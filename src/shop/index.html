@@ -1,0 +1,99 @@
+---
+layout: base.html
+title: Shop
+---
+
+<section class="shop-hero" style="padding-top:4rem;">
+  <div class="container">
+    <span class="eyebrow" style="display:block; margin-bottom:0.8rem;">✦ The Collection</span>
+    <h1 style="font-style:italic;">Shop All Pieces</h1>
+    <p style="margin-top:1rem;">Every piece handpicked just for you, Sisí</p>
+  </div>
+</section>
+
+<div class="shop-filters">
+  <div class="container">
+    <div class="filters-container">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-category="all">All</button>
+        <button class="filter-tab" data-category="bags">Bags</button>
+        <button class="filter-tab" data-category="caps">Face Caps</button>
+        <button class="filter-tab" data-category="accessories">Accessories</button>
+        <button class="filter-tab" data-category="sole">The Sole</button>
+        <button class="filter-tab" data-category="rtw">Ready To Wear</button>
+      </div>
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search pieces...">
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section-padding" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="products-grid" id="shopProducts">
+      {%- for product in collections.products | reverse %}
+      {% if product.data.available %}
+      <div class="product-card" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" onclick="window.location='/shop/{{ product.fileSlug }}/'">
+        <div class="product-image">
+          <img src="{{ product.data.image }}" alt="{{ product.data.name }}"
+            onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
+          {% if product.data.badge %}
+          <span class="product-badge badge-{{ product.data.badge }}">{{ product.data.badge | upper }}</span>
+          {% endif %}
+        </div>
+        <div class="product-info">
+          <h4>{{ product.data.name }}</h4>
+          <p class="category">{{ product.data.category }}</p>
+          <div class="product-price">
+            <span class="price">₦{{ product.data.price | numberFormat }}</span>
+            <button class="add-btn" onclick="event.stopPropagation(); addToCart('{{ product.fileSlug }}', '{{ product.data.name }}', {{ product.data.price }}, '{{ product.data.image }}')">+</button>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="product-card sold-out" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}">
+        <div class="product-image">
+          <img src="{{ product.data.image }}" alt="{{ product.data.name }}"
+            onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
+          <span class="product-badge badge-sold">SOLD OUT</span>
+        </div>
+        <div class="product-info">
+          <h4>{{ product.data.name }}</h4>
+          <p class="category">{{ product.data.category }}</p>
+          <div class="product-price">
+            <span class="price">₦{{ product.data.price | numberFormat }}</span>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const category = tab.dataset.category;
+      document.querySelectorAll('.product-card').forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  document.getElementById('searchInput').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    document.querySelectorAll('.product-card').forEach(card => {
+      const name = card.dataset.name.toLowerCase();
+      card.style.display = name.includes(query) ? 'block' : 'none';
+    });
+  });
+</script>

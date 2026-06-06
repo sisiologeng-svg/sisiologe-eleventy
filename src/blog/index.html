@@ -1,0 +1,57 @@
+---
+layout: base.html
+title: Blog
+---
+
+<section style="background:var(--black); padding:4rem 0 3rem; text-align:center;">
+  <div class="container">
+    <span style="color:var(--bone); font-size:0.75rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:1rem; display:block;">
+      ✦ The Sisíológe Diary
+    </span>
+    <h1 style="color:var(--floral-white); font-family:'Cormorant Garamond',serif; font-style:italic; margin-bottom:1rem;">
+      Stories, Style & Everything In Between
+    </h1>
+    <p style="color:rgba(255,251,244,0.65); max-width:450px; margin:0 auto;">
+      Real talk from the founder. Fashion, life, business and everything the sisí needs to know 🩵
+    </p>
+  </div>
+</section>
+
+<section class="section-padding" style="background:var(--bg);">
+  <div class="container">
+    {% if collections.blog.length == 0 %}
+    <div style="text-align:center; padding:4rem 0;">
+      <p style="font-size:1.2rem; color:var(--text-muted);">Blog posts coming soon! 🩵</p>
+      <p>Check back shortly — we have lots to share.</p>
+    </div>
+    {% else %}
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
+      {%- for post in collections.blog | reverse %}
+      <article style="background:var(--card-bg); border-radius:2px; overflow:hidden; border:1px solid var(--border); transition:var(--transition);" 
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-hover)'"
+        onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        {% if post.data.image %}
+        <img src="{{ post.data.image }}" alt="{{ post.data.title }}"
+          style="width:100%; height:220px; object-fit:cover;">
+        {% else %}
+        <div style="width:100%; height:220px; background:var(--bg-secondary); display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:3rem;">✦</span>
+        </div>
+        {% endif %}
+        <div style="padding:1.5rem;">
+          <p style="font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--olive); margin-bottom:0.5rem;">
+            {{ post.data.date | date: "%B %d, %Y" }}
+          </p>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--text-primary); margin-bottom:0.8rem;">
+            {{ post.data.title }}
+          </h3>
+          <a href="{{ post.url }}" class="btn btn-outline" style="font-size:0.75rem; padding:0.6rem 1.5rem;">
+            Read More →
+          </a>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>

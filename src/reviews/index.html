@@ -1,0 +1,96 @@
+---
+layout: base.html
+title: Reviews
+---
+
+<section style="background:var(--black); padding:4rem 0 3rem; text-align:center;">
+  <div class="container">
+    <span style="color:var(--bone); font-size:0.75rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:1rem; display:block;">
+      ✦ Real Sisís. Real Reviews.
+    </span>
+    <h1 style="color:var(--floral-white); font-family:'Cormorant Garamond',serif; font-style:italic; margin-bottom:1rem;">
+      What Our Sisís Say
+    </h1>
+    <p style="color:rgba(255,251,244,0.65); max-width:450px; margin:0 auto;">
+      Don't just take our word for it — see what the sisí family has to say 🩵
+    </p>
+  </div>
+</section>
+
+<div style="background:var(--bg-secondary); padding:3rem 0; border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; text-align:center;">
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:3rem; color:var(--olive); margin-bottom:0.3rem;">100+</h3>
+        <p style="font-size:0.8rem; letter-spacing:2px; text-transform:uppercase;">Happy Sisís</p>
+      </div>
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:3rem; color:var(--black); margin-bottom:0.3rem;">★ 5.0</h3>
+        <p style="font-size:0.8rem; letter-spacing:2px; text-transform:uppercase;">Average Rating</p>
+      </div>
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:3rem; color:var(--olive); margin-bottom:0.3rem;">10+</h3>
+        <p style="font-size:0.8rem; letter-spacing:2px; text-transform:uppercase;">States Delivered</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section-padding" style="background:var(--bg);">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">✦ Instagram Reviews</span>
+      <h2>Verified Purchases</h2>
+    </div>
+    <div class="reviews-page-grid">
+      {%- for review in collections.reviews | reverse %}
+      {% if review.data.active %}
+      <div class="review-page-card" onclick="openLightbox('{{ review.data.image }}')">
+        <img src="{{ review.data.image }}" alt="Review"
+          onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80'">
+        <div class="review-page-card-info">
+          <div class="stars">★★★★★</div>
+          <p class="reviewer-name">{{ review.data.reviewer }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-padding" style="background:var(--black); text-align:center;">
+  <div class="container">
+    <span style="color:var(--bone); font-size:0.75rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:1rem; display:block;">
+      ✦ Share Your Experience
+    </span>
+    <h2 style="color:var(--floral-white); margin-bottom:1rem;">Already Shopped With Us?</h2>
+    <p style="color:rgba(255,251,244,0.7); max-width:450px; margin:0 auto 2rem;">
+      Tag us on Instagram <strong style="color:var(--floral-white);">@sisiologe.ng</strong> with your purchase and we'll feature you here! 🩵
+    </p>
+    <a href="https://instagram.com/sisiologe.ng" target="_blank"
+      class="btn btn-outline"
+      style="border-color:rgba(255,251,244,0.4); color:var(--floral-white);">
+      <i class="fab fa-instagram" style="margin-right:0.5rem;"></i>
+      Tag Us on Instagram
+    </a>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightboxImg" src="" alt="Review">
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>

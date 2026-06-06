@@ -1,0 +1,270 @@
+---
+layout: base.html
+title: Sisíológe — Curated Accessories
+---
+
+<!-- WELCOME POPUP -->
+<div class="welcome-popup hidden" id="welcomePopup">
+  <div class="welcome-popup-inner">
+    <button class="close-popup" onclick="closeWelcomePopup()">&times;</button>
+    <p class="popup-eyebrow">✦ Welcome, Sisí!</p>
+    <h2>10% Off Your<br>First Order</h2>
+    <p>Use this code at checkout to get 10% off your first purchase 🩵</p>
+    <div class="discount-code-box">
+      <span>DEARESTSISI</span>
+      <p>One use per customer</p>
+    </div>
+    <button class="btn btn-primary" style="width:100%; margin-bottom:1rem;" onclick="copyPromoCode()">
+      Copy Code
+    </button>
+    <button class="btn btn-outline" style="width:100%;" onclick="closeWelcomePopup()">
+      Continue Shopping
+    </button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="eyebrow">✦ New Collection Available</p>
+      <h1>Curated For<br><em>Sisí</em></h1>
+      <p>Handpicked for the sisí who knows exactly what she wants. Every piece tells a story.</p>
+      <div class="hero-buttons">
+        <a href="/shop/" class="btn btn-primary">Shop Now</a>
+        <a href="/about/" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="/images/hero.jpg" alt="Sisíológe Collection"
+        onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80'">
+      <div class="hero-badge">
+        <span class="number">100%</span>
+        <span class="label">Curated Pieces</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span>Curated Bags</span><span class="dot">✦</span>
+    <span>Face Caps</span><span class="dot">✦</span>
+    <span>Accessories</span><span class="dot">✦</span>
+    <span>The Sole</span><span class="dot">✦</span>
+    <span>Ready To Wear</span><span class="dot">✦</span>
+    <span>Nationwide Delivery</span><span class="dot">✦</span>
+    <span>Same Day Lagos</span><span class="dot">✦</span>
+    <span>Curated Bags</span><span class="dot">✦</span>
+    <span>Face Caps</span><span class="dot">✦</span>
+    <span>Accessories</span><span class="dot">✦</span>
+    <span>The Sole</span><span class="dot">✦</span>
+    <span>Ready To Wear</span><span class="dot">✦</span>
+    <span>Nationwide Delivery</span><span class="dot">✦</span>
+    <span>Same Day Lagos</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">✦ Browse By Category</span>
+      <h2>Shop The Collection</h2>
+    </div>
+    <div class="categories-grid-responsive" style="display:grid; grid-template-columns:repeat(5,1fr); gap:1rem;">
+
+      <a href="/shop/?category=bags" style="position:relative; overflow:hidden; border-radius:2px; display:block;">
+        <div style="width:100%; padding-bottom:100%; position:relative; overflow:hidden;">
+          <img src="/images/cat-bags.jpg" alt="Bags"
+            onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
+        </div>
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:1.5rem 1rem 1rem; background:linear-gradient(transparent, rgba(17,18,13,0.85)); color:white;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; margin-bottom:0.2rem; color:white;">Bags</h3>
+          <span style="font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; opacity:0.8;">Shop Now →</span>
+        </div>
+      </a>
+
+      <a href="/shop/?category=caps" style="position:relative; overflow:hidden; border-radius:2px; display:block;">
+        <div style="width:100%; padding-bottom:100%; position:relative; overflow:hidden;">
+          <img src="/images/cat-caps.jpg" alt="Face Caps"
+            onerror="this.src='https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&q=80'"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
+        </div>
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:1.5rem 1rem 1rem; background:linear-gradient(transparent, rgba(17,18,13,0.85)); color:white;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; margin-bottom:0.2rem; color:white;">Face Caps</h3>
+          <span style="font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; opacity:0.8;">Shop Now →</span>
+        </div>
+      </a>
+
+      <a href="/shop/?category=accessories" style="position:relative; overflow:hidden; border-radius:2px; display:block;">
+        <div style="width:100%; padding-bottom:100%; position:relative; overflow:hidden;">
+          <img src="/images/cat-jewelry.jpg" alt="Accessories"
+            onerror="this.src='https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80'"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
+        </div>
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:1.5rem 1rem 1rem; background:linear-gradient(transparent, rgba(17,18,13,0.85)); color:white;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; margin-bottom:0.2rem; color:white;">Accessories</h3>
+          <span style="font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; opacity:0.8;">Shop Now →</span>
+        </div>
+      </a>
+
+      <a href="/shop/?category=sole" style="position:relative; overflow:hidden; border-radius:2px; display:block; opacity:0.8;">
+        <div style="width:100%; padding-bottom:100%; position:relative; overflow:hidden;">
+          <img src="/images/cat-sole.jpg" alt="The Sole"
+            onerror="this.src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&q=80'"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
+        </div>
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:1.5rem 1rem 1rem; background:linear-gradient(transparent, rgba(17,18,13,0.85)); color:white;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; margin-bottom:0.2rem; color:white;">The Sole</h3>
+          <span style="font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; opacity:0.8;">Coming Soon</span>
+        </div>
+        <span style="position:absolute; top:0.8rem; right:0.8rem; background:var(--olive); color:white; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; padding:0.3rem 0.6rem; border-radius:2px;">Soon</span>
+      </a>
+
+      <a href="/shop/?category=rtw" style="position:relative; overflow:hidden; border-radius:2px; display:block; opacity:0.8;">
+        <div style="width:100%; padding-bottom:100%; position:relative; overflow:hidden;">
+          <img src="/images/cat-rtw.jpg" alt="Ready To Wear"
+            onerror="this.src='https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80'"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;">
+        </div>
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:1.5rem 1rem 1rem; background:linear-gradient(transparent, rgba(17,18,13,0.85)); color:white;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; margin-bottom:0.2rem; color:white;">Ready To Wear</h3>
+          <span style="font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; opacity:0.8;">Coming Soon</span>
+        </div>
+        <span style="position:absolute; top:0.8rem; right:0.8rem; background:var(--olive); color:white; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; padding:0.3rem 0.6rem; border-radius:2px;">Soon</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="featured-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">✦ Latest Drops</span>
+      <h2>Featured Pieces</h2>
+    </div>
+    <div class="products-grid">
+      {%- for product in collections.products | reverse | limit(4) %}
+      {% if product.data.available %}
+      <div class="product-card" onclick="window.location='/shop/{{ product.fileSlug }}/'">
+        <div class="product-image">
+          <img src="{{ product.data.image }}" alt="{{ product.data.name }}"
+            onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
+          {% if product.data.badge %}
+          <span class="product-badge badge-{{ product.data.badge }}">{{ product.data.badge | upper }}</span>
+          {% endif %}
+        </div>
+        <div class="product-info">
+          <h4>{{ product.data.name }}</h4>
+          <p class="category">{{ product.data.category }}</p>
+          <div class="product-price">
+            <span class="price">₦{{ product.data.price | numberFormat }}</span>
+            <button class="add-btn" onclick="event.stopPropagation(); addToCart('{{ product.fileSlug }}', '{{ product.data.name }}', {{ product.data.price }}, '{{ product.data.image }}')">+</button>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {%- endfor %}
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="/shop/" class="btn btn-outline">View All Pieces</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">✦ What Our Sisís Say</span>
+      <h2>Real Reviews</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
+      {%- for review in collections.reviews | reverse | limit(3) %}
+      {% if review.data.active %}
+      <div class="review-card">
+        <img src="{{ review.data.image }}" class="review-screenshot" alt="Review"
+          onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80'">
+        <div class="review-info">
+          <div class="stars">★★★★★</div>
+          <p class="reviewer">{{ review.data.reviewer }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {%- endfor %}
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="/reviews/" class="btn btn-outline">Read All Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip section-padding">
+  <div class="container">
+    <div class="about-strip-content">
+      <div class="about-strip-text">
+        <p class="eyebrow">✦ Our Story</p>
+        <h2>What Does Sisíológe Mean?</h2>
+        <p>Sisíológe is a Yoruba word that means a woman who knows and loves fashion. A woman who moves with intention, curates with taste and wears every piece like it was made for her.</p>
+        <p style="margin-top:1rem;">That is exactly who we curate for. You.</p>
+        <a href="/about/" class="btn btn-outline"
+          style="border-color:rgba(255,251,244,0.4); color:var(--floral-white); margin-top:2rem;">
+          Read Our Full Story
+        </a>
+      </div>
+      <div style="padding:3rem; background:rgba(255,251,244,0.05); border-radius:2px; border:1px solid rgba(216,207,188,0.2);">
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--floral-white); font-style:italic; line-height:1.5; margin:0;">
+          "We started with a dream, restructured with purpose and arrived here with everything."
+        </p>
+        <p style="margin-top:1.5rem; color:var(--bone); font-size:0.85rem;">— Opemipo, Founder of Sisíológe</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section section-padding">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="icon">🚚</div>
+        <h4>Nationwide Delivery</h4>
+        <p>We deliver to every state via Moveit.ng. Delivery days are Tuesdays, Thursdays and Saturdays.</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">✦</div>
+        <h4>Curated Quality</h4>
+        <p>Every piece is personally selected and quality checked before it reaches you.</p>
+      </div>
+      <div class="feature-item">
+        <div class="icon">💬</div>
+        <h4>Always Here</h4>
+        <p>Reach us on Instagram or WhatsApp. We respond fast and we always show up for our Sisís.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section section-padding">
+  <div class="container">
+    <div class="newsletter-content">
+      <span class="eyebrow" style="color:var(--bone);">✦ Stay In The Loop</span>
+      <h2>Join The Sisís</h2>
+      <p>Be the first to know about new drops, exclusive offers and everything sisíológe.</p>
+      <form class="newsletter-form"
+        action="https://formspree.io/f/xnjrnedo"
+        method="POST"
+        onsubmit="handleNewsletter(event)">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>

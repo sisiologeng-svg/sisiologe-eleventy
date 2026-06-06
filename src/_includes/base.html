@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — Sisíológe</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  {% if announcement.active %}
+  <div class="announcement-bar">
+    <div class="announcement-track">
+      <span>{{ announcement.message }}</span>
+      <span class="dot">·</span>
+      <span>{{ announcement.message }}</span>
+      <span class="dot">·</span>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-text">sisíológe</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop/">Shop</a></li>
+        <li><a href="/reviews/">Reviews</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <a href="/shop/"><i class="fas fa-search"></i></a>
+        <a href="/checkout/" style="position:relative">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+        <a href="https://wa.me/2347074369937" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">&times;</button>
+    <a href="/">Home</a>
+    <a href="/shop/">Shop</a>
+    <a href="/reviews/">Reviews</a>
+    <a href="/blog/">Blog</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="https://wa.me/2347074369937" target="_blank">WhatsApp Us</a>
+  </div>
+
+  <!-- PAGE CONTENT -->
+  {{ content }}
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--floral-white); margin-bottom:0.5rem;">sisíológe</p>
+          <p>Curated for the sisí who knows exactly what she wants.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/sisiologe.ng" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@sisiologe.ng" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/2347074369937" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="/shop/?category=bags">Bags</a></li>
+            <li><a href="/shop/?category=caps">Face Caps</a></li>
+            <li><a href="/shop/?category=accessories">Accessories</a></li>
+            <li><a href="/shop/?category=sole">The Sole</a></li>
+            <li><a href="/shop/?category=rtw">Ready To Wear</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Information</h5>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="https://instagram.com/sisiologe.ng" target="_blank">@sisiologe.ng</a></li>
+            <li><a href="https://wa.me/2347074369937" target="_blank">07074369937</a></li>
+            <li><a href="mailto:sisiologe.ng@gmail.com">sisiologe.ng@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 sisíológe. All rights reserved.</p>
+        <p>Made with 🩵 for the Sisís</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Done!</span>
+  </div>
+
+  <script src="/js/main.js"></script>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
