@@ -4,17 +4,28 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
 
-  // Number format filter for prices
+  // Collections
+  eleventyConfig.addCollection("products", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/_data/products/*.md");
+  });
+
+  eleventyConfig.addCollection("reviews", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/_data/reviews/*.md");
+  });
+
+  eleventyConfig.addCollection("promos", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/_data/promos/*.md");
+  });
+
+  // Filters
   eleventyConfig.addFilter("numberFormat", function(value) {
     return Number(value).toLocaleString();
   });
 
-  // Limit filter
   eleventyConfig.addFilter("limit", function(array, limit) {
     return array.slice(0, limit);
   });
 
-  // Upper filter
   eleventyConfig.addFilter("upper", function(value) {
     return value ? value.toUpperCase() : "";
   });
