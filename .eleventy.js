@@ -6,15 +6,15 @@ module.exports = function(eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection("products", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/_data/products/*.md");
+    return collectionApi.getFilteredByGlob("src/products/*.md");
   });
 
   eleventyConfig.addCollection("reviews", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/_data/reviews/*.md");
+    return collectionApi.getFilteredByGlob("src/reviews/*.md");
   });
 
   eleventyConfig.addCollection("promos", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/_data/promos/*.md");
+    return collectionApi.getFilteredByGlob("src/promos/*.md");
   });
 
   // Filters

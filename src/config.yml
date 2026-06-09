@@ -1,0 +1,63 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/products"
+public_folder: "/images/products"
+
+collections:
+  - name: "products"
+    label: "🛍️ Products"
+    folder: "src/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Product Name", name: "name", widget: "string"}
+      - {label: "Price (₦)", name: "price", widget: "number"}
+      - {label: "Category", name: "category", widget: "select", options: ["bags", "caps", "accessories", "sole", "rtw"]}
+      - {label: "Product Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Available", name: "available", widget: "boolean", default: true}
+      - {label: "Badge", name: "badge", widget: "select", options: ["new", "sale", ""], default: "new"}
+
+  - name: "reviews"
+    label: "⭐ Reviews"
+    folder: "src/reviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Reviewer Name", name: "reviewer", widget: "string"}
+      - {label: "Screenshot", name: "image", widget: "image"}
+      - {label: "Active", name: "active", widget: "boolean", default: true}
+
+  - name: "promos"
+    label: "🏷️ Promo Codes"
+    folder: "src/promos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Code", name: "code", widget: "string"}
+      - {label: "Discount %", name: "discount", widget: "number"}
+      - {label: "Active", name: "active", widget: "boolean", default: true}
+      - {label: "Description", name: "description", widget: "string"}
+
+  - name: "blog"
+    label: "📝 Blog"
+    folder: "src/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "⚙️ Site Settings"
+    files:
+      - label: "Announcement Bar"
+        name: "announcement"
+        file: "src/_data/announcement.json"
+        fields:
+          - {label: "Message", name: "message", widget: "string"}
+          - {label: "Active", name: "active", widget: "boolean", default: true}

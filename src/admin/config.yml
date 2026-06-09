@@ -8,7 +8,7 @@ public_folder: "/images/products"
 collections:
   - name: "products"
     label: "🛍️ Products"
-    folder: "src/_data/products"
+    folder: "src/products"
     create: true
     slug: "{{slug}}"
     fields:
@@ -22,7 +22,7 @@ collections:
 
   - name: "reviews"
     label: "⭐ Reviews"
-    folder: "src/_data/reviews"
+    folder: "src/reviews"
     create: true
     slug: "{{slug}}"
     fields:
@@ -32,7 +32,7 @@ collections:
 
   - name: "promos"
     label: "🏷️ Promo Codes"
-    folder: "src/_data/promos"
+    folder: "src/promos"
     create: true
     slug: "{{slug}}"
     fields:
