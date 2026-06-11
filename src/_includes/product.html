@@ -1,0 +1,66 @@
+---
+layout: base.html
+---
+
+<section style="padding: 3rem 0; background: var(--bg);">
+  <div class="container">
+    <a href="/shop/" style="font-size:0.78rem; letter-spacing:2px; text-transform:uppercase; color:var(--olive);">← Back to Shop</a>
+  </div>
+</section>
+
+<section style="padding: 2rem 0 5rem; background: var(--bg);">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
+      
+      <!-- PRODUCT IMAGE -->
+      <div style="position:sticky; top:calc(var(--announcement-height) + var(--navbar-height) + 2rem);">
+        <img src="{{ image }}" alt="{{ name }}"
+          style="width:100%; height:600px; object-fit:cover; border-radius:2px;"
+          onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80'">
+      </div>
+
+      <!-- PRODUCT INFO -->
+      <div>
+        <p style="font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--olive); margin-bottom:0.5rem;">{{ category }}</p>
+        <h1 style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--text-primary); margin-bottom:1rem;">{{ name }}</h1>
+        <p style="font-size:1.5rem; font-weight:600; color:var(--olive); margin-bottom:1.5rem;">₦{{ price | numberFormat }}</p>
+        
+        <div style="background:var(--bg-secondary); padding:1.5rem; border-radius:2px; margin-bottom:2rem; border:1px solid var(--border);">
+          <p style="color:var(--text-secondary); line-height:2; margin:0;">{{ description }}</p>
+        </div>
+
+        <div style="background:rgba(86,84,73,0.06); padding:1.2rem 1.5rem; border-radius:2px; margin-bottom:2rem; border-left:3px solid var(--olive);">
+          <p style="font-size:0.82rem; color:var(--text-primary); margin:0; line-height:1.8;">
+            📅 <strong>Delivery days:</strong> Tuesday, Thursday & Saturday<br>
+            🚚 <strong>Lagos:</strong> ₦2,500 – ₦6,500 · <strong>Nationwide:</strong> from ₦5,000
+          </p>
+        </div>
+
+        {% if available %}
+        <button class="btn btn-primary" style="width:100%; margin-bottom:1rem; padding:1.2rem;"
+          onclick="addToCart('{{ page.fileSlug }}', '{{ name }}', {{ price }}, '{{ image }}'); showToast('{{ name }} added to cart! 👜')">
+          Add to Cart
+        </button>
+        <a href="/checkout/" class="btn btn-outline" style="width:100%; text-align:center; display:block; padding:1.2rem;">
+          Buy Now
+        </a>
+        {% else %}
+        <button class="btn" style="width:100%; padding:1.2rem; background:var(--border); color:var(--text-muted); cursor:not-allowed;">
+          Sold Out
+        </button>
+        {% endif %}
+
+        <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--border);">
+          <p style="font-size:0.78rem; letter-spacing:1px; text-transform:uppercase; margin-bottom:1rem; color:var(--text-primary); font-weight:600;">Share</p>
+          <div style="display:flex; gap:1rem;">
+            <a href="https://wa.me/2347074369937?text=Hi! I'm interested in {{ name }}" target="_blank"
+              style="display:flex; align-items:center; gap:0.5rem; font-size:0.82rem; color:var(--olive);">
+              <i class="fab fa-whatsapp"></i> Ask about this piece
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
