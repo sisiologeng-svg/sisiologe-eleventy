@@ -278,7 +278,8 @@ function payWithPaystack() {
         { display_name: "Customer Name", variable_name: "name", value: name },
         { display_name: "Phone", variable_name: "phone", value: phone },
         { display_name: "Delivery", variable_name: "delivery", value: delivery },
-        { display_name: "Promo", variable_name: "promo", value: appliedPromo?.code || 'None' }
+        { display_name: "Promo", variable_name: "promo", value: appliedPromo?.code || 'None' },
+        { display_name: "Product Slug", variable_name: "product_slug", value: cart[0]?.id || '' }
       ]
     },
     callback: function(response) {
