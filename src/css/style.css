@@ -711,3 +711,25 @@ footer { background: var(--black); color: var(--floral-white); padding: 4rem 0 2
     gap: 0.8rem !important;
   }
 }
+/* ===== PRODUCT PAGE FIXES ===== */
+.product-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.product-page-image #mainImage {
+  height: 500px !important;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .product-page-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  .product-page-image #mainImage {
+    height: 350px !important;
+  }
+}
