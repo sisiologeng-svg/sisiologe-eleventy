@@ -1,64 +1,112 @@
----
-layout: base.html
----
+const https = require('https');
+const crypto = require('crypto');
 
-<section style="padding: 1.5rem 0; background: var(--bg);">
-  <div class="container">
-    <a href="/shop/" style="font-size:0.78rem; letter-spacing:2px; text-transform:uppercase; color:var(--olive);">← Back to Shop</a>
-  </div>
-</section>
+exports.handler = async (event) => {
+  console.log('Webhook received:', event.httpMethod);
+  
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: 'Method not allowed' };
+  }
 
-<section style="padding: 1rem 0 5rem; background: var(--bg);">
-  <div class="container">
-    <div class="product-page-grid">
-      
-      <!-- PRODUCT IMAGE -->
-      <div class="product-page-image">
-        <img src="{{ image }}" alt="{{ name }}"
-          style="width:100%; height:500px; object-fit:cover; border-radius:2px;"
-          onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80'">
-      </div>
+  try {
+    // Verify Paystack signature
+    const secret = process.env.PAYSTACK_SECRET_KEY;
+    const hash = crypto.createHmac('sha512', secret)
+      .update(event.body)
+      .digest('hex');
 
-      <!-- PRODUCT INFO -->
-      <div class="product-page-info">
-        <p style="font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--olive); margin-bottom:0.5rem;">{{ category }}</p>
-        <h1 style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--text-primary); margin-bottom:1rem;">{{ name }}</h1>
-        <p style="font-size:1.8rem; font-weight:600; color:var(--olive); margin-bottom:1.5rem;">₦{{ price | numberFormat }}</p>
-        
-        <div style="background:var(--bg-secondary); padding:1.5rem; border-radius:2px; margin-bottom:2rem; border:1px solid var(--border);">
-          <p style="color:var(--text-secondary); line-height:2; margin:0;">{{ description }}</p>
-        </div>
+    console.log('Signature check:', hash === event.headers['x-paystack-signature']);
 
-        <div style="background:rgba(86,84,73,0.06); padding:1.2rem 1.5rem; border-radius:2px; margin-bottom:2rem; border-left:3px solid var(--olive);">
-          <p style="font-size:0.82rem; color:var(--text-primary); margin:0; line-height:1.8;">
-            📅 <strong>Delivery days:</strong> Tuesday, Thursday & Saturday<br>
-            🚚 <strong>Lagos:</strong> ₦2,500 – ₦6,500 · <strong>Nationwide:</strong> from ₦5,000
-          </p>
-        </div>
+    if (hash !== event.headers['x-paystack-signature']) {
+      console.log('Invalid signature');
+      return { statusCode: 401, body: 'Invalid signature' };
+    }
 
-        {% if available %}
-        <button class="btn btn-primary" style="width:100%; margin-bottom:1rem; padding:1.2rem;"
-          onclick="addToCart('{{ page.fileSlug }}', '{{ name }}', {{ price }}, '{{ image }}'); showToast('{{ name }} added to cart! 👜')">
-          Add to Cart
-        </button>
-        <a href="/checkout/" class="btn btn-outline" style="width:100%; text-align:center; display:block; padding:1.2rem;"
-          onclick="addToCart('{{ page.fileSlug }}', '{{ name }}', {{ price }}, '{{ image }}')">
-          Buy Now
-        </a>
-        {% else %}
-        <button class="btn" style="width:100%; padding:1.2rem; background:var(--border); color:var(--text-muted); cursor:not-allowed;">
-          Sold Out
-        </button>
-        {% endif %}
+    const payload = JSON.parse(event.body);
+    console.log('Event type:', payload.event);
 
-        <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--border);">
-          <a href="https://wa.me/2347074369937?text=Hi! I'm interested in {{ name }}" target="_blank"
-            style="display:flex; align-items:center; gap:0.5rem; font-size:0.82rem; color:var(--olive);">
-            <i class="fab fa-whatsapp"></i> Ask about this piece
-          </a>
-        </div>
-      </div>
+    if (payload.event !== 'charge.success') {
+      return { statusCode: 200, body: 'OK' };
+    }
 
-    </div>
-  </div>
-</section>
+    const metadata = payload.data.metadata;
+    const customFields = metadata?.custom_fields || [];
+    const productSlug = customFields.find(
+      f => f.variable_name === 'product_slug'
+    )?.value;
+
+    console.log('Product slug:', productSlug);
+
+    if (!productSlug) {
+      console.log('No product slug found in metadata');
+      return { statusCode: 200, body: 'No product slug' };
+    }
+
+    const token = process.env.GITHUB_TOKEN;
+    const repo = process.env.GITHUB_REPO;
+
+    // Get the file from GitHub
+    const getFile = () => new Promise((resolve, reject) => {
+      const options = {
+        hostname: 'api.github.com',
+        path: `/repos/${repo}/contents/src/products/${productSlug}.md`,
+        headers: {
+          'Authorization': `token ${token}`,
+          'User-Agent': 'sisiologe-webhook'
+        }
+      };
+      const req = https.get(options, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => resolve(JSON.parse(data)));
+      });
+      req.on('error', reject);
+    });
+
+    const fileData = await getFile();
+    console.log('File found:', fileData.name);
+
+    const content = Buffer.from(fileData.content, 'base64').toString('utf8');
+    const updated = content.replace('available: true', 'available: false');
+    const newContent = Buffer.from(updated).toString('base64');
+
+    // Update the file
+    const updateFile = () => new Promise((resolve, reject) => {
+      const body = JSON.stringify({
+        message: `Mark ${productSlug} as sold out`,
+        content: newContent,
+        sha: fileData.sha
+      });
+
+      const options = {
+        hostname: 'api.github.com',
+        path: `/repos/${repo}/contents/src/products/${productSlug}.md`,
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${token}`,
+          'User-Agent': 'sisiologe-webhook',
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(body)
+        }
+      };
+
+      const req = https.request(options, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => resolve(JSON.parse(data)));
+      });
+      req.on('error', reject);
+      req.write(body);
+      req.end();
+    });
+
+    await updateFile();
+    console.log('Product marked as sold out successfully!');
+
+    return { statusCode: 200, body: 'Product marked as sold out' };
+
+  } catch (error) {
+    console.log('Error:', error.message);
+    return { statusCode: 200, body: 'Error handled' };
+  }
+};
