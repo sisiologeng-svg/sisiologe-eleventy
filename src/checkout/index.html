@@ -11,7 +11,7 @@ title: Checkout
 
         <div class="delivery-info-box" style="margin-bottom:2rem;">
           <p>
-            <strong>📅 Delivery Days:</strong> Tuesday, Thursday & Saturday<br>
+            <strong>📅 Delivery Days:</strong> Tuesday & Saturday<br>
             <strong>⚡ Same Day:</strong> Orders placed before 9AM on a delivery day<br>
             <strong id="deliveryNote" style="color:var(--olive);"></strong>
           </p>
@@ -45,7 +45,23 @@ title: Checkout
             </label>
           </div>
 
-          <h2 style="margin-top:2rem;">Delivery Method</h2>
+          <h2 style="margin-top:2rem;">Preferred Delivery Day</h2>
+<div class="delivery-options" style="margin-bottom:1.5rem;">
+  <label class="delivery-option">
+    <input type="radio" name="delivery_day" value="Tuesday" required>
+    <div class="delivery-option-info">
+      <h5>📅 Tuesday</h5>
+      <p>Order must be placed by Monday 9PM</p>
+    </div>
+  </label>
+  <label class="delivery-option">
+    <input type="radio" name="delivery_day" value="Saturday">
+    <div class="delivery-option-info">
+      <h5>📅 Saturday</h5>
+      <p>Order must be placed by Friday 9PM</p>
+    </div>
+  </label>
+</div>
 
           <div class="delivery-options">
 
