@@ -35,7 +35,7 @@ title: Shop
     <div class="products-grid" id="shopProducts">
       {%- for product in collections.products | reverse %}
       {% if product.data.available %}
-      <div class="product-card" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" onclick="window.location='/shop/{{ product.fileSlug }}/'">
+      <div class="product-card" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" onclick="window.location='/products/{{ product.fileSlug }}/'">
         <div class="product-image">
           <img src="{{ product.data.image }}" alt="{{ product.data.name }}"
             onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
