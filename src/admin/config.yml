@@ -15,7 +15,10 @@ collections:
       - {label: "Product Name", name: "name", widget: "string"}
       - {label: "Price (₦)", name: "price", widget: "number"}
       - {label: "Category", name: "category", widget: "select", options: ["bags", "caps", "accessories", "sole", "rtw"]}
-      - {label: "Product Image", name: "image", widget: "image"}
+      - {label: "Main Image", name: "image", widget: "image"}
+      - {label: "Image 2", name: "image2", widget: "image", required: false}
+      - {label: "Image 3", name: "image3", widget: "image", required: false}
+      - {label: "Image 4", name: "image4", widget: "image", required: false}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Available", name: "available", widget: "boolean", default: true}
       - {label: "Badge", name: "badge", widget: "select", options: ["new", "sale", ""], default: "new"}
