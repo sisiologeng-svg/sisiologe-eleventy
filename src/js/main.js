@@ -23,18 +23,6 @@ function initTheme() {
   if (icon) icon.className = saved === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 }
 
-// ===== PRODUCTS DATA =====
-const products = [
-  { id: 1, name: "The Heritage", category: "bags", price: 45000, image: "images/products/bag1.jpg", badge: "new", sold: false, description: "A classic tan monogram structured bag. Vintage luxury at its finest." },
-  { id: 2, name: "The Rosé", category: "bags", price: 38000, image: "images/products/bag2.jpg", badge: "new", sold: false, description: "Soft pink monogram shoulder bag. Feminine and timeless." },
-  { id: 3, name: "The Indigo", category: "bags", price: 42000, image: "images/products/bag3.jpg", badge: "new", sold: false, description: "Vintage Guess denim patchwork hobo bag. Bold and unique." },
-  { id: 4, name: "The Rouge", category: "bags", price: 55000, image: "images/products/bag4.jpg", badge: "new", sold: false, description: "Deep red croc embossed structured tote. Power and elegance." },
-  { id: 5, name: "The Olive", category: "bags", price: 40000, image: "images/products/bag5.jpg", badge: "new", sold: false, description: "Olive green patent leather bag with silver chain." },
-  { id: 6, name: "The Stitch", category: "bags", price: 35000, image: "images/products/bag6.jpg", badge: "new", sold: false, description: "Structured denim mini bag with yellow contrast stitching." },
-  { id: 7, name: "The Monarch", category: "caps", price: 12000, image: "images/products/cap1.jpg", badge: "new", sold: false, description: "Classic structured face cap. The crown you never take off." },
-  { id: 8, name: "The Noir Cap", category: "caps", price: 10000, image: "images/products/cap2.jpg", badge: "new", sold: false, description: "Sleek all-black face cap. Effortless and intentional." }
-];
-
 // ===== PROMO CODES =====
 const promoCodes = {
   'DEARESTSISI': { discount: 10, type: 'percent', description: '10% off for new Sisí!' },
@@ -83,13 +71,13 @@ function updateCartCount() {
   });
 }
 
-function addToCart(productId) {
-  const product = products.find(p => p.id === productId);
-  if (!product || product.sold) return;
+function addToCart(productId, productName, productPrice, productImage) {
   const existing = cart.find(item => item.id === productId);
-  if (existing) { existing.qty += 1; } else { cart.push({ ...product, qty: 1 }); }
+  if (existing) { existing.qty += 1; } else {
+    cart.push({ id: productId, name: productName, price: productPrice, image: productImage, qty: 1 });
+  }
   saveCart();
-  showToast(`${product.name} added to cart! 👜`);
+  showToast(`${productName} added to cart! 👜`);
 }
 
 function removeFromCart(productId) { cart = cart.filter(item => item.id !== productId); saveCart(); renderCartItems(); }
@@ -132,158 +120,6 @@ function closeWelcomePopup() {
 
 function copyPromoCode() {
   navigator.clipboard.writeText('DEARESTSISI').then(() => { showToast('Code copied! Use DEARESTSISI at checkout 🩵'); });
-}
-
-// ===== PRODUCT CARDS =====
-function createProductCard(product) {
-  return `
-    <div class="product-card ${product.sold ? 'sold-out' : ''}" onclick="goToProduct(${product.id})">
-      <div class="product-image">
-        <img src="${product.image}" alt="${product.name}"
-          onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
-        ${product.badge ? `<span class="product-badge badge-${product.sold ? 'sold' : product.badge}">${product.sold ? 'Sold Out' : product.badge.toUpperCase()}</span>` : ''}
-      </div>
-      <div class="product-info">
-        <h4>${product.name}</h4>
-        <p class="category">${product.category}</p>
-        <div class="product-price">
-          <span class="price">₦${product.price.toLocaleString()}</span>
-          ${!product.sold ? `<button class="add-btn" onclick="event.stopPropagation(); addToCart(${product.id})">+</button>` : ''}
-        </div>
-      </div>
-    </div>`;
-}
-
-function goToProduct(id) { window.location.href = `product.html?id=${id}`; }
-
-// ===== HOMEPAGE FEATURED =====
-const featuredContainer = document.getElementById('featuredProducts');
-if (featuredContainer) {
-  featuredContainer.innerHTML = products.slice(0, 4).map(createProductCard).join('');
-}
-
-// ===== CATEGORY SLIDER =====
-let categoryIndex = 0;
-
-function getVisibleCount(type) {
-  if (window.innerWidth < 768) return 1;
-  if (window.innerWidth < 1024) return type === 'category' ? 2 : 2;
-  return type === 'category' ? 4 : 3;
-}
-
-function slideCategory(direction) {
-  const track = document.getElementById('categorySlider');
-  if (!track) return;
-  const cards = track.querySelectorAll('.category-card');
-  const visible = getVisibleCount('category');
-  const maxIndex = Math.max(0, cards.length - visible);
-  categoryIndex = Math.max(0, Math.min(categoryIndex + direction, maxIndex));
-  const pct = (categoryIndex / cards.length) * 100;
-  track.style.transform = `translateX(-${pct}%)`;
-  updateCategoryDots(cards.length, visible);
-}
-
-function updateCategoryDots(total, visible) {
-  const dotsContainer = document.getElementById('categoryDots');
-  if (!dotsContainer) return;
-  const dotCount = Math.ceil(total / visible);
-  const currentDot = Math.floor(categoryIndex / visible);
-  dotsContainer.innerHTML = Array.from({length: dotCount}, (_, i) =>
-    `<button class="slider-dot ${i === currentDot ? 'active' : ''}" onclick="goToCategory(${i})"></button>`
-  ).join('');
-}
-
-function goToCategory(index) {
-  const track = document.getElementById('categorySlider');
-  if (!track) return;
-  const cards = track.querySelectorAll('.category-card');
-  const visible = getVisibleCount('category');
-  categoryIndex = Math.min(index * visible, cards.length - visible);
-  const pct = (categoryIndex / cards.length) * 100;
-  track.style.transform = `translateX(-${pct}%)`;
-  updateCategoryDots(cards.length, visible);
-}
-
-// ===== REVIEWS SLIDER =====
-let reviewIndex = 0;
-
-function slideReview(direction) {
-  const track = document.getElementById('reviewsTrack');
-  if (!track) return;
-  const cards = track.querySelectorAll('.review-card');
-  const visible = getVisibleCount('review');
-  const maxIndex = Math.max(0, cards.length - visible);
-  reviewIndex = Math.max(0, Math.min(reviewIndex + direction, maxIndex));
-  const pct = (reviewIndex / cards.length) * 100;
-  track.style.transform = `translateX(-${pct}%)`;
-  updateReviewDots(cards.length, visible);
-}
-
-function updateReviewDots(total, visible) {
-  const dotsContainer = document.getElementById('reviewDots');
-  if (!dotsContainer) return;
-  const dotCount = Math.ceil(total / visible);
-  const currentDot = Math.floor(reviewIndex / visible);
-  dotsContainer.innerHTML = Array.from({length: dotCount}, (_, i) =>
-    `<button class="slider-dot ${i === currentDot ? 'active' : ''}" onclick="goToReview(${i})"></button>`
-  ).join('');
-}
-
-function goToReview(index) {
-  const track = document.getElementById('reviewsTrack');
-  if (!track) return;
-  const cards = track.querySelectorAll('.review-card');
-  const visible = getVisibleCount('review');
-  reviewIndex = Math.min(index * visible, cards.length - visible);
-  const pct = (reviewIndex / cards.length) * 100;
-  track.style.transform = `translateX(-${pct}%)`;
-  updateReviewDots(cards.length, visible);
-}
-
-// Auto slide reviews
-setInterval(() => {
-  const track = document.getElementById('reviewsTrack');
-  if (!track) return;
-  const cards = track.querySelectorAll('.review-card');
-  if (!cards.length) return;
-  const visible = getVisibleCount('review');
-  const maxIndex = Math.max(0, cards.length - visible);
-  reviewIndex = reviewIndex >= maxIndex ? 0 : reviewIndex + 1;
-  const pct = (reviewIndex / cards.length) * 100;
-  track.style.transform = `translateX(-${pct}%)`;
-  updateReviewDots(cards.length, visible);
-}, 4000);
-
-// ===== SHOP PAGE =====
-const shopContainer = document.getElementById('shopProducts');
-if (shopContainer) {
-  let currentCategory = 'all';
-  let searchQuery = '';
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlCategory = urlParams.get('category');
-  if (urlCategory) {
-    currentCategory = urlCategory;
-    document.querySelectorAll('.filter-tab').forEach(tab => { tab.classList.toggle('active', tab.dataset.category === urlCategory); });
-  }
-  function renderShop() {
-    let filtered = products;
-    if (currentCategory !== 'all') filtered = filtered.filter(p => p.category === currentCategory);
-    if (searchQuery) filtered = filtered.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()) || p.description.toLowerCase().includes(searchQuery.toLowerCase()));
-    shopContainer.innerHTML = filtered.length === 0
-      ? `<div style="grid-column:1/-1; text-align:center; padding:4rem;"><p>No pieces found 🔍</p></div>`
-      : filtered.map(createProductCard).join('');
-  }
-  document.querySelectorAll('.filter-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      currentCategory = tab.dataset.category;
-      renderShop();
-    });
-  });
-  const searchInput = document.getElementById('searchInput');
-  if (searchInput) searchInput.addEventListener('input', e => { searchQuery = e.target.value; renderShop(); });
-  renderShop();
 }
 
 // ===== DELIVERY DATA =====
@@ -344,7 +180,7 @@ function renderCartItems() {
   const subtotalEl = document.getElementById('subtotal');
   if (!cartItems) return;
   if (cart.length === 0) {
-    cartItems.innerHTML = `<div style="text-align:center; padding:2rem;"><p>Your cart is empty 👜</p><a href="shop.html" class="btn btn-primary" style="margin-top:1rem; display:inline-block;">Shop Now</a></div>`;
+    cartItems.innerHTML = `<div style="text-align:center; padding:2rem;"><p>Your cart is empty 👜</p><a href="/shop/" class="btn btn-primary" style="margin-top:1rem; display:inline-block;">Shop Now</a></div>`;
     return;
   }
   cartItems.innerHTML = cart.map(item => `
@@ -353,7 +189,7 @@ function renderCartItems() {
       <div class="summary-item-info"><h5>${item.name}</h5><p>Qty: ${item.qty}</p></div>
       <div>
         <span class="summary-item-price">₦${(item.price * item.qty).toLocaleString()}</span>
-        <button onclick="removeFromCart(${item.id})" style="display:block; background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.75rem; margin-top:0.3rem;">Remove</button>
+        <button onclick="removeFromCart('${item.id}')" style="display:block; background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.75rem; margin-top:0.3rem;">Remove</button>
       </div>
     </div>`).join('');
   const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
@@ -447,11 +283,10 @@ function payWithPaystack() {
     },
     callback: function(response) {
       if (appliedPromo?.code === 'DEARESTSISI') markPromoUsed('DEARESTSISI');
-      cart.forEach(item => { const product = products.find(p => p.id === item.id); if (product) product.sold = true; });
       cart = [];
       saveCart();
       showToast('Payment successful! 🎉 We will be in touch shortly!');
-      setTimeout(() => window.location.href = 'index.html', 3000);
+      setTimeout(() => window.location.href = '/', 3000);
     },
     onClose: function() { showToast('Payment cancelled.'); }
   });
@@ -470,43 +305,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   updateCartCount();
   initWelcomePopup();
-
-  // Init category slider dots
-  setTimeout(() => {
-    const catTrack = document.getElementById('categorySlider');
-    if (catTrack) {
-      const cards = catTrack.querySelectorAll('.category-card');
-      const visible = getVisibleCount('category');
-      updateCategoryDots(cards.length, visible);
-    }
-    const revTrack = document.getElementById('reviewsTrack');
-    if (revTrack) {
-      const cards = revTrack.querySelectorAll('.review-card');
-      const visible = getVisibleCount('review');
-      updateReviewDots(cards.length, visible);
-    }
-  }, 200);
-
   if (document.getElementById('checkoutSection')) {
     renderCartItems();
     setupDelivery();
-  }
-});
-
-// Update sliders on resize
-window.addEventListener('resize', () => {
-  const catTrack = document.getElementById('categorySlider');
-  if (catTrack) {
-    categoryIndex = 0;
-    catTrack.style.transform = 'translateX(0)';
-    const cards = catTrack.querySelectorAll('.category-card');
-    updateCategoryDots(cards.length, getVisibleCount('category'));
-  }
-  const revTrack = document.getElementById('reviewsTrack');
-  if (revTrack) {
-    reviewIndex = 0;
-    revTrack.style.transform = 'translateX(0)';
-    const cards = revTrack.querySelectorAll('.review-card');
-    updateReviewDots(cards.length, getVisibleCount('review'));
   }
 });
