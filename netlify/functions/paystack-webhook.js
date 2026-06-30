@@ -40,7 +40,7 @@ exports.handler = async (event) => {
   const getFile = () => new Promise((resolve, reject) => {
     const options = {
       hostname: 'api.github.com',
-      path: `/repos/${repo}/contents/src/products/${productSlug}.md`,
+      path: `/repos/${repo}/contents/src/products/${encodeURIComponent(productSlug)}.md`,
       headers: {
         'Authorization': `token ${token}`,
         'User-Agent': 'sisiologe-webhook'
@@ -69,7 +69,7 @@ exports.handler = async (event) => {
 
     const options = {
       hostname: 'api.github.com',
-      path: `/repos/${repo}/contents/src/products/${productSlug}.md`,
+      path: `/repos/${repo}/contents/src/products/${encodeURIComponent(productSlug)}.md`,
       method: 'PUT',
       headers: {
         'Authorization': `token ${token}`,
