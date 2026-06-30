@@ -10,6 +10,7 @@ collections:
     label: "🛍️ Products"
     folder: "src/products"
     create: true
+    identifier_field: name
     slug: "{{slug}}"
     fields:
       - {label: "Product Name", name: "name", widget: "string"}
