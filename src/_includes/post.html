@@ -4,30 +4,37 @@ layout: base.html
 
 <article>
 
-  <div style="max-width:750px; margin:0 auto; padding:2rem 1.5rem 0;">
+  <div style="max-width:780px; margin:0 auto; padding:2rem 1.5rem 0;">
     <a href="/blog/" style="color:var(--olive); font-size:0.78rem; letter-spacing:2px; text-transform:uppercase;">
       ← Back to Blog
     </a>
   </div>
 
+  <div style="max-width:780px; margin:2.5rem auto 0; padding:0 1.5rem; text-align:center;">
+    <h1 style="font-family:'Cormorant Garamond',serif; font-weight:700; text-transform:uppercase; font-size:clamp(2.5rem,7vw,4.5rem); color:var(--text-primary); margin-bottom:0.8rem; line-height:1.1;">
+      {{ title }}
+    </h1>
+    {% if subtitle %}
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.3rem; color:var(--text-secondary); margin-bottom:1.5rem;">
+      {{ subtitle }}
+    </p>
+    {% endif %}
+    <p style="font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; color:var(--olive); margin-bottom:0;">
+      {{ date | date: "%B %d, %Y" }}
+    </p>
+  </div>
+
+  <div style="max-width:780px; margin:2rem auto 0; padding:0 1.5rem;">
+    <hr style="border:none; border-top:1px solid var(--border);">
+  </div>
+
   {% if image %}
-  <div style="max-width:900px; margin:2rem auto 0; padding:0 1.5rem;">
-    <img src="{{ image }}" alt="{{ title }}"
-      style="width:100%; height:450px; object-fit:cover; border-radius:2px;">
+  <div style="max-width:780px; margin:2.5rem auto 0; padding:0 1.5rem;">
+    <img src="{{ image }}" alt="{{ title }}" style="width:100%; border-radius:2px;">
   </div>
   {% endif %}
 
-  <div style="max-width:680px; margin:0 auto; padding:2.5rem 1.5rem 1rem; text-align:center;">
-    <p style="font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; color:var(--olive); margin-bottom:1.2rem;">
-      {{ date | date: "%B %d, %Y" }}
-    </p>
-
-    <h1 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(2.2rem,6vw,3.8rem); color:var(--text-primary); margin-bottom:0; line-height:1.15;">
-      {{ title }}
-    </h1>
-  </div>
-
-  <div class="blog-content" style="max-width:680px; margin:2.5rem auto 0; padding:0 1.5rem;">
+  <div class="blog-content" style="max-width:780px; margin:2.5rem auto 0; padding:0 1.5rem;">
     {{ content }}
   </div>
 

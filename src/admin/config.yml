@@ -52,6 +52,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
