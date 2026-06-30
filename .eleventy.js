@@ -17,6 +17,10 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/promos/*.md");
   });
 
+  eleventyConfig.addCollection("blog", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/blog/*.md");
+  });
+
   // Filters
   eleventyConfig.addFilter("numberFormat", function(value) {
     return Number(value).toLocaleString();
