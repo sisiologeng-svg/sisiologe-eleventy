@@ -258,13 +258,18 @@ title: Sisíológe — Curated Accessories
       <span class="eyebrow" style="color:var(--bone);">✦ Stay In The Loop</span>
       <h2>Join The Sisís</h2>
       <p>Be the first to know about new drops, exclusive offers and everything sisíológe.</p>
-      <form class="newsletter-form"
-        action="https://formspree.io/f/xnjrnedo"
-        method="POST"
-        onsubmit="handleNewsletter(event)">
-        <input type="email" name="email" placeholder="Your email address" required>
-        <button type="submit">Subscribe</button>
-      </form>
+
+      <div id="sib-container" style="max-width:450px; margin:0 auto;">
+        <div id="error-message" class="sib-form-message-panel" style="display:none;"></div>
+        <div id="success-message" class="sib-form-message-panel" style="display:none;"></div>
+        <form id="sib-form" method="POST" action="https://5a892fd7.sibforms.com/serve/MUIFAE7zCV5XX2g_O1b9i6DKeC7A6V2TKVwhw1J1Mwqk9jgU-lQLTWL_sOcU5urSet16g64ZBk1fUEkXue6ElW1RyKV8shZdzVvMMwAE5ZFyMDvEwV2wec2RPlH0HRQGQp64JTNXt_ezkxsy9KdtuJSURmvfsaSN6Jl0LxA03df1JNDvJ51wGy52NHpaJMHLrmAjC4R_NOj9z7rUKg==" data-type="subscription" class="newsletter-form">
+          <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address" data-required="true" required>
+          <button form="sib-form" type="submit">Subscribe</button>
+          <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+          <input type="hidden" name="locale" value="en">
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
