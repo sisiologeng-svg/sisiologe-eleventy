@@ -124,38 +124,39 @@ function copyPromoCode() {
 
 // ===== DELIVERY DATA =====
 const lagosDelivery = {
-  "Ikeja": 4000, "Egbeda": 4000, "Ikotun": 4000, "Igando": 5000,
-  "Abule Egba": 4000, "Agege": 4000, "Fagba": 4000, "Ojodu": 4500,
-  "Omole 1/2": 4000, "Ogba": 4000, "Magodo 1/2": 4000, "Maryland": 4000,
-  "Mile 12": 4000, "Ketu": 4000, "Ojota": 4000, "Ogudu": 4000,
-  "Oworo": 4500, "Surulere": 4000, "Mushin": 4000, "Isolo": 4000,
-  "Ajao Estate": 4000, "Oshodi": 4000, "Ijegun": 4500, "Ago Palace": 4500,
-  "Amuwo": 4500, "Festac": 5500, "Satellite": 6000, "Apapa": 5000,
-  "Onipanu": 4500, "Shomolu": 4500, "Bariga": 4500, "Yaba": 4000,
-  "Akoka": 4000, "Ebute Meta": 4500, "Gbagada": 4500,
-  "Orile Iganmu": 4500, "Ejigbo": 4000, "Ipaja": 2500, "Ayobo": 3000,
-  "Ikoyi": 4500, "Victoria Island": 4500, "Lagos Island": 4500,
-  "Oniru": 4500, "Lekki Phase 1": 5000, "Ikate": 5000, "Ilasan": 5000,
-  "Jakande": 5000, "Osapa": 6000, "Orchid": 6000, "Ikota": 6000,
-  "Agungi": 6000, "Idado Lekki": 6000, "VGC": 6000, "Ajah": 6000,
-  "Shongotedo": 6500, "Abraham Adesanya": 6000
+  "Ikeja": 5000, "Egbeda": 5000, "Ikotun": 5000, "Igando": 6000,
+  "Abule Egba": 5000, "Agege": 5000, "Fagba": 5000, "Ojodu": 5500,
+  "Omole 1/2": 5000, "Ogba": 5000, "Magodo 1/2": 5000, "Maryland": 5000,
+  "Mile 12": 5000, "Ketu": 5000, "Ojota": 5000, "Ogudu": 5000,
+  "Oworo": 5500, "Surulere": 5000, "Mushin": 5000, "Isolo": 5000,
+  "Ajao Estate": 5000, "Oshodi": 5000, "Ijegun": 5500, "Ago Palace": 5500,
+  "Amuwo": 5500, "Festac": 6500, "Satellite": 7000, "Apapa": 6000,
+  "Onipanu": 5500, "Shomolu": 5500, "Bariga": 5500, "Yaba": 5000,
+  "Akoka": 5000, "Ebute Meta": 5500, "Gbagada": 5500,
+  "Orile Iganmu": 5500, "Ejigbo": 5000, "Ipaja": 3500, "Ayobo": 4000,
+  "Ikoyi": 5500, "Victoria Island": 5500, "Lagos Island": 5500,
+  "Oniru": 5500, "Lekki Phase 1": 6000, "Ikate": 6000, "Ilasan": 6000,
+  "Jakande": 6000, "Osapa": 7000, "Orchid": 7000, "Ikota": 7000,
+  "Agungi": 7000, "Idado Lekki": 7000, "VGC": 7000, "Ajah": 7000,
+  "Shongotedo": 7500, "Abraham Adesanya": 7000
 };
 
 const outsideLagosDelivery = {
-  "Abeokuta": 5000, "Ijebu Ode": 5000, "Shagamu": 5000, "Ibadan": 5000,
-  "Ilorin": 6500, "Ekiti": 6500, "Ondo": 6500, "Osun": 6500,
-  "Aba": 8000, "Abuja": 8000, "Asaba": 8000, "Awka": 8000,
-  "Benin": 8000, "Enugu": 8000, "Calabar": 8000, "Kaduna": 8000,
-  "Kano": 8000, "Nnewi": 8000, "Onitsha": 8000, "Owerri": 8000,
-  "Port Harcourt": 8000, "Sapele": 8000, "Umuahia": 8000,
-  "Uyo": 8000, "Warri": 8000,
-  "Abakaliki": 8500, "Bauchi": 8500, "Birnin Kebbi": 8500,
-  "Bonny": 8500, "Damaturu": 8500, "Dutse": 8500, "Eket": 8500,
-  "Gombe": 8500, "Gusau": 8500, "Jalingo": 8500, "Jos": 8500,
-  "Katsina": 8500, "Lafia": 8500, "Lokoja": 8500, "Makurdi": 8500,
-  "Maiduguri": 8500, "Minna": 8500, "Nsukka": 8500, "Sokoto": 8500,
-  "Suleja": 8500, "Yenegoa": 8500, "Yola": 8500, "Zaria": 8500,
-  "Ikot Ekpene": 8500
+  "Abeokuta": 6000, "Ijebu Ode": 6000, "Shagamu": 6000, "Ibadan": 6000,
+  "Ilorin": 7500, "Ekiti": 7500, "Ondo": 7500, "Osun": 7500,
+  "Pan Atlantic University": 8000,
+  "Aba": 9000, "Abuja": 9000, "Asaba": 9000, "Awka": 9000,
+  "Benin": 9000, "Enugu": 9000, "Calabar": 9000, "Kaduna": 9000,
+  "Kano": 9000, "Nnewi": 9000, "Onitsha": 9000, "Owerri": 9000,
+  "Port Harcourt": 9000, "Sapele": 9000, "Umuahia": 9000,
+  "Uyo": 9000, "Warri": 9000,
+  "Abakaliki": 9500, "Bauchi": 9500, "Birnin Kebbi": 9500,
+  "Bonny": 9500, "Damaturu": 9500, "Dutse": 9500, "Eket": 9500,
+  "Gombe": 9500, "Gusau": 9500, "Jalingo": 9500, "Jos": 9500,
+  "Katsina": 9500, "Lafia": 9500, "Lokoja": 9500, "Makurdi": 9500,
+  "Maiduguri": 9500, "Minna": 9500, "Nsukka": 9500, "Sokoto": 9500,
+  "Suleja": 9500, "Yenegoa": 9500, "Yola": 9500, "Zaria": 9500,
+  "Ikot Ekpene": 9500
 };
 
 // ===== DELIVERY SCHEDULE =====
@@ -163,7 +164,7 @@ function getNextDeliveryDay() {
   const now = new Date();
   const day = now.getDay();
   const hour = now.getHours();
-  const deliveryDays = [2, 4, 6];
+  const deliveryDays = [2, 6];
   const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   if (deliveryDays.includes(day) && hour < 9) return `⚡ Same day delivery available! Order before 9AM. Today is ${dayNames[day]}.`;
   for (let i = 1; i <= 7; i++) {

@@ -13,7 +13,8 @@ title: Checkout
           <p>
             <strong>📅 Delivery Days:</strong> Tuesday & Saturday<br>
             <strong>⏰ Order before 9AM</strong> on Tuesday or Saturday for same-day dispatch. Orders after 9AM on Tuesday deliver Saturday.<br>
-            <strong id="deliveryNote" style="color:var(--olive);"></strong>
+            <strong id="deliveryNote" style="color:var(--olive);"></strong><br>
+            <span style="font-size:0.78rem; color:var(--text-muted);">⚖️ Delivery fees shown are for packages 0–2kg. Heavier orders may attract an additional fee.</span>
           </p>
         </div>
 
@@ -46,23 +47,24 @@ title: Checkout
           </div>
 
           <h2 style="margin-top:2rem;">Preferred Delivery Day</h2>
-<div class="delivery-options" style="margin-bottom:1.5rem;">
-  <label class="delivery-option">
-    <input type="radio" name="delivery_day" value="Tuesday" required>
-    <div class="delivery-option-info">
-      <h5>📅 Tuesday</h5>
-      <p>Order must be placed by Monday 9PM</p>
-    </div>
-  </label>
-  <label class="delivery-option">
-    <input type="radio" name="delivery_day" value="Saturday">
-    <div class="delivery-option-info">
-      <h5>📅 Saturday</h5>
-      <p>Order must be placed by Friday 9PM</p>
-    </div>
-  </label>
-</div>
+          <div class="delivery-options" style="margin-bottom:1.5rem;">
+            <label class="delivery-option">
+              <input type="radio" name="delivery_day" value="Tuesday" required>
+              <div class="delivery-option-info">
+                <h5>📅 Tuesday</h5>
+                <p>Order must be placed by Monday 9PM</p>
+              </div>
+            </label>
+            <label class="delivery-option">
+              <input type="radio" name="delivery_day" value="Saturday">
+              <div class="delivery-option-info">
+                <h5>📅 Saturday</h5>
+                <p>Order must be placed by Friday 9PM</p>
+              </div>
+            </label>
+          </div>
 
+          <h2 style="margin-top:2rem;">Delivery Method</h2>
           <div class="delivery-options">
 
             <label class="delivery-option">
@@ -71,7 +73,7 @@ title: Checkout
                 <h5>🏠 Lagos Home Delivery</h5>
                 <p>Delivered to your door within Lagos</p>
               </div>
-              <span class="delivery-option-price">From ₦2,500</span>
+              <span class="delivery-option-price">From ₦3,500</span>
             </label>
 
             <label class="delivery-option">
@@ -80,7 +82,7 @@ title: Checkout
                 <h5>🚚 Outside Lagos</h5>
                 <p>Via Moveit.ng — delivered nationwide</p>
               </div>
-              <span class="delivery-option-price">From ₦5,000</span>
+              <span class="delivery-option-price">From ₦6,000</span>
             </label>
 
             <label class="delivery-option">
