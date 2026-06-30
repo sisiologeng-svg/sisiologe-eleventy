@@ -734,3 +734,66 @@ footer { background: var(--black); color: var(--floral-white); padding: 4rem 0 2
     height: 350px !important;
   }
 }
+/* ===== BLOG CONTENT (MAGAZINE STYLE) ===== */
+.blog-content {
+  font-family: 'Jost', sans-serif;
+  color: var(--text-secondary);
+}
+
+.blog-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 1.6rem;
+}
+
+.blog-content p:first-of-type {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.blog-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin: 2.5rem 0 1.2rem;
+}
+
+.blog-content h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 2rem 0 1rem;
+}
+
+.blog-content blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--olive);
+  border-left: 3px solid var(--olive);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.blog-content img {
+  width: 100%;
+  border-radius: 2px;
+  margin: 2rem 0;
+}
+
+.blog-content a {
+  color: var(--olive);
+  text-decoration: underline;
+}
+
+.blog-content strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .blog-content p { font-size: 1rem; }
+  .blog-content p:first-of-type { font-size: 1.2rem; }
+}
