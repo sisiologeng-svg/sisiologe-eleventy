@@ -25,7 +25,7 @@ title: Blog
       <p>Check back shortly — we have lots to share.</p>
     </div>
     {% else %}
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
+    <div class="blog-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
       {%- for post in collections.blog | reverse %}
       <article style="background:var(--card-bg); border-radius:2px; overflow:hidden; border:1px solid var(--border); transition:var(--transition);" 
         onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-hover)'"
