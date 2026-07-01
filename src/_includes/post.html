@@ -30,13 +30,25 @@ layout: base.html
 
   {% if image %}
   <div style="max-width:780px; margin:2.5rem auto 0; padding:0 1.5rem;">
-    <img src="{{ image }}" alt="{{ title }}" style="width:100%; border-radius:2px;">
+    <img src="{{ image }}" alt="{{ title }}" style="width:100%; max-height:500px; object-fit:cover; border-radius:2px;">
   </div>
   {% endif %}
 
   <div class="blog-content" style="max-width:780px; margin:2.5rem auto 0; padding:0 1.5rem;">
     {{ content }}
   </div>
+
+  {% if image2 %}
+  <div style="max-width:780px; margin:2rem auto 0; padding:0 1.5rem;">
+    <img src="{{ image2 }}" alt="{{ title }}" style="width:100%; max-height:450px; object-fit:cover; border-radius:2px;">
+  </div>
+  {% endif %}
+
+  {% if image3 %}
+  <div style="max-width:780px; margin:2rem auto 0; padding:0 1.5rem;">
+    <img src="{{ image3 }}" alt="{{ title }}" style="width:100%; max-height:450px; object-fit:cover; border-radius:2px;">
+  </div>
+  {% endif %}
 
   <div style="max-width:680px; margin:4rem auto 0; padding:2rem 1.5rem 4rem; border-top:1px solid var(--border); text-align:center;">
     <p style="color:var(--text-muted); margin-bottom:1.2rem; font-size:0.9rem;">Enjoyed this? Share it with a sisí! 🩵</p>
