@@ -805,3 +805,16 @@ footer { background: var(--black); color: var(--floral-white); padding: 4rem 0 2
     font-size: 0.98rem;
   }
 }
+
+/* ===== BLOG LISTING RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
