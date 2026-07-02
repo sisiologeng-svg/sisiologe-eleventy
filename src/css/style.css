@@ -818,3 +818,15 @@ footer { background: var(--black); color: var(--floral-white); padding: 4rem 0 2
     grid-template-columns: 1fr !important;
   }
 }
+/* ===== HOMEPAGE REVIEWS RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

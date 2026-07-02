@@ -184,7 +184,7 @@ title: Sisíológe — Curated Accessories
       <span class="eyebrow">✦ What Our Sisís Say</span>
       <h2>Real Reviews</h2>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
+    <div class="reviews-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
       {%- for review in collections.reviews | reverse | limit(3) %}
       {% if review.data.active %}
       <div class="review-card">
