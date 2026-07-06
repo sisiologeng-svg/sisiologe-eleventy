@@ -167,7 +167,7 @@ title: Sisíológe — Curated Accessories
       <h2>Real Reviews</h2>
     </div>
     <div class="reviews-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
-      {%- for review in collections.reviews | reverse | limit(3) %}
+      {%- for review in collections.reviews | reverse | limit(1) %}
       {% if review.data.active %}
       <div class="review-card">
         <img src="{{ review.data.image }}" class="review-screenshot" alt="Review"
