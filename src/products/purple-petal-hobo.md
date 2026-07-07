@@ -1,18 +1,20 @@
 ---
-name: La Pargayo Noir Duffel
-price: 18000
+name: Guess Signature Tassel Tote
+price: 25000
 category: bags
-image: /images/products/img_5488.jpeg
-image2: /images/products/img_5489.jpeg
-image3: /images/products/img_5492.jpeg
-image4: /images/products/img_5491.jpeg
+image: /images/products/img_5460.jpeg
+image2: /images/products/img_5461.jpeg
+image3: ""
+image4: ""
 description: >-
-  Sleek black bowler-style duffel with silver hardware and a signature dice-bead
-  charm. Gives off off-duty model, errands-in-the-city energy. 
+  Monogram canvas body with croc-effect leather trim, studded bow detail, and a
+  swingy tassel charm. Loud in all the right ways.
 
-  vintage faux leather 
 
-  Size- small
+  vintage canvas & croc-leather 
+
+
+  Size- medium 
 
   condition: preloved
 available: true
