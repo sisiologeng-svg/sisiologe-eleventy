@@ -1,17 +1,16 @@
 ---
-name: Purple petal hobo
+name: La Pargayo Noir Duffel
 price: 18000
 category: bags
-image: /images/products/img_5518.jpeg
-image2: /images/products/img_5519.jpeg
+image: /images/products/img_5488.jpeg
+image2: /images/products/img_5489.jpeg
+image3: /images/products/img_5492.jpeg
+image4: /images/products/img_5491.jpeg
 description: >-
-  Deep aubergine pebbled leather with a whipstitch trim and a floral applique
-  that just does something to you. Croc-embossed handle adds the perfect
-  textural contrast. Main girl energy. 
+  Sleek black bowler-style duffel with silver hardware and a signature dice-bead
+  charm. Gives off off-duty model, errands-in-the-city energy. 
 
-  restock not guaranteed 
-
-  vintage genuine leather 
+  vintage faux leather 
 
   Size- small
 
