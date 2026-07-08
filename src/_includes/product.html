@@ -22,17 +22,17 @@ layout: base.html
           <img src="{{ image }}" alt="{{ name }}"
             style="width:100%; height:80px; object-fit:contain; background:#ffffff; border-radius:2px; cursor:pointer; border:2px solid var(--olive);"
             onclick="switchImage(this)">
-          {% if image2 %}
+          {% if image2 and image2 != "" %}
           <img src="{{ image2 }}" alt="{{ name }}"
             style="width:100%; height:80px; object-fit:contain; background:#ffffff; border-radius:2px; cursor:pointer; border:2px solid transparent;"
             onclick="switchImage(this)">
           {% endif %}
-          {% if image3 %}
+          {% if image3 and image3 != "" %}
           <img src="{{ image3 }}" alt="{{ name }}"
             style="width:100%; height:80px; object-fit:contain; background:#ffffff; border-radius:2px; cursor:pointer; border:2px solid transparent;"
             onclick="switchImage(this)">
           {% endif %}
-          {% if image4 %}
+          {% if image4 and image4 != "" %}
           <img src="{{ image4 }}" alt="{{ name }}"
             style="width:100%; height:80px; object-fit:contain; background:#ffffff; border-radius:2px; cursor:pointer; border:2px solid transparent;"
             onclick="switchImage(this)">
@@ -47,7 +47,7 @@ layout: base.html
         <p style="font-size:1.8rem; font-weight:600; color:var(--olive); margin-bottom:1.5rem;">₦{{ price | numberFormat }}</p>
         
         <div style="background:var(--bg-secondary); padding:1.5rem; border-radius:2px; margin-bottom:2rem; border:1px solid var(--border);">
-          <p style="color:var(--text-secondary); line-height:2; margin:0;">{{ description }}</p>
+          <p style="color:var(--text-secondary); line-height:2; margin:0; white-space:pre-line;">{{ description }}</p>
         </div>
 
         <div style="background:rgba(86,84,73,0.06); padding:1.2rem 1.5rem; border-radius:2px; margin-bottom:2rem; border-left:3px solid var(--olive);">
