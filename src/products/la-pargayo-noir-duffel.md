@@ -2,9 +2,10 @@
 name: La Pargayo Noir Duffel
 price: 20000
 category: bags
-image: /images/products/img_5488.heic
-image2: /images/products/img_5489.heic
-image3: /images/products/img_5491.heic
+image: /images/products/img_5488.jpeg
+image2: /images/products/img_5489.jpeg
+image3: /images/products/img_5491.jpeg
+image4: /images/products/img_5492.jpeg
 description: >-
   restock not guaranteed
 
