@@ -1,6 +1,6 @@
 ---
 name: Guess Pastel Croc Bowling Bag
-price: 15000
+price: 18000
 category: bags
 image: /images/products/img_3548.jpg
 image2: /images/products/img_3549.jpg
@@ -17,5 +17,6 @@ description: >-
 
   Soft lilac, sage, and cream croc-embossed leather with a silver "G" turnlock. Dreamy pastel colorway you don't see every day — sorbet-coded.
 available: true
+featured: false
 badge: new
 ---
