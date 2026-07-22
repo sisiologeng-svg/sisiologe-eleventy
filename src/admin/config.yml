@@ -22,6 +22,7 @@ collections:
       - {label: "Image 4", name: "image4", widget: "image", required: false}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Available", name: "available", widget: "boolean", default: true}
+      - {label: "Featured on Homepage", name: "featured", widget: "boolean", default: false}
       - {label: "Badge", name: "badge", widget: "select", options: ["new", "sale", ""], default: "new"}
 
   - name: "reviews"
