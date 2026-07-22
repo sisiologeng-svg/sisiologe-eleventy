@@ -1,6 +1,6 @@
 ---
 name: Pink "OMG" Charm Baguette
-price: 12000
+price: 15000
 category: bags
 image: /images/products/img_3584.jpg
 image2: /images/products/img_3579.jpg
@@ -12,5 +12,6 @@ description: |-
   Bubblegum pink with playful patches, safety-pin charms, and chain detail. 
   Chaotic Y2K it-girl, made for the girls who never blend in.
 available: true
+featured: false
 badge: new
 ---
