@@ -1,6 +1,6 @@
 ---
 name: Metallic Orange Pleated Clutch
-price: 15000
+price: 20000
 category: bags
 image: /images/products/img_3917.jpg
 image2: /images/products/img_3921.jpg
@@ -19,5 +19,6 @@ description: >-
 
   Bronze-orange metallic leather, pleated front, jeweled centerpiece, gold chain strap. 
 available: true
+featured: false
 badge: new
 ---
