@@ -45,7 +45,6 @@ title: Shop
         </div>
         <div class="product-info">
           <h4>{{ product.data.name }}</h4>
-          <p class="category">{{ product.data.category }}</p>
           <div class="product-price">
             <span class="price">₦{{ product.data.price | numberFormat }}</span>
             <button class="add-btn" onclick="event.stopPropagation(); addToCart('{{ product.fileSlug }}', '{{ product.data.name }}', {{ product.data.price }}, '{{ product.data.image }}')">+</button>
@@ -61,7 +60,6 @@ title: Shop
         </div>
         <div class="product-info">
           <h4>{{ product.data.name }}</h4>
-          <p class="category">{{ product.data.category }}</p>
           <div class="product-price">
             <span class="price">₦{{ product.data.price | numberFormat }}</span>
           </div>
