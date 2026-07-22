@@ -1,6 +1,6 @@
 ---
 name: Pearl Beaded Evening Clutch
-price: 13000
+price: 18000
 category: bags
 image: /images/products/img_3939.jpg
 image2: /images/products/img_3938.jpg
@@ -18,5 +18,6 @@ description: >-
 
   Ivory beaded clutch with a delicate pearl chain strap and sequin leaf embellishment. Bridal, old money, special-occasion ready.
 available: true
+featured: false
 badge: new
 ---
