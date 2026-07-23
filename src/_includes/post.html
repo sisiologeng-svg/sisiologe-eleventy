@@ -52,7 +52,33 @@ layout: base.html
 
   <div style="max-width:680px; margin:4rem auto 0; padding:2rem 1.5rem 4rem; border-top:1px solid var(--border); text-align:center;">
     <p style="color:var(--text-muted); margin-bottom:1.2rem; font-size:0.9rem;">Enjoyed this? Share it with a sisí! 🩵</p>
+
+    <div style="display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem;">
+      <a href="https://wa.me/?text={{ title | url_encode }}%20-%20https://sisiologe.com.ng{{ page.url }}"
+        target="_blank"
+        style="display:flex; align-items:center; gap:0.5rem; padding:0.7rem 1.2rem; background:#25D366; color:white; border-radius:2px; font-size:0.82rem; font-weight:500;">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="https://twitter.com/intent/tweet?text={{ title | url_encode }}&url=https://sisiologe.com.ng{{ page.url }}"
+        target="_blank"
+        style="display:flex; align-items:center; gap:0.5rem; padding:0.7rem 1.2rem; background:var(--black); color:white; border-radius:2px; font-size:0.82rem; font-weight:500;">
+        <i class="fab fa-x-twitter"></i> Twitter
+      </a>
+      <button onclick="copyBlogLink()"
+        style="display:flex; align-items:center; gap:0.5rem; padding:0.7rem 1.2rem; background:var(--bg-secondary); color:var(--text-primary); border:1.5px solid var(--border); border-radius:2px; font-size:0.82rem; font-weight:500; cursor:pointer;">
+        <i class="fas fa-link"></i> Copy Link
+      </button>
+    </div>
+
     <a href="/blog/" class="btn btn-outline">← More Stories</a>
   </div>
+
+  <script>
+    function copyBlogLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        showToast('Link copied! Share it anywhere 🩵');
+      });
+    }
+  </script>
 
 </article>
