@@ -1,7 +1,7 @@
 ---
 title: Finally, A blog
 subtitle: "And a Prelaunch "
-date: 2026-07-23T08:32:00.000+01:00
+date: 2026-07-23T08:50:00.000+01:00
 image: /images/products/img_6519.jpg
 image2: /images/products/copy_deb83413-2a22-4689-8bf4-8739c0ba64c2.jpg
 ---
