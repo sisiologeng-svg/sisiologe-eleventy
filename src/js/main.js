@@ -121,7 +121,7 @@ function closeWelcomePopup() {
 }
 
 function copyPromoCode() {
-  navigator.clipboard.writeText('DEARESTSISI').then(() => { showToast('Code copied! Use DEARESTSISI at checkout 🩵'); });
+  navigator.clipboard.writeText('OMOGE').then(() => { showToast('Code copied! Use OMOGE at checkout 🩵'); });
 }
 
 // ===== DELIVERY DATA =====
