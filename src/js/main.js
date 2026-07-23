@@ -26,6 +26,7 @@ function initTheme() {
 // ===== PROMO CODES =====
 const promoCodes = {
   'DEARESTSISI': { discount: 10, type: 'percent', description: '10% off for new Sisí!' },
+ 'OMOGE': { discount: 25, type: 'percent', description: '25% off for our launch, Omoge!', expiresAt: '2026-07-25T16:00:00' },
   'SALE20': { discount: 20, type: 'percent', description: '20% off sale!' },
   'SALE15': { discount: 15, type: 'percent', description: '15% off sale!' },
 };
@@ -49,9 +50,10 @@ function applyPromoCode() {
   if (!input || !message) return;
   const code = input.value.trim().toUpperCase();
   if (!code) { message.textContent = 'Please enter a promo code.'; message.className = 'promo-message promo-error'; return; }
-  if (code === 'DEARESTSISI' && checkPromoUsed('DEARESTSISI')) { message.textContent = 'This welcome code has already been used on this device.'; message.className = 'promo-message promo-error'; return; }
+  if ((code === 'DEARESTSISI' || code === 'OMOGE') && checkPromoUsed(code)) { message.textContent = 'This code has already been used on this device.'; message.className = 'promo-message promo-error'; return; }
   const promo = promoCodes[code];
   if (!promo) { message.textContent = 'Invalid promo code. Please try again.'; message.className = 'promo-message promo-error'; appliedPromo = null; updateTotal(); return; }
+  if (promo.expiresAt && new Date() > new Date(promo.expiresAt)) { message.textContent = 'This promo code has expired.'; message.className = 'promo-message promo-error'; appliedPromo = null; updateTotal(); return; }
   appliedPromo = { code, ...promo };
   message.textContent = `✓ ${promo.description} applied!`;
   message.className = 'promo-message promo-success';
@@ -284,7 +286,7 @@ function payWithPaystack() {
       ]
     },
     callback: function(response) {
-      if (appliedPromo?.code === 'DEARESTSISI') markPromoUsed('DEARESTSISI');
+      if (appliedPromo?.code === 'DEARESTSISI' || appliedPromo?.code === 'OMOGE') markPromoUsed(appliedPromo.code);
       cart = [];
       saveCart();
       showToast('Payment successful! 🎉 We will be in touch shortly!');
