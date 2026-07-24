@@ -16,7 +16,7 @@ description: >-
   Restock not guaranteed once it’s gone, it’s gone.
 
   Playful scalloped petal-shaped bag in green, mustard, and pink leather with whipstitch trim detail. A true collector’s conversation piece.
-available: true
+available: false
 featured: false
 badge: new
 ---
