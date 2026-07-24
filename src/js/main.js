@@ -280,9 +280,15 @@ function payWithPaystack() {
       custom_fields: [
         { display_name: "Customer Name", variable_name: "name", value: name },
         { display_name: "Phone", variable_name: "phone", value: phone },
-        { display_name: "Delivery", variable_name: "delivery", value: delivery },
+        { display_name: "Delivery Method", variable_name: "delivery", value: delivery },
+        { display_name: "Delivery Day", variable_name: "delivery_day", value: document.querySelector('input[name="delivery_day"]:checked')?.value || '' },
+        { display_name: "Address", variable_name: "address", value: document.getElementById('deliveryAddress')?.value || '' },
+        { display_name: "Landmark", variable_name: "landmark", value: document.querySelector('input[name="Landmark"]')?.value || '' },
+        { display_name: "Order Notes", variable_name: "notes", value: document.getElementById('orderNotes')?.value || '' },
         { display_name: "Promo", variable_name: "promo", value: appliedPromo?.code || 'None' },
-        { display_name: "Product Slug", variable_name: "product_slug", value: cart[0]?.id || '' }
+        { display_name: "Product Slugs", variable_name: "product_slugs", value: cart.map(i => i.id).join(',') }
+        { display_name: "Items", variable_name: "items", value: cart.map(i => `${i.name} (x${i.qty})`).join(', ') },
+        { display_name: "Total", variable_name: "order_total", value: (total / 100).toString() }
       ]
     },
     callback: function(response) {
