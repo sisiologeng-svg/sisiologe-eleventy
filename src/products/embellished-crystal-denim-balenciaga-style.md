@@ -18,7 +18,7 @@ description: >-
   Restock not guaranteed, once it’s gone, it’s gone.
 
   Grey denim hobo dripping in crystal-studded hardware detailing, with a coordinating mini pouch charm. Directional, statement-making, rare.
-available: true
+available: false
 featured: false
 badge: new
 ---
