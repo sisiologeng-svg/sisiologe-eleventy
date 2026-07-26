@@ -22,19 +22,19 @@ exports.handler = async (event) => {
       return { statusCode: 200, body: 'OK' };
     }
 
-    const metadata = payload.data.metadata;
+    const data = payload.data;
+    const metadata = data.metadata;
     const customFields = metadata?.custom_fields || [];
-    const slugsRaw = customFields.find(
-      f => f.variable_name === 'product_slugs'
-    )?.value;
 
-    if (!slugsRaw) {
-      return { statusCode: 200, body: 'No product slugs found' };
-    }
+    const getField = (key) => customFields.find(f => f.variable_name === key)?.value || '';
 
-    const slugs = slugsRaw.split(',').map(s => s.trim()).filter(Boolean);
+    const slugsRaw = getField('product_slugs');
+    const slugs = slugsRaw ? slugsRaw.split(',').map(s => s.trim()).filter(Boolean) : [];
+
     const token = process.env.GITHUB_TOKEN;
     const repo = process.env.GITHUB_REPO;
+
+    // ===== PART 1: Mark all purchased products as sold out =====
 
     const getFile = (slug) => new Promise((resolve, reject) => {
       const options = {
@@ -46,9 +46,9 @@ exports.handler = async (event) => {
         }
       };
       const req = https.get(options, (res) => {
-        let data = '';
-        res.on('data', chunk => data += chunk);
-        res.on('end', () => resolve(JSON.parse(data)));
+        let body = '';
+        res.on('data', chunk => body += chunk);
+        res.on('end', () => resolve(JSON.parse(body)));
       });
       req.on('error', reject);
     });
@@ -77,16 +77,15 @@ exports.handler = async (event) => {
       };
 
       const req = https.request(options, (res) => {
-        let data = '';
-        res.on('data', chunk => data += chunk);
-        res.on('end', () => resolve(JSON.parse(data)));
+        let resBody = '';
+        res.on('data', chunk => resBody += chunk);
+        res.on('end', () => resolve(JSON.parse(resBody)));
       });
       req.on('error', reject);
       req.write(body);
       req.end();
     });
 
-    // Process each product slug one at a time (sequential to avoid GitHub API race conditions)
     for (const slug of slugs) {
       try {
         const fileData = await getFile(slug);
@@ -94,12 +93,82 @@ exports.handler = async (event) => {
           await updateFile(slug, fileData);
         }
       } catch (err) {
-        console.log(`Error processing ${slug}:`, err.message);
-        // Continue to next slug even if one fails
+        console.log(`Error marking ${slug} sold out:`, err.message);
       }
     }
 
-    return { statusCode: 200, body: `Processed ${slugs.length} product(s)` };
+    // ===== PART 2: Create an order record =====
+
+    const createOrderFile = () => new Promise((resolve, reject) => {
+      const now = new Date();
+      const dateStr = now.toISOString().split('T')[0];
+      const timeStr = now.getTime();
+      const orderSlug = `order-${dateStr}-${timeStr}`;
+
+      const customerName = getField('name') || 'Unknown';
+      const phone = getField('phone') || '';
+      const email = data.customer?.email || '';
+      const items = getField('items') || slugsRaw;
+      const total = (data.amount / 100).toString();
+      const deliveryMethod = getField('delivery') || '';
+      const deliveryDay = getField('delivery_day') || '';
+      const address = getField('address') || '';
+      const landmark = getField('landmark') || '';
+      const notes = getField('notes') || '';
+      const promo = getField('promo') || 'None';
+
+      const fileContent = `---
+customer_name: "${customerName.replace(/"/g, '\\"')}"
+phone: "${phone}"
+email: "${email}"
+items: "${items.replace(/"/g, '\\"')}"
+total: "${total}"
+delivery_method: "${deliveryMethod}"
+delivery_day: "${deliveryDay}"
+address: "${address.replace(/"/g, '\\"').replace(/\n/g, ' ')}"
+landmark: "${landmark.replace(/"/g, '\\"')}"
+notes: "${notes.replace(/"/g, '\\"').replace(/\n/g, ' ')}"
+promo: "${promo}"
+date: ${now.toISOString()}
+---
+`;
+
+      const encodedContent = Buffer.from(fileContent).toString('base64');
+
+      const body = JSON.stringify({
+        message: `New order from ${customerName}`,
+        content: encodedContent
+      });
+
+      const options = {
+        hostname: 'api.github.com',
+        path: `/repos/${repo}/contents/src/orders/${orderSlug}.md`,
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${token}`,
+          'User-Agent': 'sisiologe-webhook',
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(body)
+        }
+      };
+
+      const req = https.request(options, (res) => {
+        let resBody = '';
+        res.on('data', chunk => resBody += chunk);
+        res.on('end', () => resolve(JSON.parse(resBody)));
+      });
+      req.on('error', reject);
+      req.write(body);
+      req.end();
+    });
+
+    try {
+      await createOrderFile();
+    } catch (err) {
+      console.log('Error creating order file:', err.message);
+    }
+
+    return { statusCode: 200, body: `Processed ${slugs.length} product(s) and created order record` };
 
   } catch (error) {
     console.log('Error:', error.message);

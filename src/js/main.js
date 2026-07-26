@@ -286,8 +286,8 @@ function payWithPaystack() {
         { display_name: "Landmark", variable_name: "landmark", value: document.querySelector('input[name="Landmark"]')?.value || '' },
         { display_name: "Order Notes", variable_name: "notes", value: document.getElementById('orderNotes')?.value || '' },
         { display_name: "Promo", variable_name: "promo", value: appliedPromo?.code || 'None' },
-        { display_name: "Product Slugs", variable_name: "product_slugs", value: cart.map(i => i.id).join(',') }
-        { display_name: "Items", variable_name: "items", value: cart.map(i => `${i.name} (x${i.qty})`).join(', ') },
+        { display_name: "Product Slugs", variable_name: "product_slugs", value: cart.map(i => i.id).join(',') },
+{ display_name: "Items", variable_name: "items", value: cart.map(i => `${i.name} (x${i.qty})`).join(', ') },
         { display_name: "Total", variable_name: "order_total", value: (total / 100).toString() }
       ]
     },
