@@ -13,7 +13,7 @@ description: >-
   Restock not guaranteed, once it’s gone, it’s gone.
 
   Sleek black croc-embossed leather with a structured silhouette and gold-tone hardware. A quiet-luxury everyday bag that goes with literally everything.
-available: true
+available: false
 featured: true
 badge: new
 ---
