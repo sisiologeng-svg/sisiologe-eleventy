@@ -17,6 +17,7 @@ description: >-
   condition: preloved
 
   Woven canvas top with floral patchwork pocket, macrame fringe, and brass button detail. Festival-ready, one of one energy.
-available: true
+available: false
+featured: false
 badge: new
 ---
