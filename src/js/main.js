@@ -26,21 +26,22 @@ function initTheme() {
 // ===== PROMO CODES =====
 const promoCodes = {
   'DEARESTSISI': { discount: 10, type: 'percent', description: '10% off for new Sisí!' },
- 'OMOGE': { discount: 25, type: 'percent', description: '25% off for our launch, Omoge!', expiresAt: '2026-07-25T16:00:00' },
+ 'OMOGE': { discount: 25, type: 'percent', description: '25% off for our launch, Omoge!', expiresAt: '2026-08-07T23:59:59' },
   'SALE20': { discount: 20, type: 'percent', description: '20% off sale!' },
   'SALE15': { discount: 15, type: 'percent', description: '15% off sale!' },
 };
 
 let appliedPromo = null;
 
-function checkPromoUsed(code) {
-  const used = JSON.parse(localStorage.getItem('sisiologe-used-promos') || '[]');
-  return used.includes(code);
+function getPromoUseCount(code) {
+  const counts = JSON.parse(localStorage.getItem('sisiologe-promo-counts') || '{}');
+  return counts[code] || 0;
 }
 
-function markPromoUsed(code) {
-  const used = JSON.parse(localStorage.getItem('sisiologe-used-promos') || '[]');
-  if (!used.includes(code)) { used.push(code); localStorage.setItem('sisiologe-used-promos', JSON.stringify(used)); }
+function incrementPromoUse(code) {
+  const counts = JSON.parse(localStorage.getItem('sisiologe-promo-counts') || '{}');
+  counts[code] = (counts[code] || 0) + 1;
+  localStorage.setItem('sisiologe-promo-counts', JSON.stringify(counts));
 }
 
 function applyPromoCode() {
@@ -50,7 +51,14 @@ function applyPromoCode() {
   if (!input || !message) return;
   const code = input.value.trim().toUpperCase();
   if (!code) { message.textContent = 'Please enter a promo code.'; message.className = 'promo-message promo-error'; return; }
-  if ((code === 'DEARESTSISI' || code === 'OMOGE') && checkPromoUsed(code)) { message.textContent = 'This code has already been used on this device.'; message.className = 'promo-message promo-error'; return; }
+const maxUses = { 'DEARESTSISI': 1, 'OMOGE': 5 };
+if (maxUses[code] && getPromoUseCount(code) >= maxUses[code]) {
+  message.textContent = code === 'OMOGE'
+    ? 'OMOGE is valid for only 5 uses per device, and this device has reached that limit.'
+    : 'This code has already been used on this device.';
+  message.className = 'promo-message promo-error';
+  return;
+}
   const promo = promoCodes[code];
   if (!promo) { message.textContent = 'Invalid promo code. Please try again.'; message.className = 'promo-message promo-error'; appliedPromo = null; updateTotal(); return; }
   if (promo.expiresAt && new Date() > new Date(promo.expiresAt)) { message.textContent = 'This promo code has expired.'; message.className = 'promo-message promo-error'; appliedPromo = null; updateTotal(); return; }
@@ -292,7 +300,7 @@ function payWithPaystack() {
       ]
     },
     callback: function(response) {
-      if (appliedPromo?.code === 'DEARESTSISI' || appliedPromo?.code === 'OMOGE') markPromoUsed(appliedPromo.code);
+      if (appliedPromo?.code === 'DEARESTSISI' || appliedPromo?.code === 'OMOGE') incrementPromoUse(appliedPromo.code);
       cart = [];
       saveCart();
       showToast('Payment successful! 🎉 We will be in touch shortly!');
