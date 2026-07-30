@@ -15,7 +15,7 @@ description: >-
   Restock not guaranteed, once it’s gone, it’s gone.
 
   Classic camo cap with the iconic embroidered NY logo. Understated, versatile, goes with everything.
-available: true
+available: false
 featured: false
 badge: new
 ---
