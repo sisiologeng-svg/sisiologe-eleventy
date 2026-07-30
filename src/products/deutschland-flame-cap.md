@@ -13,7 +13,7 @@ description: >-
   Restock not guaranteed — once it’s gone, it’s gone.
 
   Bold red cap with flame embroidery and “Deutschland” lettering. A statement piece for anyone who wants their cap to do the talking.
-available: true
+available: false
 featured: false
 badge: new
 ---
