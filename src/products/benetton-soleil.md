@@ -14,7 +14,7 @@ description: >-
   Sunshine-yellow canvas hobo with allover logo print, cream leather trim, and a silver buckle strap detail. Playful, retro, and full of Y2K charm, this one’s for the girls who want their bag to do the talking.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
