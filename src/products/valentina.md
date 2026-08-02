@@ -13,7 +13,7 @@ description: >-
   Cream pebbled leather satchel with deep brown leather trim, dual handles, and branded silver buckle hardware. Soft, slouchy, and beautifully broken in — an effortless neutral for daily rotation.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
