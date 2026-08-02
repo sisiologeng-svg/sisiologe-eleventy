@@ -18,7 +18,7 @@ description: >-
   Dark indigo denim shoulder bag with a hardware-forward design,  chunky silver O-rings, dark brown leather trim, and a front buckle strap detail. Edgy and structured, this one leans more moto than classic. Great for anyone wanting an accessory with attitude.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
