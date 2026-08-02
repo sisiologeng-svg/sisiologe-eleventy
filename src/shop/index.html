@@ -27,6 +27,18 @@ title: Shop
         <input type="text" id="searchInput" placeholder="Search pieces...">
       </div>
     </div>
+    <div class="filter-tabs" id="sizeFilters" style="display:none; margin-top:0.8rem;">
+      <button class="filter-tab size-tab active" data-size="all">All Sizes</button>
+      <button class="filter-tab size-tab" data-size="36">36</button>
+      <button class="filter-tab size-tab" data-size="37">37</button>
+      <button class="filter-tab size-tab" data-size="38">38</button>
+      <button class="filter-tab size-tab" data-size="39">39</button>
+      <button class="filter-tab size-tab" data-size="40">40</button>
+      <button class="filter-tab size-tab" data-size="41">41</button>
+      <button class="filter-tab size-tab" data-size="42">42</button>
+      <button class="filter-tab size-tab" data-size="43">43</button>
+      <button class="filter-tab size-tab" data-size="44">44</button>
+    </div>
   </div>
 </div>
 
@@ -35,7 +47,7 @@ title: Shop
     <div class="products-grid" id="shopProducts">
       {%- for product in collections.products | reverse %}
       {% if product.data.available %}
-      <div class="product-card" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" onclick="window.location='/products/{{ product.fileSlug }}/'">
+      <div class="product-card" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" data-size="{{ product.data.shoe_size }}" onclick="window.location='/products/{{ product.fileSlug }}/'">
         <div class="product-image">
           <img src="{{ product.data.image }}" alt="{{ product.data.name }}"
             onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
@@ -52,7 +64,7 @@ title: Shop
         </div>
       </div>
       {% else %}
-      <div class="product-card sold-out" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}">
+      <div class="product-card sold-out" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" data-size="{{ product.data.shoe_size }}">
         <div class="product-image">
           <img src="{{ product.data.image }}" alt="{{ product.data.name }}"
             onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
@@ -72,20 +84,45 @@ title: Shop
 </section>
 
 <script>
-  document.querySelectorAll('.filter-tab').forEach(tab => {
+  let activeCategory = 'all';
+  let activeSize = 'all';
+
+  document.querySelectorAll('.filter-tab:not(.size-tab)').forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.filter-tab:not(.size-tab)').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      const category = tab.dataset.category;
-      document.querySelectorAll('.product-card').forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      activeCategory = tab.dataset.category;
+
+      const sizeFilters = document.getElementById('sizeFilters');
+      if (activeCategory === 'sole') {
+        sizeFilters.style.display = 'flex';
+      } else {
+        sizeFilters.style.display = 'none';
+        activeSize = 'all';
+        document.querySelectorAll('.size-tab').forEach(t => t.classList.remove('active'));
+        document.querySelector('.size-tab[data-size="all"]').classList.add('active');
+      }
+
+      filterProducts();
     });
   });
+
+  document.querySelectorAll('.size-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.size-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeSize = tab.dataset.size;
+      filterProducts();
+    });
+  });
+
+  function filterProducts() {
+    document.querySelectorAll('.product-card').forEach(card => {
+      const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+      const matchesSize = activeSize === 'all' || card.dataset.size === activeSize;
+      card.style.display = (matchesCategory && matchesSize) ? 'block' : 'none';
+    });
+  }
 
   document.getElementById('searchInput').addEventListener('input', function() {
     const query = this.value.toLowerCase();
