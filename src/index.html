@@ -134,8 +134,7 @@ title: Sisíológe — Curated Accessories
       {% assign shown = shown | plus: 1 %}
       <div class="product-card" onclick="window.location='/products/{{ product.fileSlug }}/'">
         <div class="product-image">
-          <img src="{{ product.data.image }}" alt="{{ product.data.name }}"
-            onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
+          {% image product.data.image, product.data.name %}
           {% if product.data.badge %}
           <span class="product-badge badge-{{ product.data.badge }}">{{ product.data.badge | upper }}</span>
           {% endif %}

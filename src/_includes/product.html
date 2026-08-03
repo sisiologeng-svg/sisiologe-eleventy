@@ -21,21 +21,21 @@ layout: base.html
         <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.5rem;">
           <img src="{{ image }}" alt="{{ name }}"
             style="width:100%; height:80px; object-fit:contain; background:#ffffff; border-radius:2px; cursor:pointer; border:2px solid var(--olive);"
-            onclick="switchImage(this)">
+            onclick="switchImage('{{ image }}', this)">
           {% if image2 and image2 != "" %}
           <img src="{{ image2 }}" alt="{{ name }}"
             style="width:100%; height:80px; object-fit:contain; background:#ffffff; border-radius:2px; cursor:pointer; border:2px solid transparent;"
-            onclick="switchImage(this)">
+            onclick="switchImage('{{ image2 }}', this)">
           {% endif %}
           {% if image3 and image3 != "" %}
           <img src="{{ image3 }}" alt="{{ name }}"
             style="width:100%; height:80px; object-fit:contain; background:#ffffff; border-radius:2px; cursor:pointer; border:2px solid transparent;"
-            onclick="switchImage(this)">
+            onclick="switchImage('{{ image3 }}', this)">
           {% endif %}
           {% if image4 and image4 != "" %}
           <img src="{{ image4 }}" alt="{{ name }}"
             style="width:100%; height:80px; object-fit:contain; background:#ffffff; border-radius:2px; cursor:pointer; border:2px solid transparent;"
-            onclick="switchImage(this)">
+            onclick="switchImage('{{ image4 }}', this)">
           {% endif %}
         </div>
       </div>
@@ -86,8 +86,8 @@ layout: base.html
 </section>
 
 <script>
-function switchImage(el) {
-  document.getElementById('mainImage').src = el.src;
+function switchImage(src, el) {
+  document.getElementById('mainImage').src = src;
   document.querySelectorAll('.product-page-image img:not(#mainImage)').forEach(img => {
     img.style.borderColor = 'transparent';
   });

@@ -17,6 +17,7 @@ collections:
       - {label: "Price (₦)", name: "price", widget: "number"}
       - {label: "Category", name: "category", widget: "select", options: ["bags", "caps", "accessories", "sole", "rtw"]}
       - {label: "Shoe Size (UK, only for The Sole)", name: "shoe_size", widget: "select", options: ["36", "37", "38", "39", "40", "41", "42", "43", "44"], required: false}
+      - {label: "Jewelry Type (only for Accessories)", name: "jewelry_type", widget: "select", options: [{label: "Vintage Treasures", value: "vintage-jewelry"}, {label: "Wristwatches", value: "wristwatches"}, {label: "Rings", value: "rings"}, {label: "Bracelets/Bangles", value: "bracelets-bangles"}], required: false}
       - {label: "Main Image", name: "image", widget: "image"}
       - {label: "Image 2", name: "image2", widget: "image", required: false}
       - {label: "Image 3", name: "image3", widget: "image", required: false}

@@ -39,6 +39,14 @@ title: Shop
       <button class="filter-tab size-tab" data-size="43">43</button>
       <button class="filter-tab size-tab" data-size="44">44</button>
     </div>
+    <div class="filter-tabs" id="jewelryFilters" style="display:none; margin-top:0.8rem;">
+      <button class="filter-tab jewelry-tab active" data-jewelry="all">All Types</button>
+      <button class="filter-tab jewelry-tab" data-jewelry="vintage-jewelry">Vintage Treasures</button>
+      <button class="filter-tab jewelry-tab" data-jewelry="wristwatches">Wristwatches</button>
+      <button class="filter-tab jewelry-tab" data-jewelry="rings">Rings</button>
+      <button class="filter-tab jewelry-tab" data-jewelry="bracelets-bangles">Bracelets/Bangles</button>
+      
+    </div>
   </div>
 </div>
 
@@ -47,10 +55,9 @@ title: Shop
     <div class="products-grid" id="shopProducts">
       {%- for product in collections.products | reverse %}
       {% if product.data.available %}
-      <div class="product-card" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" data-size="{{ product.data.shoe_size }}" onclick="window.location='/products/{{ product.fileSlug }}/'">
+      <div class="product-card" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" data-size="{{ product.data.shoe_size }}" data-jewelry="{{ product.data.jewelry_type }}" onclick="window.location='/products/{{ product.fileSlug }}/'">
         <div class="product-image">
-          <img src="{{ product.data.image }}" alt="{{ product.data.name }}"
-            onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
+          {% image product.data.image, product.data.name %}
           {% if product.data.badge %}
           <span class="product-badge badge-{{ product.data.badge }}">{{ product.data.badge | upper }}</span>
           {% endif %}
@@ -64,10 +71,9 @@ title: Shop
         </div>
       </div>
       {% else %}
-      <div class="product-card sold-out" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" data-size="{{ product.data.shoe_size }}">
+      <div class="product-card sold-out" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" data-size="{{ product.data.shoe_size }}" data-jewelry="{{ product.data.jewelry_type }}">
         <div class="product-image">
-          <img src="{{ product.data.image }}" alt="{{ product.data.name }}"
-            onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'">
+          {% image product.data.image, product.data.name %}
           <span class="product-badge badge-sold">SOLD OUT</span>
         </div>
         <div class="product-info">
@@ -84,23 +90,47 @@ title: Shop
 </section>
 
 <script>
-  let activeCategory = 'all';
+  const urlParams = new URLSearchParams(window.location.search);
+  let activeCategory = urlParams.get('category') || 'all';
   let activeSize = 'all';
+  let activeJewelry = 'all';
 
-  document.querySelectorAll('.filter-tab:not(.size-tab)').forEach(tab => {
+  document.querySelectorAll('.filter-tab:not(.size-tab):not(.jewelry-tab)').forEach(tab => {
+    if (tab.dataset.category === activeCategory) {
+      document.querySelectorAll('.filter-tab:not(.size-tab):not(.jewelry-tab)').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    }
+  });
+
+  if (activeCategory === 'sole') {
+    document.getElementById('sizeFilters').style.display = 'flex';
+  }
+  if (activeCategory === 'accessories') {
+    document.getElementById('jewelryFilters').style.display = 'flex';
+  }
+
+  document.querySelectorAll('.filter-tab:not(.size-tab):not(.jewelry-tab)').forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.filter-tab:not(.size-tab)').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.filter-tab:not(.size-tab):not(.jewelry-tab)').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       activeCategory = tab.dataset.category;
 
       const sizeFilters = document.getElementById('sizeFilters');
+      const jewelryFilters = document.getElementById('jewelryFilters');
+
+      sizeFilters.style.display = 'none';
+      jewelryFilters.style.display = 'none';
+      activeSize = 'all';
+      activeJewelry = 'all';
+      document.querySelectorAll('.size-tab').forEach(t => t.classList.remove('active'));
+      document.querySelector('.size-tab[data-size="all"]').classList.add('active');
+      document.querySelectorAll('.jewelry-tab').forEach(t => t.classList.remove('active'));
+      document.querySelector('.jewelry-tab[data-jewelry="all"]').classList.add('active');
+
       if (activeCategory === 'sole') {
         sizeFilters.style.display = 'flex';
-      } else {
-        sizeFilters.style.display = 'none';
-        activeSize = 'all';
-        document.querySelectorAll('.size-tab').forEach(t => t.classList.remove('active'));
-        document.querySelector('.size-tab[data-size="all"]').classList.add('active');
+      } else if (activeCategory === 'accessories') {
+        jewelryFilters.style.display = 'flex';
       }
 
       filterProducts();
@@ -116,11 +146,21 @@ title: Shop
     });
   });
 
+  document.querySelectorAll('.jewelry-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.jewelry-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeJewelry = tab.dataset.jewelry;
+      filterProducts();
+    });
+  });
+
   function filterProducts() {
     document.querySelectorAll('.product-card').forEach(card => {
       const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
       const matchesSize = activeSize === 'all' || card.dataset.size === activeSize;
-      card.style.display = (matchesCategory && matchesSize) ? 'block' : 'none';
+      const matchesJewelry = activeJewelry === 'all' || card.dataset.jewelry === activeJewelry;
+      card.style.display = (matchesCategory && matchesSize && matchesJewelry) ? 'block' : 'none';
     });
   }
 
@@ -131,4 +171,6 @@ title: Shop
       card.style.display = name.includes(query) ? 'block' : 'none';
     });
   });
+
+  filterProducts();
 </script>
