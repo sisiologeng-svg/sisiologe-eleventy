@@ -1,5 +1,5 @@
 ---
-name: Vintage sole IIII
+name: Vintage sole IV
 price: 15000
 category: sole
 shoe_size: "37"
