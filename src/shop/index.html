@@ -27,25 +27,28 @@ title: Shop
         <input type="text" id="searchInput" placeholder="Search pieces...">
       </div>
     </div>
-    <div class="filter-tabs" id="sizeFilters" style="display:none; margin-top:0.8rem;">
-      <button class="filter-tab size-tab active" data-size="all">All Sizes</button>
-      <button class="filter-tab size-tab" data-size="36">36</button>
-      <button class="filter-tab size-tab" data-size="37">37</button>
-      <button class="filter-tab size-tab" data-size="38">38</button>
-      <button class="filter-tab size-tab" data-size="39">39</button>
-      <button class="filter-tab size-tab" data-size="40">40</button>
-      <button class="filter-tab size-tab" data-size="41">41</button>
-      <button class="filter-tab size-tab" data-size="42">42</button>
-      <button class="filter-tab size-tab" data-size="43">43</button>
-      <button class="filter-tab size-tab" data-size="44">44</button>
+    <div id="sizeFilters" style="display:none; margin-top:0.8rem;">
+      <select id="sizeSelect" style="padding:0.6rem 1rem; border:1.5px solid var(--border); border-radius:2px; font-family:var(--font-body); font-size:0.85rem; background:var(--card-bg); color:var(--text-primary); cursor:pointer;">
+        <option value="all">All Sizes</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+      </select>
     </div>
-    <div class="filter-tabs" id="jewelryFilters" style="display:none; margin-top:0.8rem;">
-      <button class="filter-tab jewelry-tab active" data-jewelry="all">All Types</button>
-      <button class="filter-tab jewelry-tab" data-jewelry="vintage-jewelry">Vintage Treasures</button>
-      <button class="filter-tab jewelry-tab" data-jewelry="wristwatches">Wristwatches</button>
-      <button class="filter-tab jewelry-tab" data-jewelry="rings">Rings</button>
-      <button class="filter-tab jewelry-tab" data-jewelry="bracelets-bangles">Bracelets/Bangles</button>
-      
+    <div id="jewelryFilters" style="display:none; margin-top:0.8rem;">
+      <select id="jewelrySelect" style="padding:0.6rem 1rem; border:1.5px solid var(--border); border-radius:2px; font-family:var(--font-body); font-size:0.85rem; background:var(--card-bg); color:var(--text-primary); cursor:pointer;">
+        <option value="all">All Types</option>
+        <option value="vintage-jewelry">Vintage Treasures</option>
+        <option value="wristwatches">Wristwatches</option>
+        <option value="rings">Rings</option>
+        <option value="bracelets-bangles">Bracelets/Bangles</option>
+      </select>
     </div>
   </div>
 </div>
@@ -95,23 +98,23 @@ title: Shop
   let activeSize = 'all';
   let activeJewelry = 'all';
 
-  document.querySelectorAll('.filter-tab:not(.size-tab):not(.jewelry-tab)').forEach(tab => {
+  document.querySelectorAll('.filter-tab').forEach(tab => {
     if (tab.dataset.category === activeCategory) {
-      document.querySelectorAll('.filter-tab:not(.size-tab):not(.jewelry-tab)').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
     }
   });
 
   if (activeCategory === 'sole') {
-    document.getElementById('sizeFilters').style.display = 'flex';
+    document.getElementById('sizeFilters').style.display = 'block';
   }
   if (activeCategory === 'accessories') {
-    document.getElementById('jewelryFilters').style.display = 'flex';
+    document.getElementById('jewelryFilters').style.display = 'block';
   }
 
-  document.querySelectorAll('.filter-tab:not(.size-tab):not(.jewelry-tab)').forEach(tab => {
+  document.querySelectorAll('.filter-tab').forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.filter-tab:not(.size-tab):not(.jewelry-tab)').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       activeCategory = tab.dataset.category;
 
@@ -122,37 +125,27 @@ title: Shop
       jewelryFilters.style.display = 'none';
       activeSize = 'all';
       activeJewelry = 'all';
-      document.querySelectorAll('.size-tab').forEach(t => t.classList.remove('active'));
-      document.querySelector('.size-tab[data-size="all"]').classList.add('active');
-      document.querySelectorAll('.jewelry-tab').forEach(t => t.classList.remove('active'));
-      document.querySelector('.jewelry-tab[data-jewelry="all"]').classList.add('active');
+      document.getElementById('sizeSelect').value = 'all';
+      document.getElementById('jewelrySelect').value = 'all';
 
       if (activeCategory === 'sole') {
-        sizeFilters.style.display = 'flex';
+        sizeFilters.style.display = 'block';
       } else if (activeCategory === 'accessories') {
-        jewelryFilters.style.display = 'flex';
+        jewelryFilters.style.display = 'block';
       }
 
       filterProducts();
     });
   });
 
-  document.querySelectorAll('.size-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.size-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      activeSize = tab.dataset.size;
-      filterProducts();
-    });
+  document.getElementById('sizeSelect').addEventListener('change', function() {
+    activeSize = this.value;
+    filterProducts();
   });
 
-  document.querySelectorAll('.jewelry-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.jewelry-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      activeJewelry = tab.dataset.jewelry;
-      filterProducts();
-    });
+  document.getElementById('jewelrySelect').addEventListener('change', function() {
+    activeJewelry = this.value;
+    filterProducts();
   });
 
   function filterProducts() {
