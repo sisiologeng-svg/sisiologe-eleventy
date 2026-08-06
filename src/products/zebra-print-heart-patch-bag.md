@@ -16,7 +16,7 @@ description: >-
   Preloved black and silver zebra-print bag with a croc-embossed black leather trim and a playful cluster of sequined, beaded heart patches across the front. Studded base corners and a heart-shaped charm pull complete the look. Bold, whimsical, and made to be noticed.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
