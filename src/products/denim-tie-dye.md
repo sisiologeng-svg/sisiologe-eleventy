@@ -14,7 +14,7 @@ description: >-
   Oversized acid-wash denim hobo with cognac leather straps, silver grommet detailing, and a slouchy, relaxed silhouette. Roomy enough for everyday essentials with a laid-back, lived-in denim feel.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
