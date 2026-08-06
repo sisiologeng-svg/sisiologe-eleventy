@@ -18,7 +18,7 @@ description: >-
   Hugo boss slide mules with a clean, minimal square strap and low kitten heel. Buttery soft suede with that rich olive undertone effortless with denim or a slip dress.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
