@@ -13,7 +13,7 @@ description: >-
   Restock not guaranteed — once it’s gone, it’s gone.
 
   Rich indigo blue pebbled leather satchel with dual handles and a detachable crossbody strap. A standout color rarely seen in preloved Coach finds
-available: true
+available: false
 featured: false
 badge: new
 ---
