@@ -26,7 +26,6 @@ function initTheme() {
 // ===== PROMO CODES =====
 const promoCodes = {
   'DEARESTSISI': { discount: 10, type: 'percent', description: '10% off for new Sisí!' },
- 'OMOGE': { discount: 25, type: 'percent', description: '25% off for our launch, Omoge!', expiresAt: '2026-08-07T23:59:59' },
   'SALE20': { discount: 20, type: 'percent', description: '20% off sale!' },
   'SALE15': { discount: 15, type: 'percent', description: '15% off sale!' },
 };
@@ -51,17 +50,18 @@ function applyPromoCode() {
   if (!input || !message) return;
   const code = input.value.trim().toUpperCase();
   if (!code) { message.textContent = 'Please enter a promo code.'; message.className = 'promo-message promo-error'; return; }
-const maxUses = { 'DEARESTSISI': 1, 'OMOGE': 5 };
-if (maxUses[code] && getPromoUseCount(code) >= maxUses[code]) {
-  message.textContent = code === 'OMOGE'
-    ? 'OMOGE is valid for only 5 uses per device, and this device has reached that limit.'
-    : 'This code has already been used on this device.';
-  message.className = 'promo-message promo-error';
-  return;
-}
+
+  const maxUses = { 'DEARESTSISI': 1 };
+  if (maxUses[code] && getPromoUseCount(code) >= maxUses[code]) {
+    message.textContent = 'This code has already been used on this device.';
+    message.className = 'promo-message promo-error';
+    return;
+  }
+
   const promo = promoCodes[code];
   if (!promo) { message.textContent = 'Invalid promo code. Please try again.'; message.className = 'promo-message promo-error'; appliedPromo = null; updateTotal(); return; }
   if (promo.expiresAt && new Date() > new Date(promo.expiresAt)) { message.textContent = 'This promo code has expired.'; message.className = 'promo-message promo-error'; appliedPromo = null; updateTotal(); return; }
+
   appliedPromo = { code, ...promo };
   message.textContent = `✓ ${promo.description} applied!`;
   message.className = 'promo-message promo-success';
@@ -129,7 +129,7 @@ function closeWelcomePopup() {
 }
 
 function copyPromoCode() {
-  navigator.clipboard.writeText('OMOGE').then(() => { showToast('Code copied! Use OMOGE at checkout 🩵'); });
+  navigator.clipboard.writeText('DEARESTSISI').then(() => { showToast('Code copied! Use DEARESTSISI at checkout 🩵'); });
 }
 
 // ===== DELIVERY DATA =====
@@ -295,12 +295,12 @@ function payWithPaystack() {
         { display_name: "Order Notes", variable_name: "notes", value: document.getElementById('orderNotes')?.value || '' },
         { display_name: "Promo", variable_name: "promo", value: appliedPromo?.code || 'None' },
         { display_name: "Product Slugs", variable_name: "product_slugs", value: cart.map(i => i.id).join(',') },
-{ display_name: "Items", variable_name: "items", value: cart.map(i => `${i.name} (x${i.qty})`).join(', ') },
+        { display_name: "Items", variable_name: "items", value: cart.map(i => `${i.name} (x${i.qty})`).join(', ') },
         { display_name: "Total", variable_name: "order_total", value: (total / 100).toString() }
       ]
     },
     callback: function(response) {
-      if (appliedPromo?.code === 'DEARESTSISI' || appliedPromo?.code === 'OMOGE') incrementPromoUse(appliedPromo.code);
+      if (appliedPromo?.code === 'DEARESTSISI') incrementPromoUse(appliedPromo.code);
       cart = [];
       saveCart();
       showToast('Payment successful! 🎉 We will be in touch shortly!');
