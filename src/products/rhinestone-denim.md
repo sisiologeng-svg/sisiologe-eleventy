@@ -14,7 +14,7 @@ description: >-
   Denim satchel encrusted with allover crystal studs, brown leather trim, and antique brass hardware. The two-tone wash gives it a lived-in, luxe denim finish, and the brown leather handles have that perfect broken-in softness. A true statement piece for anyone who loves texture and sparkle.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
