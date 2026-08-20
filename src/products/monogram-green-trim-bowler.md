@@ -13,7 +13,7 @@ description: >-
   Preloved monogram jacquard mini bowler bag with forest green pebbled leather trim, front buckle detail, and silver hardware. Structured, compact, and full of old-money charm — a great grab-and-go piece.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
-featured: true
+available: false
+featured: false
 badge: new
 ---
