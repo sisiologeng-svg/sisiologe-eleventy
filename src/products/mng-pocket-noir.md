@@ -15,7 +15,7 @@ description: >-
   Black MNG faux leather shoulder bag with contrast cream stitching and dual front flap pockets with buckle detailing. Clean, structured, and versatile — the kind of bag that pairs with literally everything in your closet.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
-featured: true
+available: false
+featured: false
 badge: new
 ---
