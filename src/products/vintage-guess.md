@@ -15,7 +15,7 @@ description: |-
   - Top zip closure
   - Y2K vintage — recognizable Guess signature hobo style from the mid-2000s
   	•	Note: has a previously repaired tear (small mend, sold as-is)
-available: true
+available: false
 featured: false
 badge: new
 ---
