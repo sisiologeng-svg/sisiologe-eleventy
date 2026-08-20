@@ -13,7 +13,7 @@ description: >-
   Hot pink leather tote with croc-embossed patent trim, dual zip side pockets, and polished silver hardware. Bold, glossy, and made to be the centerpiece of any look, a true pop of color for your collection.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
