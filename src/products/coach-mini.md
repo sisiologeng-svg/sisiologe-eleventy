@@ -14,7 +14,7 @@ description: >-
   Signature khaki canvas Coach bucket bag with rich brown leather trim, gold hardware, and the classic horse-and-carriage logo. Comes complete with detachable crossbody strap and hangtag. Compact, iconic, and endlessly wearable.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
-featured: true
+available: false
+featured: false
 badge: new
 ---
