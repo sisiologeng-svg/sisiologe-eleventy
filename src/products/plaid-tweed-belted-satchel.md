@@ -20,7 +20,7 @@ description: >-
   Preloved beige and navy plaid tweed satchel with navy leather trim and a front belt buckle detail. Preppy, classic, and elevated.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
-featured: true
+available: false
+featured: false
 badge: new
 ---
