@@ -16,7 +16,7 @@ description: >-
   Restock not guaranteed once it’s gone, it’s gone.
 
   Rich brown croc-embossed leather tote from Krizia, finished with gold turn-lock hardware and the brand’s signature charm tag. A genuine designer find.
-available: true
+available: false
 featured: false
 badge: new
 ---
