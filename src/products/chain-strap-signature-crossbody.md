@@ -14,7 +14,7 @@ description: >-
   Condition: Excellent 💯
 
   Cream leather-and-signature-canvas crossbody with a gold chain strap and turn-lock closure. Compact and polished for evening wear.
-available: true
+available: false
 featured: false
 badge: new
 ---
