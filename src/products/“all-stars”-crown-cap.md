@@ -16,7 +16,7 @@ description: >-
   Restock not guaranteed — once it’s gone, it’s gone.
 
   Hot pink cap with a glittery crown and crest patch. Distressed brim gives it that lived-in, street-style edge.
-available: true
+available: false
 featured: false
 badge: new
 ---
