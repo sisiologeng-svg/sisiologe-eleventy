@@ -18,7 +18,7 @@ description: >-
   Preloved black leather satchel with gunmetal studs, tassel zip pull, and a detachable crossbody strap. Edgy motorcycle-bag silhouette.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
