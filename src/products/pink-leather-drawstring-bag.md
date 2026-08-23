@@ -16,7 +16,7 @@ description: >-
   Preloved soft pink leather shoulder bag with silver-tone hardware, drawstring side pockets, and a front flap latch closure. Sweet and feminine.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
