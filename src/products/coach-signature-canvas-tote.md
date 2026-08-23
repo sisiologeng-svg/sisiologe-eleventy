@@ -15,7 +15,7 @@ description: >-
   	•	Classic Coach “C” jacquard canvas with dark brown leather trim
   	•	Dual leather handles, silver Coach hardware
   	•	Timeless Coach staple — goes with literally everything, holds its resale value
-available: true
+available: false
 featured: false
 badge: new
 ---
