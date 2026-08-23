@@ -18,7 +18,7 @@ description: >-
   Restock not guaranteed once it’s gone, it’s gone.
 
   Black pony-hair bowler bag with structured leather handles and a clean center seam. Bold texture, quiet luxury.
-available: true
+available: false
 featured: false
 badge: new
 ---
