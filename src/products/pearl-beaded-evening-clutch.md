@@ -17,7 +17,7 @@ description: >-
   condition: preloved
 
   Ivory beaded clutch with a delicate pearl chain strap and sequin leaf embellishment. Bridal, old money, special-occasion ready.
-available: true
+available: false
 featured: false
 badge: new
 ---
