@@ -1,6 +1,6 @@
 ---
 name: "JorYa Weekend Woven Raffia Tote "
-price: 30000
+price: 25000
 category: bags
 image: /images/products/img_6017.jpeg
 image2: /images/products/img_6019.jpeg
