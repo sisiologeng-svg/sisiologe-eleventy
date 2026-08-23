@@ -11,7 +11,7 @@ description: >-
   	•	Bronze metallic leather flap with croc-embossed brown body
   	•	Antique gold buckle hardware
   	•	Warm metallic tone gives it a luxe, going-out edge — pairs beautifully with both neutrals and jewel ton
-available: true
+available: false
 featured: false
 badge: new
 ---
