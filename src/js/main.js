@@ -26,6 +26,7 @@ function initTheme() {
 // ===== PROMO CODES =====
 const promoCodes = {
   'DEARESTSISI': { discount: 10, type: 'percent', description: '10% off for new Sisí!' },
+  'WEHIT1K': { discount: 30, type: 'percent', description: '30% off to celebrate 1K followers!', startsAt: '2026-08-25T00:00:00', expiresAt: '2026-08-27T00:00:00' },
   'SALE20': { discount: 20, type: 'percent', description: '20% off sale!' },
   'SALE15': { discount: 15, type: 'percent', description: '15% off sale!' },
 };
@@ -51,7 +52,7 @@ function applyPromoCode() {
   const code = input.value.trim().toUpperCase();
   if (!code) { message.textContent = 'Please enter a promo code.'; message.className = 'promo-message promo-error'; return; }
 
-  const maxUses = { 'DEARESTSISI': 1 };
+  const maxUses = { 'DEARESTSISI': 1, 'WEHIT1K': 2 };
   if (maxUses[code] && getPromoUseCount(code) >= maxUses[code]) {
     message.textContent = 'This code has already been used on this device.';
     message.className = 'promo-message promo-error';
@@ -60,6 +61,7 @@ function applyPromoCode() {
 
   const promo = promoCodes[code];
   if (!promo) { message.textContent = 'Invalid promo code. Please try again.'; message.className = 'promo-message promo-error'; appliedPromo = null; updateTotal(); return; }
+  if (promo.startsAt && new Date() < new Date(promo.startsAt)) { message.textContent = 'This promo code is not active yet.'; message.className = 'promo-message promo-error'; appliedPromo = null; updateTotal(); return; }
   if (promo.expiresAt && new Date() > new Date(promo.expiresAt)) { message.textContent = 'This promo code has expired.'; message.className = 'promo-message promo-error'; appliedPromo = null; updateTotal(); return; }
 
   appliedPromo = { code, ...promo };
@@ -300,7 +302,7 @@ function payWithPaystack() {
       ]
     },
     callback: function(response) {
-      if (appliedPromo?.code === 'DEARESTSISI') incrementPromoUse(appliedPromo.code);
+      if (appliedPromo?.code === 'DEARESTSISI' || appliedPromo?.code === 'WEHIT1K') incrementPromoUse(appliedPromo.code);
       cart = [];
       saveCart();
       showToast('Payment successful! 🎉 We will be in touch shortly!');
@@ -319,6 +321,16 @@ function handleNewsletter(e) {
 }
 
 // ===== INIT =====
+function checkPromoBanner() {
+  const banner = document.getElementById('promoBanner');
+  if (!banner) return;
+  const promo = promoCodes['WEHIT1K'];
+  const now = new Date();
+  if (promo.startsAt && promo.expiresAt && now >= new Date(promo.startsAt) && now <= new Date(promo.expiresAt)) {
+    banner.style.display = 'block';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   updateCartCount();
@@ -326,5 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('checkoutSection')) {
     renderCartItems();
     setupDelivery();
+    checkPromoBanner();
   }
 });
