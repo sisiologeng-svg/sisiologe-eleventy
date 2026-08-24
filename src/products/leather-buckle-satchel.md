@@ -14,7 +14,7 @@ description: >-
   Condition: Excellent 💯
 
   Rich burgundy leather satchel with brass buckle straps, front push-lock closure, and multiple exterior pockets. A statement piece with vintage character.
-available: true
+available: false
 featured: false
 badge: new
 ---
