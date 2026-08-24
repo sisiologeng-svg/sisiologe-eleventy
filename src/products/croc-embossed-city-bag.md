@@ -12,7 +12,7 @@ description: >-
   	•	Deep burgundy croc-embossed leather, gold hardware
   	•	Front zip pocket, buckle tabs, detachable crossbody strap
   	•	Motorcycle-bag silhouette in a rich, rare colorway — elevated take on the classic City bag look
-available: true
+available: false
 featured: false
 badge: new
 ---
