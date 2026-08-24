@@ -17,7 +17,7 @@ description: >-
   Preloved multicolor striped crochet shoulder bag with wooden beaded handles in ombré tones. Textural, artisanal, and completely one-of-a-kind.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
