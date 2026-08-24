@@ -56,6 +56,11 @@ layout: base.html
             🚚 <strong>Lagos:</strong> ₦3,500 – ₦7,500 · <strong>Nationwide:</strong> from ₦6,000<br>
             <span style="font-size:0.75rem; opacity:0.75;">⚖️ Fees apply to 0–2kg packages</span>
           </p>
+          {% if category == "accessories" %}
+          <p style="font-size:0.82rem; color:var(--text-primary); margin:0.8rem 0 0; line-height:1.8;">
+            💍 <strong>Note:</strong> Does not come boxed.
+          </p>
+          {% endif %}
         </div>
 
         {% if available %}
