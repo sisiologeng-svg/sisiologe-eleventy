@@ -11,7 +11,7 @@ description: >-
   	•	Plush red faux fur body with croc-embossed leather flap and chain-link strap
   	•	Ornate silver buckle closure
   	•	Fun, textural statement bag — a party-ready piece that’s hard to find in this fur colorway
-available: false
+available: true
 featured: false
 badge: new
 ---
