@@ -12,7 +12,7 @@ description: >-
   Beige monogram canvas flap bag with croc-embossed patent trim and a statement silver buckle closure. The Authentic Guess branding is front and center on the hardware. Vintage 2000s glamour in one small package.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
