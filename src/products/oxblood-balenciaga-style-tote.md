@@ -1,6 +1,6 @@
 ---
 name: Oxblood Balenciaga-Style Tote
-price: 21999
+price: 25000
 category: bags
 image: /images/products/img_5380.jpg
 image2: /images/products/img_5376.jpg
