@@ -176,7 +176,7 @@ function getNextDeliveryDay() {
   const now = new Date();
   const day = now.getDay();
   const hour = now.getHours();
-  const deliveryDays = [2, 6];
+  const deliveryDays = [1, 6];
   const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   if (deliveryDays.includes(day) && hour < 9) return `⚡ Same day delivery available! Order before 9AM. Today is ${dayNames[day]}.`;
   for (let i = 1; i <= 7; i++) {
