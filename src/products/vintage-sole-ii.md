@@ -17,7 +17,7 @@ description: >-
   Preloved flat sandals with a burst of woven orange straps gathered into a coiled front knot, set on a bold multicolor pop-art footbed — purple, teal, mustard, and orange in a mix of stripes and polka dots. Fun, playful, and unapologetically loud. Great preloved condition.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
