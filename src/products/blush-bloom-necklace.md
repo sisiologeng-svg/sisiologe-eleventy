@@ -5,7 +5,7 @@ category: accessories
 jewelry_type: vintage-jewelry
 image: /images/products/img_8506.jpeg
 description: Beaded necklace with a carved pink flower pendant and mixed charm drops
-available: true
+available: false
 featured: false
 badge: new
 ---
