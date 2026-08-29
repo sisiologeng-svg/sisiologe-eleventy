@@ -5,7 +5,7 @@ category: accessories
 jewelry_type: vintage-jewelry
 image: /images/products/img_8543.jpeg
 description: Layered necklace with teal faceted drops and matching silver-leaf earrings
-available: true
+available: false
 featured: false
 badge: new
 ---
