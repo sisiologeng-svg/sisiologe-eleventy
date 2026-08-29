@@ -12,7 +12,7 @@ description: >-
   	•	Detachable adjustable crossbody strap included
   	•	Selling point: Balenciaga City-inspired silhouette — edgy, versatile, works as a hand-carry or crossbody
   PS: long hand has been changed. 
-available: true
+available: false
 featured: false
 badge: new
 ---
