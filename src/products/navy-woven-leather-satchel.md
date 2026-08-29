@@ -17,7 +17,7 @@ description: >-
   Navy woven leather satchel with black leather trim, silver hardware, and a Coach hangtag. Structured and sophisticated.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
