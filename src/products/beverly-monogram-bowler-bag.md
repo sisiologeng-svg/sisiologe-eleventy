@@ -7,7 +7,7 @@ description: |-
   Brand: Beverly (Est. 1935, France)
   	•	Grey monogram jacquard body
   	•	Dark brown leather trim, gold hardware, branded logo plate
-available: true
+available: false
 featured: false
 badge: new
 ---
