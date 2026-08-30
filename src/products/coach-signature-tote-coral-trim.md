@@ -16,7 +16,7 @@ description: >-
   Restock not guaranteed, once it’s gone, it’s gone.
 
   Classic Coach khaki signature canvas brightened with bold coral leather trim and a matching charm. A pop of color for your everyday carry.
-available: true
+available: false
 featured: false
 badge: new
 ---
