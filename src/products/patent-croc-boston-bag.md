@@ -17,7 +17,7 @@ description: >-
   Restock not guaranteed, once it’s gone, it’s gone.
 
   Glossy black patent croc-embossed Boston bag with gold statement hardware. Sleek, going-out ready, zero flaws.
-available: true
+available: false
 featured: false
 badge: new
 ---
