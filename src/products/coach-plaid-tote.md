@@ -16,7 +16,7 @@ description: >-
   Restock not guaranteed once it’s gone, it’s gone.
 
   Cream leather tote in a vibrant tattersall plaid print with gold-tone trim and the signature Coach pink logo disc. A preppy statement piece.
-available: true
+available: false
 featured: false
 badge: new
 ---
