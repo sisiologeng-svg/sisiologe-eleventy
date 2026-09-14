@@ -17,7 +17,7 @@ description: >-
   Mustard yellow pebbled leather satchel with dual top handles, detachable crossbody strap, and silver hardware. Vibrant and eye-catching.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
