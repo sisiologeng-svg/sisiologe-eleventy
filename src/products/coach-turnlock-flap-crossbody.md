@@ -15,7 +15,7 @@ description: >-
   Restock not guaranteed, once it’s gone, it’s gone.
 
   A dusty mauve leather flap bag with silver turn-lock closure and soft suede paneling. Compact, feminine, and rare — this one won’t last.
-available: true
+available: false
 featured: false
 badge: new
 ---
