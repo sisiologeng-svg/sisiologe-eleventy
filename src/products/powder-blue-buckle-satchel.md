@@ -16,7 +16,7 @@ description: >-
   Restock not guaranteed once it’s gone, it’s gone.
 
   Powder blue leather satchel with statement silver hardware and double buckle straps. Soft color, hard edge.
-available: true
+available: false
 featured: false
 badge: new
 ---
