@@ -10,7 +10,7 @@ description: |-
   Beaded necklace with a hammered copper-tone disc pendant.
   Note: Does not come boxed.
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
