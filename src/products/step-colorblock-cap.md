@@ -9,7 +9,7 @@ description: >-
   Pink, blue, and black colorblock cap with distressed brim and puff “STEP” embroidery.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
