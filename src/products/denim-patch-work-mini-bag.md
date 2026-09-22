@@ -15,7 +15,7 @@ description: >-
   Condition: Great. denim shows intentional distressed/ombré finish, leather belt detail and chain strap intact
 
   Ombré khaki-green denim barrel bag with a leather belt strap and patch pocket detail. Utility-inspired, chain strap for versatility.
-available: true
+available: false
 featured: false
 badge: new
 ---
