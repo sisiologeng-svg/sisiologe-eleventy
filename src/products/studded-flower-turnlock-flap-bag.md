@@ -15,7 +15,7 @@ description: >-
   Black leather flap bag with signature canvas panel, gold stud trim, and a floral turn-lock closure. Chain-and-leather strap included.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
