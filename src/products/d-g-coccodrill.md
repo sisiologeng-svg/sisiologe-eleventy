@@ -14,7 +14,7 @@ description: >-
   Rich brown croc-embossed leather clutch-style bag with black leather trim, silver stud detailing, and the signature D&G turn-lock hardware. Structured, glossy, and unmistakably luxe.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
