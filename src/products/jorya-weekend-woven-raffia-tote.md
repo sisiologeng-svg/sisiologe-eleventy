@@ -17,6 +17,6 @@ description: >-
 
   Woven raffia tote with rich brown leather trim and a cute detachable coin pouch charm. Summer-ready and texturally rich.
 available: true
-featured: true
+featured: false
 badge: new
 ---
