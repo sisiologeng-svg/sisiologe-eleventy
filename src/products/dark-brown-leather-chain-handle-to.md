@@ -16,7 +16,7 @@ description: >-
   Sleek brown leather tote with gold-tone chain-and-leather handles and the classic Coach carriage logo plate. Roomy, versatile, and effortlessly chic.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
