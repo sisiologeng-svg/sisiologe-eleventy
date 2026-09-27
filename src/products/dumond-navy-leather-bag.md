@@ -21,6 +21,6 @@ description: >-
 
   Restock not guaranteed — once it's gone, it's gone.
 available: true
-featured: false
+featured: true
 badge: new
 ---
