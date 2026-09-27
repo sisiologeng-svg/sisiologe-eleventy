@@ -11,7 +11,7 @@ description: >-2
   Signature monogram canvas tote with black leather trim and silver buckle straps. Structured silhouette with a polished, business-ready feel. Great for work or travel.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
