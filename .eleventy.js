@@ -31,7 +31,12 @@ module.exports = function(eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection("products", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/products/*.md");
+    const products = collectionApi.getFilteredByGlob("src/products/*.md");
+    return products.sort((a, b) => {
+      const dateA = a.data.date ? new Date(a.data.date) : new Date(0);
+      const dateB = b.data.date ? new Date(b.data.date) : new Date(0);
+      return dateB - dateA;
+    });
   });
 
   eleventyConfig.addCollection("reviews", function(collectionApi) {

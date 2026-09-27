@@ -114,7 +114,7 @@ title: Sisíológe — Curated Accessories
     </div>
     <div class="products-grid">
       {% assign shown = 0 %}
-      {%- for product in collections.products | reverse %}
+      {%- for product in collections.products %}
       {% if product.data.available and product.data.featured and shown < 3 %}
       {% assign shown = shown | plus: 1 %}
       <div class="product-card" onclick="window.location='/products/{{ product.fileSlug }}/'">
@@ -128,7 +128,14 @@ title: Sisíológe — Curated Accessories
           <h4>{{ product.data.name }}</h4>
           <p class="category">{{ product.data.category }}</p>
           <div class="product-price">
+            {% if product.data.on_sale and product.data.original_price %}
+            <span>
+              <span style="text-decoration:line-through; color:var(--text-muted); font-size:0.8rem; margin-right:0.4rem;">₦{{ product.data.original_price | numberFormat }}</span>
+              <span class="price">₦{{ product.data.price | numberFormat }}</span>
+            </span>
+            {% else %}
             <span class="price">₦{{ product.data.price | numberFormat }}</span>
+            {% endif %}
             <button class="add-btn" onclick="event.stopPropagation(); addToCart('{{ product.fileSlug }}', '{{ product.data.name }}', {{ product.data.price }}, '{{ product.data.image }}')">+</button>
           </div>
         </div>
@@ -187,6 +194,7 @@ title: Sisíológe — Curated Accessories
         <div class="icon">🚚</div>
         <h4>Nationwide Delivery</h4>
         <p>We deliver to every state via Moveit.ng. Delivery days are Mondays and Saturdays.</p>
+      </div>
       <div class="feature-item">
         <div class="icon">✦</div>
         <h4>Curated Quality</h4>

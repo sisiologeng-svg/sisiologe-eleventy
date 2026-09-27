@@ -59,7 +59,7 @@ title: Shop
 <section class="section-padding" style="background:var(--bg-secondary);">
   <div class="container">
     <div class="products-grid" id="shopProducts">
-      {%- for product in collections.products | reverse %}
+      {%- for product in collections.products %}
       {% if product.data.available %}
       <div class="product-card" data-category="{{ product.data.category }}" data-name="{{ product.data.name }}" data-size="{{ product.data.shoe_size }}" data-jewelry="{{ product.data.jewelry_type }}" onclick="window.location='/products/{{ product.fileSlug }}/'">
         <div class="product-image">
@@ -71,7 +71,14 @@ title: Shop
         <div class="product-info">
           <h4>{{ product.data.name }}</h4>
           <div class="product-price">
+            {% if product.data.on_sale and product.data.original_price %}
+            <span>
+              <span style="text-decoration:line-through; color:var(--text-muted); font-size:0.8rem; margin-right:0.4rem;">₦{{ product.data.original_price | numberFormat }}</span>
+              <span class="price">₦{{ product.data.price | numberFormat }}</span>
+            </span>
+            {% else %}
             <span class="price">₦{{ product.data.price | numberFormat }}</span>
+            {% endif %}
             <button class="add-btn" onclick="event.stopPropagation(); addToCart('{{ product.fileSlug }}', '{{ product.data.name }}', {{ product.data.price }}, '{{ product.data.image }}')">+</button>
           </div>
         </div>

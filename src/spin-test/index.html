@@ -1,0 +1,87 @@
+---
+layout: base.html
+title: Spin Test
+---
+
+<section style="padding:4rem 1.5rem; min-height:80vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background:var(--bg);">
+
+  <h1 style="font-family:'Cormorant Garamond',serif; font-style:italic; text-align:center; margin-bottom:0.5rem;">Spin & Win</h1>
+  <p style="text-align:center; color:var(--text-muted); margin-bottom:2.5rem;">Give it a spin, Sisí 🎡</p>
+
+  <div style="position:relative; width:340px; height:340px; max-width:90vw;">
+
+    <!-- Pointer -->
+    <div style="position:absolute; top:-14px; left:50%; transform:translateX(-50%); z-index:10; width:0; height:0; border-left:16px solid transparent; border-right:16px solid transparent; border-top:28px solid var(--black);"></div>
+
+    <!-- Wheel -->
+    <div id="wheel" style="width:100%; height:100%; border-radius:50%; position:relative; box-shadow:0 8px 40px rgba(17,18,13,0.25); border:6px solid var(--black); transition:transform 5s cubic-bezier(0.17, 0.67, 0.12, 0.99); overflow:hidden;">
+      <svg viewBox="0 0 300 300" style="width:100%; height:100%; display:block;">
+        <g transform="translate(150,150)">
+          <path d="M0,0 L0,-150 A150,150 0 0,1 129.9,-75 Z" fill="#E85D75"/>
+          <path d="M0,0 L129.9,-75 A150,150 0 0,1 129.9,75 Z" fill="#4A9B8E"/>
+          <path d="M0,0 L129.9,75 A150,150 0 0,1 0,150 Z" fill="#F2A03D"/>
+          <path d="M0,0 L0,150 A150,150 0 0,1 -129.9,75 Z" fill="#6B5CA5"/>
+          <path d="M0,0 L-129.9,75 A150,150 0 0,1 -129.9,-75 Z" fill="#E85D75"/>
+          <path d="M0,0 L-129.9,-75 A150,150 0 0,1 0,-150 Z" fill="#4A9B8E"/>
+        </g>
+        <!-- Labels: each centered in the middle of its 60deg wedge, rotated to sit upright along the radius -->
+        <g font-family="Jost, sans-serif" font-weight="700" text-anchor="middle" fill="#FFFBF4">
+          <text x="150" y="70" font-size="14" transform="rotate(30 150 150)">TRY AGAIN</text>
+          <text x="150" y="70" font-size="14" transform="rotate(90 150 150)">20% OFF</text>
+          <text x="150" y="70" font-size="12" transform="rotate(150 150 150)">DELIVERY 20%</text>
+          <text x="150" y="70" font-size="14" transform="rotate(210 150 150)">TRY AGAIN</text>
+          <text x="150" y="70" font-size="13" transform="rotate(270 150 150)">FREE DELIVERY</text>
+          <text x="150" y="70" font-size="14" transform="rotate(330 150 150)">50% OFF</text>
+        </g>
+      </svg>
+
+      <!-- Center hub -->
+      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:56px; height:56px; background:var(--floral-white); border-radius:50%; border:4px solid var(--black); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--olive); font-style:italic;">S</div>
+    </div>
+  </div>
+
+  <button id="spinBtn" class="btn btn-primary" style="margin-top:2.5rem; padding:1rem 3rem;">SPIN THE WHEEL</button>
+
+  <p id="resultText" style="margin-top:1.5rem; font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--olive); min-height:2rem; text-align:center;"></p>
+
+</section>
+
+<script>
+  const segments = [
+    { label: "Try Again", angle: 0, isLose: true },
+    { label: "20% Off", angle: 60, isLose: false },
+    { label: "20% Off Delivery", angle: 120, isLose: false },
+    { label: "Try Again", angle: 180, isLose: true },
+    { label: "Free Delivery", angle: 240, isLose: false },
+    { label: "50% Off", angle: 300, isLose: false }
+  ];
+
+  let currentRotation = 0;
+  const wheel = document.getElementById('wheel');
+  const spinBtn = document.getElementById('spinBtn');
+  const resultText = document.getElementById('resultText');
+
+  spinBtn.addEventListener('click', () => {
+    spinBtn.disabled = true;
+    resultText.textContent = '';
+
+    const winnerIndex = Math.floor(Math.random() * segments.length);
+    const winner = segments[winnerIndex];
+
+    const segmentAngle = 60;
+    const targetAngle = 360 - winner.angle - (segmentAngle / 2);
+    const fullSpins = 5 * 360;
+    currentRotation += fullSpins + targetAngle - (currentRotation % 360);
+
+    wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+    setTimeout(() => {
+      if (winner.isLose) {
+        resultText.textContent = `Sorry Sisí, try again! 🥲`;
+      } else {
+        resultText.textContent = `🎉 You won Sisí, ${winner.label}!`;
+      }
+      spinBtn.disabled = false;
+    }, 5200);
+  });
+</script>

@@ -44,7 +44,14 @@ layout: base.html
       <div class="product-page-info">
         <p style="font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--olive); margin-bottom:0.5rem;">{{ category }}</p>
         <h1 style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--text-primary); margin-bottom:1rem;">{{ name }}</h1>
+        {% if on_sale and original_price %}
+        <p style="margin-bottom:1.5rem;">
+          <span style="text-decoration:line-through; color:var(--text-muted); font-size:1.1rem; margin-right:0.6rem;">₦{{ original_price | numberFormat }}</span>
+          <span style="font-size:1.8rem; font-weight:600; color:var(--olive);">₦{{ price | numberFormat }}</span>
+        </p>
+        {% else %}
         <p style="font-size:1.8rem; font-weight:600; color:var(--olive); margin-bottom:1.5rem;">₦{{ price | numberFormat }}</p>
+        {% endif %}
         
         <div style="background:var(--bg-secondary); padding:1.5rem; border-radius:2px; margin-bottom:2rem; border:1px solid var(--border);">
           <p style="color:var(--text-secondary); line-height:2; margin:0; white-space:pre-line;">{{ description }}</p>
