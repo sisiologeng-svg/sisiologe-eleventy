@@ -14,6 +14,6 @@ description: >-
 
   Classic Coach signature canvas in soft khaki, elevated with a statement chain-and-patent shoulder strap. Roomy enough for everyday essentials, with that unmistakable Coach horse-and-carriage emblem front and center.
 available: true
-featured: true
+featured: false
 badge: new
 ---
