@@ -16,7 +16,7 @@ description: >-
   Restock not guaranteed, once it’s gone, it’s gone.
 
   Black textured leather top-handle tote with crisp white contrast stitching. Compact, structured, boardroom-ready.
-available: true
+available: false
 featured: false
 badge: new
 ---
