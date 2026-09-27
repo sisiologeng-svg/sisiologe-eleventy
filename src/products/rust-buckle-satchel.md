@@ -15,7 +15,7 @@ description: >-
   Rust-red leather satchel with front flap pockets, brass buckle detailing, and a push-lock closure. Rugged, vintage-inspired styling.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
