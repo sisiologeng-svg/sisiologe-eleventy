@@ -1,6 +1,9 @@
 ---
 name: Coach “Est. 1941” Storypatch Tote
-price: 30000
+date: 2026-09-29T13:35:00.000+01:00
+price: 25000
+on_sale: true
+original_price: 29999
 category: bags
 image: /images/products/img_8625.jpeg
 image2: /images/products/img_8630.jpeg
@@ -16,5 +19,5 @@ description: >-
   	•	Collector-favorite Coach print — the storypatch design is a discontinued, sought-after archive pi
 available: true
 featured: false
-badge: new
+badge: sale
 ---
