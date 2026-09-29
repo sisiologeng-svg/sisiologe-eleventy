@@ -1,6 +1,8 @@
 ---
 name: Guess Black Embossed Bag
-price: 30000
+price: 24000
+on_sale: true
+original_price: 29998
 category: bags
 image: /images/products/img_1389.jpeg
 image2: /images/products/img_1395.jpeg
@@ -15,5 +17,5 @@ description: >-
   Restock not guaranteed — once it's gone, it's gone.
 available: true
 featured: false
-badge: new
+badge: sale
 ---
