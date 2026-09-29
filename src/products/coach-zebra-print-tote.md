@@ -1,6 +1,9 @@
 ---
 name: Coach Zebra Print Tote
-price: 28000
+date: 2026-09-29T13:34:00.000+01:00
+price: 23000
+on_sale: true
+original_price: 28000
 category: bags
 image: /images/products/img_3991.jpg
 image2: /images/products/img_3989.jpg
@@ -21,5 +24,6 @@ description: >-
 
   Bold red zebra print canvas with tan leather trim and double straps. Statement tote that does the outfit talking for you.
 available: true
-badge: new
+featured: false
+badge: sale
 ---
