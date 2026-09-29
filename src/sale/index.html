@@ -1,0 +1,55 @@
+---
+layout: base.html
+title: Sale
+---
+
+<section class="hero" style="min-height:50vh; background:linear-gradient(135deg, var(--olive) 0%, var(--black) 100%);">
+  <div class="hero-content" style="grid-template-columns:1fr; text-align:center; max-width:800px;">
+    <div class="hero-text">
+      <p class="eyebrow" style="color:var(--bone);">✦ Limited Time</p>
+      <h1 style="color:var(--floral-white); font-style:italic; font-size:clamp(2.5rem, 6vw, 5rem);">Sale Sale Sale</h1>
+      <p style="color:rgba(255,251,244,0.85); max-width:500px; margin:0 auto 2.5rem;">Selected pieces, marked down for a limited time. Once they're gone, the price goes back up, or the piece goes with it.</p>
+      <div class="hero-buttons" style="justify-content:center;">
+        <a href="#saleItems" class="btn btn-primary">Shop The Sale</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding" style="background:var(--bg-secondary);" id="saleItems">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">✦ Marked Down</span>
+      <h2>On Sale Right Now</h2>
+    </div>
+
+    <div class="products-grid">
+      {%- for product in collections.products %}
+      {% if product.data.available and product.data.on_sale %}
+      <div class="product-card" onclick="window.location='/products/{{ product.fileSlug }}/'">
+        <div class="product-image">
+          {% image product.data.image, product.data.name %}
+          <span class="product-badge badge-sale">SALE</span>
+        </div>
+        <div class="product-info">
+          <h4>{{ product.data.name }}</h4>
+          <div class="product-price">
+            <span>
+              {% if product.data.original_price %}
+              <span style="text-decoration:line-through; color:var(--text-muted); font-size:0.8rem; margin-right:0.4rem;">₦{{ product.data.original_price | numberFormat }}</span>
+              {% endif %}
+              <span class="price">₦{{ product.data.price | numberFormat }}</span>
+            </span>
+            <button class="add-btn" onclick="event.stopPropagation(); addToCart('{{ product.fileSlug }}', '{{ product.data.name }}', {{ product.data.price }}, '{{ product.data.image }}')">+</button>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {%- endfor %}
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="/shop/" class="btn btn-outline">View Full Collection</a>
+    </div>
+  </div>
+</section>
