@@ -1,6 +1,9 @@
 ---
 name: Elle Monogram Boston Bag
-price: 28000
+date: 2026-09-29T13:39:00.000+01:00
+price: 22000
+on_sale: true
+original_price: 28000
 category: bags
 image: /images/products/img_5963.jpeg
 image2: /images/products/img_5964.jpeg
@@ -19,5 +22,5 @@ description: >-
   Allover monogram canvas Boston bag finished with vivid pink leather trim and detachable crossbody strap. Fun color pop on a classic silhouette.
 available: true
 featured: false
-badge: new
+badge: sale
 ---
