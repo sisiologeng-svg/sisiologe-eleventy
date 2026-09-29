@@ -49,7 +49,7 @@ collections:
       - {label: "Promo Code", name: "promo", widget: "string", required: false}
       - {label: "Date", name: "date", widget: "datetime"}
 
-  - name: "reviews"
+   - name: "reviews"
     label: "⭐ Reviews"
     folder: "src/reviews"
     create: true
@@ -58,6 +58,17 @@ collections:
       - {label: "Reviewer Name", name: "reviewer", widget: "string"}
       - {label: "Screenshot", name: "image", widget: "image"}
       - {label: "Active", name: "active", widget: "boolean", default: true}
+
+  - name: "pending_reviews"
+    label: "🕐 Pending Reviews"
+    folder: "src/reviews-pending"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {label: "Reviewer Name", name: "reviewer", widget: "string"}
+      - {label: "Rating", name: "rating", widget: "number"}
+      - {label: "Comment", name: "comment", widget: "text"}
+      - {label: "Date Submitted", name: "date", widget: "datetime"}
 
   - name: "promos"
     label: "🏷️ Promo Codes"

@@ -1,0 +1,80 @@
+---
+layout: base.html
+title: Leave a Review
+---
+
+<section style="padding:4rem 1.5rem; min-height:70vh; display:flex; align-items:center; justify-content:center; background:var(--bg);">
+  <div style="max-width:500px; width:100%;">
+    <div style="text-align:center; margin-bottom:2.5rem;">
+      <span class="eyebrow" style="display:block; margin-bottom:0.8rem;">✦ We'd Love To Hear From You</span>
+      <h1 style="font-style:italic;">Leave A Review</h1>
+      <p style="margin-top:1rem;">Tell other Sisís about your experience</p>
+    </div>
+
+    <form id="reviewForm">
+      <div class="form-group">
+        <label>Your Name *</label>
+        <input type="text" id="reviewerName" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Rating *</label>
+        <select id="reviewRating" required>
+          <option value="5">★★★★★ Excellent</option>
+          <option value="4">★★★★ Good</option>
+          <option value="3">★★★ Okay</option>
+          <option value="2">★★ Not Great</option>
+          <option value="1">★ Poor</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Your Review *</label>
+        <textarea id="reviewComment" rows="5" placeholder="Share your experience..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%; padding:1.2rem;" id="submitReviewBtn">
+        Submit Review
+      </button>
+
+      <p id="reviewMessage" style="text-align:center; margin-top:1rem; font-size:0.9rem;"></p>
+    </form>
+  </div>
+</section>
+
+<script>
+document.getElementById('reviewForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitReviewBtn');
+  const msg = document.getElementById('reviewMessage');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  const payload = {
+    reviewer: document.getElementById('reviewerName').value,
+    rating: document.getElementById('reviewRating').value,
+    comment: document.getElementById('reviewComment').value
+  };
+
+  try {
+    const res = await fetch('/.netlify/functions/submit-review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (res.ok) {
+      msg.textContent = '✓ Thank you! Your review has been submitted.';
+      msg.style.color = 'var(--olive)';
+      document.getElementById('reviewForm').reset();
+    } else {
+      throw new Error('Failed');
+    }
+  } catch (err) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.color = '#8B2020';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Submit Review';
+});
+</script>
