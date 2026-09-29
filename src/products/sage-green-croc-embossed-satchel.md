@@ -1,6 +1,7 @@
 ---
 name: Sage green croc-embossed satchel
-price: 27000
+price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_1106.jpeg
 image2: /images/products/img_1110.jpeg
