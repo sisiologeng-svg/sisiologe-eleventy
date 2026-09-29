@@ -1,6 +1,8 @@
 ---
 name: Mini Buckle Denim Bag
-price: 17000
+price: 10000
+on_sale: true
+original_price: 17000
 category: bags
 image: /images/products/img_3384.jpeg
 description: >-
@@ -15,5 +17,5 @@ description: >-
   Compact black denim shoulder bag with an oversized silver buckle and chunky chain strap. Y2K mini-bag energy, made for going out.
 available: true
 featured: false
-badge: new
+badge: sale
 ---
