@@ -14,7 +14,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Product Name", name: "name", widget: "string"}
-      - {label: "Date Added", name: "date", widget: "datetime", default: ""}
+      - {label: "Date Added", name: "date", widget: "datetime", required: false, default: ""}
       - {label: "Price (₦)", name: "price", widget: "number"}
       - {label: "Discounted? (optional)", name: "on_sale", widget: "boolean", default: false}
       - {label: "Original Price (only if on sale)", name: "original_price", widget: "number", required: false}
