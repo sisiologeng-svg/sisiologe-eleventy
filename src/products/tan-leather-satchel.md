@@ -1,6 +1,7 @@
 ---
 name: "Tan leather satchel "
-price: 30000
+price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_8860.jpeg
 image2: /images/products/img_8864.jpeg
