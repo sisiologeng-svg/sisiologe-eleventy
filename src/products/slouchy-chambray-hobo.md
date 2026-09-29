@@ -1,6 +1,8 @@
 ---
 name: Slouchy Chambray Hobo
-price: 18000
+price: 10000
+on_sale: true
+original_price: 18000
 category: bags
 image: /images/products/img_6032.jpeg
 image2: /images/products/img_6031.jpeg
@@ -19,5 +21,5 @@ description: >-
   Soft grey-blue denim hobo with warm brown leather handles and a branded hardware disc. Easy, everyday shape.
 available: true
 featured: false
-badge: new
+badge: sale
 ---
