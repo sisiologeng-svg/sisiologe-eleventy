@@ -1,6 +1,8 @@
 ---
 name: Herringbone Wood-Handle Tote
-price: 18000
+price: 10000
+on_sale: true
+original_price: 17996
 category: bags
 image: /images/products/img_3137.jpeg
 image2: /images/products/img_3121.jpeg
@@ -16,5 +18,5 @@ description: >-
   Dusty blue herringbone tote with a warm wood handle and an embossed “Secret to our best wishes” panel. Understated and a little poetic.
 available: true
 featured: false
-badge: new
+badge: sale
 ---
