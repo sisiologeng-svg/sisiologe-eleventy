@@ -1,6 +1,8 @@
 ---
 name: Taupe Faux Fur Satchel
-price: 20000
+price: 15000
+on_sale: true
+original_price: 20000
 category: bags
 image: /images/products/img_0795.jpeg
 image2: /images/products/img_0799.jpeg
