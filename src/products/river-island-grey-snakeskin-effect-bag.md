@@ -1,6 +1,7 @@
 ---
 name: River Island Grey Snakeskin-Effect Bag
 price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_1654.jpeg
 image2: /images/products/img_1657.jpeg
@@ -13,7 +14,7 @@ description: >-
   Sage grey snake-effect leather bag with gold hardware, dual handles, and a crossbody strap option. "Special edition" branded hangtag with a structured, boxy silhouette. A textured neutral that elevates any outfit.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: true
 badge: new
 ---
