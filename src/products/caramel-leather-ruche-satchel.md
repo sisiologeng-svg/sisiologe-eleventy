@@ -1,6 +1,5 @@
 ---
 name: Caramel Leather Ruche Satchel
-date: 2026-09-27T20:29:00.000+01:00
 price: 18000
 on_sale: true
 original_price: 24000

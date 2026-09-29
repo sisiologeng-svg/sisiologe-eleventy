@@ -1,6 +1,5 @@
 ---
 name: "JorYa Weekend Woven Raffia Tote "
-date: 2026-09-29T13:45:00.000+01:00
 price: 18000
 on_sale: true
 original_price: 25000

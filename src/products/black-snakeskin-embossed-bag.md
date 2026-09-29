@@ -1,6 +1,5 @@
 ---
 name: Black snakeskin-embossed bag
-date: 2026-09-29T13:22:00.000+01:00
 price: 18000
 on_sale: true
 original_price: 23000

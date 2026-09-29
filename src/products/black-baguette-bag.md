@@ -1,6 +1,5 @@
 ---
 name: Black Baguette Bag
-date: 2026-09-29T13:22:00.000+01:00
 price: 15000
 on_sale: true
 original_price: 20000

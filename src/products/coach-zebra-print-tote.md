@@ -1,6 +1,5 @@
 ---
 name: Coach Zebra Print Tote
-date: 2026-09-29T13:34:00.000+01:00
 price: 23000
 on_sale: true
 original_price: 28000

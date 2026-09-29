@@ -1,6 +1,5 @@
 ---
 name: "Cognac leather satchel "
-date: 2026-09-27T20:53:00.000+01:00
 price: 25000
 on_sale: true
 original_price: 30000

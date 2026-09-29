@@ -1,6 +1,5 @@
 ---
 name: "Blush Woven Buckle Satchel "
-date: 2026-09-27T20:27:00.000+01:00
 price: 13000
 on_sale: true
 original_price: 18000

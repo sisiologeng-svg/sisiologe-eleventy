@@ -1,6 +1,5 @@
 ---
 name: IciNoo Python-Trim Bowler
-date: 2026-09-29T13:45:00.000+01:00
 price: 25000
 on_sale: false
 category: bags

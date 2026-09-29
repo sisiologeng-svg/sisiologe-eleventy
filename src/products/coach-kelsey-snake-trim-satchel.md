@@ -1,6 +1,5 @@
 ---
 name: Coach Kelsey Snake-Trim Satchel
-date: 2026-09-27T20:51:00.000+01:00
 price: 24000
 on_sale: true
 original_price: 30000

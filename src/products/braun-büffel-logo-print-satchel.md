@@ -1,6 +1,5 @@
 ---
 name: Braun Büffel Logo Print Satchel
-date: 2026-09-29T13:23:00.000+01:00
 price: 20000
 on_sale: true
 original_price: 24999

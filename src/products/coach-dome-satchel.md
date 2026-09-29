@@ -1,6 +1,5 @@
 ---
 name: Coach Dome Satchel
-date: 2026-09-27T20:47:00.000+01:00
 price: 17000
 on_sale: true
 original_price: 23000

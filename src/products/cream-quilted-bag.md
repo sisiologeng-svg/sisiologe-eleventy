@@ -1,6 +1,5 @@
 ---
 name: Cream Quilted Bag
-date: 2026-09-29T13:37:00.000+01:00
 price: 20000
 on_sale: true
 original_price: 24997

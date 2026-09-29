@@ -1,6 +1,5 @@
 ---
 name: Classic Brown Leather Satchel
-date: 2026-09-27T20:43:00.000+01:00
 price: 15000
 on_sale: true
 original_price: 20000

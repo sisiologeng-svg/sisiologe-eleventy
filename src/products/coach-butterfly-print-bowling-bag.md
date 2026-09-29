@@ -1,6 +1,5 @@
 ---
 name: Coach Butterfly Print Bowling Bag
-date: 2026-09-27T20:42:00.000+01:00
 price: 20000
 on_sale: true
 original_price: 15000

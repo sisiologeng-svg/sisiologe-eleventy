@@ -1,6 +1,5 @@
 ---
 name: Burgundy Croc-Effect Bag
-date: 2026-09-29T13:29:00.000+01:00
 price: 16000
 on_sale: true
 original_price: 20000

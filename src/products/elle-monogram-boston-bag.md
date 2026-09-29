@@ -1,6 +1,5 @@
 ---
 name: Elle Monogram Boston Bag
-date: 2026-09-29T13:39:00.000+01:00
 price: 22000
 on_sale: true
 original_price: 28000

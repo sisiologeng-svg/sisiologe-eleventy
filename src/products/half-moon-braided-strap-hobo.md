@@ -1,6 +1,5 @@
 ---
 name: Half-Moon Braided Strap Hobo
-date: 2026-09-29T13:44:00.000+01:00
 price: 12000
 on_sale: true
 original_price: 17997
