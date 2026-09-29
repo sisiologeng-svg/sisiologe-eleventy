@@ -1,6 +1,7 @@
 ---
 name: Sansibar Grey Shoulder Bag
-price: 25000
+price: 20000
+on_sale: false
 category: bags
 image: /images/products/img_1040.jpeg
 image2: /images/products/img_1044.jpeg
