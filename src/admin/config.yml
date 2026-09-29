@@ -49,7 +49,7 @@ collections:
       - {label: "Promo Code", name: "promo", widget: "string", required: false}
       - {label: "Date", name: "date", widget: "datetime"}
 
-   - name: "reviews"
+  - name: "reviews"
     label: "⭐ Reviews"
     folder: "src/reviews"
     create: true
