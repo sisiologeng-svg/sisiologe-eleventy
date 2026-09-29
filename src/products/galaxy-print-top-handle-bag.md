@@ -1,6 +1,9 @@
 ---
 name: Galaxy Print Top-Handle Bag
-price: 18000
+date: 2026-09-29T13:41:00.000+01:00
+price: 13000
+on_sale: true
+original_price: 18000
 category: bags
 image: /images/products/img_7593.jpeg
 image2: /images/products/img_7592.jpeg
@@ -10,5 +13,5 @@ description: |-
   Restock not guaranteed — once it’s gone, it’s gone.
 available: true
 featured: false
-badge: new
+badge: sale
 ---
