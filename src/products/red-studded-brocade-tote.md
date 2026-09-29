@@ -1,6 +1,8 @@
 ---
 name: Red Studded Brocade Tote
-price: 25000
+price: 20000
+on_sale: true
+original_price: 25000
 category: bags
 image: /images/products/img_8641.jpeg
 image2: /images/products/img_8643.jpeg
@@ -12,5 +14,5 @@ description: >-
   	•	Rich jewel-tone with a vintage baroque feel — a standout statement piece for fall/winter styling
 available: true
 featured: false
-badge: new
+badge: sale
 ---
