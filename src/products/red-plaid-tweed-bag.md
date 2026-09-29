@@ -1,6 +1,7 @@
 ---
 name: Red Plaid Tweed Bag
-price: 25000
+price: 20000
+on_sale: false
 category: bags
 image: /images/products/img_1662.jpeg
 image2: /images/products/img_1678.jpeg
