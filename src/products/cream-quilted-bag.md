@@ -1,6 +1,9 @@
 ---
 name: Cream Quilted Bag
-price: 25000
+date: 2026-09-29T13:37:00.000+01:00
+price: 20000
+on_sale: true
+original_price: 24997
 category: bags
 image: /images/products/img_1415.jpeg
 image2: /images/products/img_1421.jpeg
@@ -14,5 +17,5 @@ description: >-
   Cream quilted bag with braided handles and gold chain strap detailing running down the front. Elegant and polished with a soft structured shape. A beautiful neutral for dressing up any outfit.
 available: true
 featured: false
-badge: new
+badge: sale
 ---
