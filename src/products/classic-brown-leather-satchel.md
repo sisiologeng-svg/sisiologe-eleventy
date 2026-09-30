@@ -17,7 +17,7 @@ description: >-
   Classic brown leather satchel with dual top handles and a front buckle strap pocket. Timeless and easy to style.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: sale
 ---
