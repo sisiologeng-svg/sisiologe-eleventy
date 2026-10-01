@@ -10,7 +10,7 @@ description: |-
   Size: Medium 
   Cosmic galaxy-print canvas bag with mint green leather handles and trim.
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: sale
 ---
