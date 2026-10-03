@@ -18,7 +18,7 @@ description: >-
   Restock not guaranteed once it’s gone, it’s gone.
 
   Woven raffia tote with rich brown leather trim and a cute detachable coin pouch charm. Summer-ready and texturally rich.
-available: true
+available: false
 featured: false
 badge: sale
 ---
