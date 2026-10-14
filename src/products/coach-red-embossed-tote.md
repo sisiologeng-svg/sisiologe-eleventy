@@ -1,7 +1,7 @@
 ---
 name: Coach Red Embossed Tote
 price: 18000
-on_sale: true
+on_sale: false
 original_price: 22997
 category: bags
 image: /images/products/img_9582.jpeg
@@ -16,7 +16,7 @@ description: >-
   Red embossed patent leather tote with the signature Coach monogram pattern and silver hardware. Side pockets and a clean silhouette make this both stylish and functional. A bold colour choice for anyone who loves to stand out.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: sale
 ---
