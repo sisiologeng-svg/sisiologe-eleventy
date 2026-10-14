@@ -17,7 +17,7 @@ description: >-
   Sage green croc-embossed satchel with a front turn-lock closure, dual front pockets, and an adjustable crossbody strap. Fresh, unique colourway that stands out from the usual neutrals. Comes with plenty of storage for everyday use.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
