@@ -2,7 +2,7 @@
 name: Coach Red Embossed Tote
 price: 18000
 on_sale: false
-original_price: 22997
+original_price: 23000
 category: bags
 image: /images/products/img_9582.jpeg
 image2: /images/products/img_9586.jpeg
