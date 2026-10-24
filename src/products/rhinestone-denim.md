@@ -1,6 +1,7 @@
 ---
 name: Rhinestone Denim
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_7106.jpeg
 image2: /images/products/img_7108.jpeg

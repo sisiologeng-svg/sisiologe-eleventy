@@ -1,6 +1,8 @@
 ---
 name: Chain-Accent Leather Hobo
-price: 18000
+price: 10800
+on_sale: true
+original_price: 18000
 category: bags
 image: /images/products/img_5373.jpeg
 image2: /images/products/img_5372.jpeg

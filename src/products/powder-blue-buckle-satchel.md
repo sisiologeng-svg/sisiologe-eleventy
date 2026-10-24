@@ -1,6 +1,7 @@
 ---
 name: Powder Blue Buckle Satchel
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_5341.jpeg
 image2: /images/products/img_5340.jpeg

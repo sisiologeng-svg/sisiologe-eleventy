@@ -1,6 +1,7 @@
 ---
 name: Coach Plaid Tote
 price: 28000
+on_sale: false
 category: bags
 image: /images/products/img_6337.jpeg
 image2: /images/products/img_6339.jpeg

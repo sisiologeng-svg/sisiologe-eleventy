@@ -1,6 +1,7 @@
 ---
 name: Coach Signature Tote (Coral Trim)
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_6393.jpeg
 image2: /images/products/img_6398.jpeg

@@ -1,6 +1,7 @@
 ---
 name: Pony Hair Bowler
 price: 28000
+on_sale: false
 category: bags
 image: /images/products/img_6498.jpeg
 image2: /images/products/img_6500.jpeg

@@ -1,6 +1,7 @@
 ---
 name: Patent Croc Boston Bag
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_5438.jpeg
 image2: /images/products/img_5441.jpeg

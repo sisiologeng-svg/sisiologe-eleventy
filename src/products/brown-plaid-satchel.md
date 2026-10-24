@@ -1,7 +1,8 @@
 ---
 name: Brown Plaid Satchel
-price: 25000
-on_sale: false
+price: 15000
+on_sale: true
+original_price: 25000
 category: bags
 image: /images/products/img_1306.jpeg
 image2: /images/products/img_1308.jpeg

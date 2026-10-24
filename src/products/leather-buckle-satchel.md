@@ -1,6 +1,7 @@
 ---
 name: Leather Buckle Satchel
 price: 27000
+on_sale: false
 category: bags
 image: /images/products/img_8269.jpeg
 image2: /images/products/img_8272.jpeg

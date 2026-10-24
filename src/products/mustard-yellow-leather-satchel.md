@@ -1,6 +1,7 @@
 ---
 name: Mustard Yellow Leather Satchel
 price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_8079.jpeg
 image2: /images/products/img_8082.jpeg

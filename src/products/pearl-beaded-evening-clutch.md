@@ -1,6 +1,7 @@
 ---
 name: Pearl Beaded Evening Clutch
 price: 18000
+on_sale: false
 category: bags
 image: /images/products/img_3939.jpg
 image2: /images/products/img_3938.jpg

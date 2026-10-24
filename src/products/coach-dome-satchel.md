@@ -1,7 +1,8 @@
 ---
 name: Coach Dome Satchel
-price: 23000
-on_sale: false
+price: 13800
+on_sale: true
+original_price: 23000
 category: bags
 image: /images/products/img_9612.jpeg
 image2: /images/products/img_9614.jpeg

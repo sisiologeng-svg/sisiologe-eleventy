@@ -1,6 +1,7 @@
 ---
 name: Pink Leather Drawstring Bag
 price: 18000
+on_sale: false
 category: bags
 image: /images/products/img_8284.jpeg
 image2: /images/products/img_8290.jpeg

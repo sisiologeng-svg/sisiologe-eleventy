@@ -1,6 +1,7 @@
 ---
 name: Marc Jacobs Grey Tote
 price: 50000
+on_sale: false
 category: bags
 image: /images/products/img_1560.jpeg
 image2: /images/products/img_1581.jpeg

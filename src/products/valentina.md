@@ -1,6 +1,7 @@
 ---
 name: "Valentina "
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_7271.jpeg
 image2: /images/products/img_7270.jpeg

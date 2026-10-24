@@ -1,6 +1,7 @@
 ---
 name: Boho Fringe Patchwork Bag
 price: 15000
+on_sale: false
 category: bags
 image: /images/products/img_3886.jpg
 image2: /images/products/img_3884.jpg

@@ -1,6 +1,8 @@
 ---
 name: "Tan Suede Fringe Satchel "
-price: 30000
+price: 18000
+on_sale: true
+original_price: 30000
 category: bags
 image: /images/products/img_7585.jpeg
 image2: /images/products/img_7590.jpeg

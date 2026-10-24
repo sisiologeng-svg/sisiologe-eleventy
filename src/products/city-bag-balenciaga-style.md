@@ -1,6 +1,7 @@
 ---
 name: "City bag (balenciaga- style) "
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_8330.jpeg
 image2: /images/products/img_8331.jpeg

@@ -1,6 +1,8 @@
 ---
 name: Denim Camo Tote
-price: 25000
+price: 15000
+on_sale: true
+original_price: 25000
 category: bags
 image: /images/products/img_0838.jpeg
 image2: /images/products/img_0841.jpeg

@@ -1,7 +1,8 @@
 ---
 name: Half-Moon Braided Strap Hobo
-price: 18000
-on_sale: false
+price: 10800
+on_sale: true
+original_price: 18000
 category: bags
 image: /images/products/img_5386.jpeg
 image2: /images/products/img_5385.jpeg

@@ -1,6 +1,8 @@
 ---
 name: Coach Tassel Tote
-price: 35000
+price: 21000
+on_sale: true
+original_price: 35000
 category: bags
 image: /images/products/img_1340.jpeg
 image2: /images/products/img_1350.jpeg

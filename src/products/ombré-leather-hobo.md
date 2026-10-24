@@ -1,6 +1,7 @@
 ---
 name: Ombré Leather Hobo
 price: 28000
+on_sale: false
 category: bags
 image: /images/products/img_6455.jpeg
 image2: /images/products/img_6461.jpeg

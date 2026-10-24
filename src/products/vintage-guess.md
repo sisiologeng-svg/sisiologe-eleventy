@@ -1,6 +1,7 @@
 ---
 name: "Vintage guess "
 price: 28000
+on_sale: false
 category: bags
 image: /images/products/img_8260.jpeg
 image2: /images/products/img_8261.jpeg

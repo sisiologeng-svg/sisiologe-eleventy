@@ -1,6 +1,7 @@
 ---
 name: Zebra Print Heart Patch Bag
 price: 20000
+on_sale: false
 category: bags
 image: /images/products/img_7457.jpeg
 image2: /images/products/img_7461.jpeg

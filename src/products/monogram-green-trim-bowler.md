@@ -1,6 +1,7 @@
 ---
 name: Monogram Green Trim Bowler
 price: 24000
+on_sale: false
 category: bags
 image: /images/products/img_7478.jpeg
 image2: /images/products/img_7480.jpeg

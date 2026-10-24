@@ -1,6 +1,7 @@
 ---
 name: Beverly Monogram Bowler Bag
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_4839.jpeg
 description: |-

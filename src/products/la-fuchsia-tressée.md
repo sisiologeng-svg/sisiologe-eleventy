@@ -1,6 +1,8 @@
 ---
 name: La Fuchsia Tressée
-price: 30000
+price: 18000
+on_sale: true
+original_price: 30000
 category: bags
 image: /images/products/img_9056.jpeg
 image2: /images/products/img_9058.jpeg

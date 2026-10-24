@@ -1,6 +1,7 @@
 ---
 name: Croc-Embossed Gold Hardware Tote
 price: 28000
+on_sale: false
 category: bags
 image: /images/products/img_1910.jpeg
 image2: /images/products/img_1908.jpeg

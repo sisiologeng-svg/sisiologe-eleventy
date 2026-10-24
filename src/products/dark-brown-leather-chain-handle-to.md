@@ -1,6 +1,7 @@
 ---
 name: Dark Brown Leather Chain-Handle To
 price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_8139.jpeg
 image2: /images/products/img_8144.jpeg

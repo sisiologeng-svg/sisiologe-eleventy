@@ -1,6 +1,8 @@
 ---
 name: Guess Pastel Croc Bowling Bag
-price: 18000
+price: 10800
+on_sale: true
+original_price: 18000
 category: bags
 image: /images/products/img_3548.jpg
 image2: /images/products/img_3549.jpg

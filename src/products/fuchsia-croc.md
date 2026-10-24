@@ -1,6 +1,7 @@
 ---
 name: Fuchsia Croc
 price: 24000
+on_sale: false
 category: bags
 image: /images/products/img_7088.jpeg
 image2: /images/products/img_7090.jpeg

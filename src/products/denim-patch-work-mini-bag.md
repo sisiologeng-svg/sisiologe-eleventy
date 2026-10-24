@@ -1,6 +1,7 @@
 ---
 name: "Denim patch work mini bag "
 price: 20000
+on_sale: false
 category: bags
 image: /images/products/img_5988.jpeg
 image2: /images/products/img_5985.jpeg

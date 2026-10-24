@@ -1,6 +1,7 @@
 ---
 name: Coach Turnlock Flap Crossbody
 price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_6601.jpeg
 image2: /images/products/img_6615.jpeg

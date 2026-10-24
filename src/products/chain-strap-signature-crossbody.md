@@ -1,6 +1,7 @@
 ---
 name: Chain-Strap Signature Crossbody
 price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_7925.jpeg
 image2: /images/products/img_7923.jpeg

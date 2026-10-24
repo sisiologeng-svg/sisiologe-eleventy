@@ -1,6 +1,7 @@
 ---
 name: Structured Top-Handle Tote
 price: 20000
+on_sale: false
 category: bags
 image: /images/products/img_5270.jpeg
 image2: /images/products/img_5269.jpeg

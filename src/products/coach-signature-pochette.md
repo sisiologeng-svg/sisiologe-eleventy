@@ -1,6 +1,7 @@
 ---
 name: Coach Signature Pochette
 price: 22000
+on_sale: false
 category: bags
 image: /images/products/img_6348.jpeg
 image2: /images/products/img_6351.jpeg

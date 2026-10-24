@@ -1,6 +1,8 @@
 ---
 name: Tasseled Belted Hobo
-price: 28000
+price: 16800
+on_sale: true
+original_price: 28000
 category: bags
 image: /images/products/img_5161.jpeg
 image2: /images/products/img_5162.jpeg

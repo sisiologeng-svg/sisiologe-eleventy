@@ -1,6 +1,8 @@
 ---
 name: Dooney & Bourke Croc Tote
-price: 35000
+price: 21000
+on_sale: true
+original_price: 35000
 category: bags
 image: /images/products/img_9354.jpeg
 image2: /images/products/img_9358.jpeg

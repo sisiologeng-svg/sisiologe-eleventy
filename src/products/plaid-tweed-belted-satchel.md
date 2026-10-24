@@ -1,6 +1,7 @@
 ---
 name: Plaid Tweed Belted Satchel
 price: 35000
+on_sale: false
 category: bags
 image: /images/products/img_8312.jpeg
 image2: /images/products/img_8314.jpeg

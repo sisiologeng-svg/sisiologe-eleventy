@@ -1,6 +1,7 @@
 ---
 name: Coach New York Leather Satchel
 price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_6375.jpeg
 image2: /images/products/img_6380.jpeg

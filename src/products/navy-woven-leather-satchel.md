@@ -1,6 +1,7 @@
 ---
 name: Navy Woven Leather Satchel
 price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_8108.jpeg
 image2: /images/products/img_8114.jpeg

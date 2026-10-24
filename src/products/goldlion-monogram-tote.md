@@ -1,6 +1,7 @@
 ---
 name: Goldlion Monogram Tote
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_9380.jpeg
 image2: /images/products/img_9382.jpeg

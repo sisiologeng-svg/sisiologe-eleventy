@@ -1,6 +1,7 @@
 ---
 name: Rust Buckle Satchel
 price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_8074.jpeg
 image2: /images/products/img_8075.jpeg

@@ -1,6 +1,7 @@
 ---
 name: Embellished Crystal Denim  (balenciaga style)
 price: 28000
+on_sale: false
 category: bags
 image: /images/products/img_5966.jpeg
 image2: /images/products/img_5968.jpeg

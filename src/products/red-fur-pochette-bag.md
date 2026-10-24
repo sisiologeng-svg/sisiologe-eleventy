@@ -1,6 +1,7 @@
 ---
 name: Red Fur Pochette Bag
 price: 23000
+on_sale: false
 category: bags
 image: /images/products/img_8619.jpeg
 image2: /images/products/img_8621.jpeg

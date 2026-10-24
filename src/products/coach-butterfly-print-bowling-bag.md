@@ -1,7 +1,8 @@
 ---
 name: Coach Butterfly Print Bowling Bag
-price: 15000
-on_sale: false
+price: 9000
+on_sale: true
+original_price: 15000
 category: bags
 image: /images/products/img_3912.jpg
 image2: /images/products/img_3908.jpg

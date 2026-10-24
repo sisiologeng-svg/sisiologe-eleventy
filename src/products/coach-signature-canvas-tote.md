@@ -1,6 +1,7 @@
 ---
 name: Coach Signature Canvas Tote
 price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_8660.jpeg
 image2: /images/products/img_8665.jpeg

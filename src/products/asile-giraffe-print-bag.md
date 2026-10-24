@@ -1,8 +1,9 @@
 ---
 name: Asile Giraffe Print Bag
 date: 2026-10-23T16:17:00.000+01:00
-price: 30000
-on_sale: false
+price: 18000
+on_sale: true
+original_price: 30000
 category: bags
 image: /images/products/img_3644.jpeg
 image2: /images/products/img_3647.jpeg

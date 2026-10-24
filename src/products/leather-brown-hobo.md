@@ -2,7 +2,6 @@
 name: "Leather Brown Hobo "
 price: 25000
 on_sale: false
-original_price: ""
 category: bags
 image: /images/products/img_0802.jpeg
 image2: /images/products/img_0806.jpeg

@@ -1,6 +1,7 @@
 ---
 name: Bronze Metallic Croc-Embossed Bag
 price: 15000
+on_sale: false
 category: bags
 image: /images/products/img_8599.jpeg
 image2: /images/products/img_8603.jpeg

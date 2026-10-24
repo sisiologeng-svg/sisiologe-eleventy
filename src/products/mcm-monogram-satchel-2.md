@@ -1,6 +1,7 @@
 ---
 name: MCM Monogram Satchel
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_6439.jpeg
 image2: /images/products/img_6436.jpeg

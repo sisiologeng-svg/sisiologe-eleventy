@@ -1,8 +1,9 @@
 ---
 name: Louis Vuitton Camo Cargo Bag
 date: 2026-10-23T15:12:00.000+01:00
-price: 40000
-on_sale: false
+price: 24000
+on_sale: true
+original_price: 40000
 category: bags
 image: /images/products/img_2535.jpeg
 image2: /images/products/img_2541.jpeg

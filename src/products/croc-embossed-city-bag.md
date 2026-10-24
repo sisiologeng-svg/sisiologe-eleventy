@@ -1,6 +1,7 @@
 ---
 name: "Croc-Embossed City Bag "
 price: 27000
+on_sale: false
 category: bags
 image: /images/products/img_8631.jpeg
 image2: /images/products/img_8635.jpeg

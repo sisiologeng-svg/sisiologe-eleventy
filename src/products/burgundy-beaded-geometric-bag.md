@@ -1,8 +1,9 @@
 ---
 name: Burgundy Beaded Geometric Bag
 date: 2026-10-23T16:05:00.000+01:00
-price: 30000
-on_sale: false
+price: 18000
+on_sale: true
+original_price: 30000
 category: bags
 image: /images/products/img_3535.jpeg
 image2: /images/products/img_3539.jpeg

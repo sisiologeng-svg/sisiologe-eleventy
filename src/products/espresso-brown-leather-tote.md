@@ -1,6 +1,7 @@
 ---
 name: Espresso Brown Leather Tote
 price: 27000
+on_sale: false
 category: bags
 image: /images/products/img_8614.jpeg
 image2: /images/products/img_8617.jpeg

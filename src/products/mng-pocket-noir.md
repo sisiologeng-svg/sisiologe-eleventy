@@ -1,6 +1,7 @@
 ---
 name: MNG Pocket Noir
 price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_7144.jpeg
 image2: /images/products/img_7148.jpeg
