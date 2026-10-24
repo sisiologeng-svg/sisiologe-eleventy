@@ -1,8 +1,7 @@
 ---
 name: Purple Petal Hobo
-price: 10000
-on_sale: true
-original_price: 15000
+price: 15000
+on_sale: false
 category: bags
 image: /images/products/img_5516.jpeg
 image2: /images/products/img_5519.jpeg

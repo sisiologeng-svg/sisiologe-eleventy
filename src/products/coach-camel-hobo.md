@@ -1,6 +1,6 @@
 ---
 name: Coach Camel Hobo
-price: 24998
+price: 25000
 on_sale: false
 category: bags
 image: /images/products/img_1353.jpeg
