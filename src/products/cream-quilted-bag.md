@@ -2,7 +2,7 @@
 name: Cream Quilted Bag
 price: 20000
 on_sale: true
-original_price: 24997
+original_price: 25000
 category: bags
 image: /images/products/img_1415.jpeg
 image2: /images/products/img_1421.jpeg
