@@ -1,8 +1,7 @@
 ---
 name: White faux fur shoulder bag
-price: 14000
-on_sale: true
-original_price: 16995
+price: 16995
+on_sale: false
 category: bags
 image: /images/products/img_9051.jpeg
 image2: /images/products/img_9053.jpeg

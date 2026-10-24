@@ -11,9 +11,10 @@ title: Reviews
     <h1 style="color:var(--floral-white); font-family:'Cormorant Garamond',serif; font-style:italic; margin-bottom:1rem;">
       What Our Sisís Say
     </h1>
-    <p style="color:rgba(255,251,244,0.65); max-width:450px; margin:0 auto;">
+    <p style="color:rgba(255,251,244,0.65); max-width:450px; margin:0 auto 1.5rem;">
       Don't just take our word for it — see what the sisí family has to say 🩵
     </p>
+    <a href="/leave-review/" class="btn btn-primary">Leave A Review</a>
   </div>
 </section>
 
@@ -39,12 +40,13 @@ title: Reviews
 <section class="section-padding" style="background:var(--bg);">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">✦ Instagram Reviews</span>
+      <span class="eyebrow">✦ From Our Sisís</span>
       <h2>Verified Purchases</h2>
     </div>
     <div class="reviews-page-grid">
       {%- for review in collections.reviews | reverse %}
       {% if review.data.active %}
+      {% if review.data.image %}
       <div class="review-page-card" onclick="openLightbox('{{ review.data.image }}')">
         <img src="{{ review.data.image }}" alt="Review"
           onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80'">
@@ -53,6 +55,21 @@ title: Reviews
           <p class="reviewer-name">{{ review.data.reviewer }}</p>
         </div>
       </div>
+      {% else %}
+      <div class="review-page-card" style="cursor:default; display:flex; flex-direction:column;">
+        <div style="padding:2rem 1.5rem; flex:1; display:flex; align-items:center; background:var(--bg-secondary);">
+          <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.2rem; color:var(--text-primary); line-height:1.6; margin:0;">
+            "{{ review.data.comment }}"
+          </p>
+        </div>
+        <div class="review-page-card-info">
+          <div class="stars">
+            {% for i in (1..5) %}{% if i <= review.data.rating %}★{% else %}☆{% endif %}{% endfor %}
+          </div>
+          <p class="reviewer-name">{{ review.data.reviewer }}</p>
+        </div>
+      </div>
+      {% endif %}
       {% endif %}
       {%- endfor %}
     </div>
@@ -66,14 +83,17 @@ title: Reviews
     </span>
     <h2 style="color:var(--floral-white); margin-bottom:1rem;">Already Shopped With Us?</h2>
     <p style="color:rgba(255,251,244,0.7); max-width:450px; margin:0 auto 2rem;">
-      Tag us on Instagram <strong style="color:var(--floral-white);">@sisiologe.ng</strong> with your purchase and we'll feature you here! 🩵
+      Leave a review below, or tag us on Instagram <strong style="color:var(--floral-white);">@sisiologe.ng</strong> with your purchase and we'll feature you here! 🩵
     </p>
-    <a href="https://instagram.com/sisiologe.ng" target="_blank"
-      class="btn btn-outline"
-      style="border-color:rgba(255,251,244,0.4); color:var(--floral-white);">
-      <i class="fab fa-instagram" style="margin-right:0.5rem;"></i>
-      Tag Us on Instagram
-    </a>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="/leave-review/" class="btn btn-primary">Leave A Review</a>
+      <a href="https://instagram.com/sisiologe.ng" target="_blank"
+        class="btn btn-outline"
+        style="border-color:rgba(255,251,244,0.4); color:var(--floral-white);">
+        <i class="fab fa-instagram" style="margin-right:0.5rem;"></i>
+        Tag Us on Instagram
+      </a>
+    </div>
   </div>
 </section>
 

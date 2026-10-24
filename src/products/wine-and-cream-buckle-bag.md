@@ -1,8 +1,7 @@
 ---
 name: Wine and Cream Buckle Bag
-price: 25000
-on_sale: true
-original_price: 29997
+price: 29997
+on_sale: false
 category: bags
 image: /images/products/img_9639.jpeg
 image2: /images/products/img_9645.jpeg

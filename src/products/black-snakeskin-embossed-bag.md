@@ -1,8 +1,7 @@
 ---
 name: Black snakeskin-embossed bag
-price: 18000
-on_sale: true
-original_price: 23000
+price: 23000
+on_sale: false
 category: bags
 image: /images/products/img_1049.jpeg
 image2: /images/products/img_1054.jpeg

@@ -1,8 +1,7 @@
 ---
 name: Classic Brown Leather Satchel
-price: 15000
-on_sale: true
-original_price: 20000
+price: 20000
+on_sale: false
 category: bags
 image: /images/products/img_7899.jpeg
 image2: /images/products/img_7902.jpeg

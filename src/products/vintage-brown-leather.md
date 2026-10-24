@@ -1,8 +1,7 @@
 ---
 name: Vintage brown leather
-price: 18000
-on_sale: true
-original_price: 25000
+price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_7306.jpeg
 image2: /images/products/img_7309.jpeg

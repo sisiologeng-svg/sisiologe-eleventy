@@ -1,8 +1,7 @@
 ---
 name: Coach “Est. 1941” Storypatch Tote
-price: 25000
-on_sale: true
-original_price: 29999
+price: 29999
+on_sale: false
 category: bags
 image: /images/products/img_8625.jpeg
 image2: /images/products/img_8630.jpeg

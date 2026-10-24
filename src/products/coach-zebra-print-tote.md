@@ -1,8 +1,7 @@
 ---
 name: Coach Zebra Print Tote
-price: 23000
-on_sale: true
-original_price: 28000
+price: 28000
+on_sale: false
 category: bags
 image: /images/products/img_3991.jpg
 image2: /images/products/img_3989.jpg

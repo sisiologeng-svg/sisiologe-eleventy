@@ -1,8 +1,7 @@
 ---
 name: Coach Kelsey Snake-Trim Satchel
-price: 24000
-on_sale: true
-original_price: 30000
+price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_8650.jpeg
 image2: /images/products/img_8655.jpeg

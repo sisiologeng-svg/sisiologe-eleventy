@@ -56,7 +56,9 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Reviewer Name", name: "reviewer", widget: "string"}
-      - {label: "Screenshot", name: "image", widget: "image"}
+      - {label: "Screenshot (optional)", name: "image", widget: "image", required: false}
+      - {label: "Written Review (optional, if no screenshot)", name: "comment", widget: "text", required: false}
+      - {label: "Rating (only for written reviews)", name: "rating", widget: "number", required: false}
       - {label: "Active", name: "active", widget: "boolean", default: true}
 
   - name: "pending_reviews"

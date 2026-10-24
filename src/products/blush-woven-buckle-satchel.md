@@ -1,8 +1,7 @@
 ---
 name: "Blush Woven Buckle Satchel "
-price: 13000
-on_sale: true
-original_price: 18000
+price: 18000
+on_sale: false
 category: bags
 image: /images/products/img_7600.jpeg
 image2: /images/products/img_7603.jpeg

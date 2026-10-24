@@ -1,8 +1,7 @@
 ---
 name: Coach dark navy blue Leather Tote
-price: 25000
-on_sale: true
-original_price: 29997
+price: 29997
+on_sale: false
 category: bags
 image: /images/products/img_1005.jpeg
 image2: /images/products/img_1012.jpeg
