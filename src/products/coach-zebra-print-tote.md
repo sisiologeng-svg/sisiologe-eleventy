@@ -21,7 +21,7 @@ description: >-
   condition: preloved
 
   Bold red zebra print canvas with tan leather trim and double straps. Statement tote that does the outfit talking for you.
-available: true
+available: false
 featured: false
 badge: sale
 ---

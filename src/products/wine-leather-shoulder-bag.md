@@ -1,7 +1,8 @@
 ---
 name: "Wine Leather Shoulder Bag "
-price: 19997
-on_sale: false
+price: 15000
+on_sale: true
+original_price: 20000
 category: bags
 image: /images/products/img_9279.jpeg
 image2: /images/products/img_9283.jpeg

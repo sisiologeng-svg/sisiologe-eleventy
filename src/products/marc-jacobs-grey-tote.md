@@ -19,7 +19,7 @@ description: >-
   Grey canvas tote with the iconic "The Tote Bag" print in white lettering. Simple, sturdy, and instantly recognizable. A viral piece that's as functional as it is stylish.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---

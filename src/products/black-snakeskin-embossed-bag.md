@@ -1,7 +1,8 @@
 ---
 name: Black snakeskin-embossed bag
-price: 23000
+price: 18000
 on_sale: false
+original_price: 23000
 category: bags
 image: /images/products/img_1049.jpeg
 image2: /images/products/img_1054.jpeg
@@ -12,7 +13,7 @@ description: >-
   Size: Medium | Condition: Great
 
   Black snakeskin-embossed bag with braided handles, antique brass hardware caps, and a branded zip pull. Slouchy shape with a glossy textured finish that catches the light beautifully. Edgy and eye-catching for anyone who loves a statement piece.
-available: true
+available: false
 featured: false
 badge: sale
 ---

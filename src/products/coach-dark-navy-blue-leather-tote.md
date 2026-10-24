@@ -18,7 +18,7 @@ description: >-
   Dark navy blue pebbled leather tote with silver Coach hardware and branded hangtag. Clean, structured, and endlessly versatile. A wardrobe staple that goes with everything.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: sale
 ---
