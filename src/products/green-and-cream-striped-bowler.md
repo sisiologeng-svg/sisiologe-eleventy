@@ -3,7 +3,7 @@ name: Green and Cream Striped Bowler
 date: 2026-10-23T19:29:00.000+01:00
 price: 28000
 on_sale: false
-original_price: 28000
+original_price: ""
 category: bags
 image: /images/products/img_2160.jpeg
 image2: /images/products/img_2167.jpeg
@@ -16,7 +16,7 @@ description: >-
   Black bowler bag with green and cream stripe panels.  Retro and a little sporty.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
