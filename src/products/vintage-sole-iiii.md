@@ -1,6 +1,7 @@
 ---
 name: Vintage sole IV
 price: 15000
+on_sale: false
 category: sole
 shoe_size: "37"
 image: /images/products/img_7528.jpeg
@@ -17,6 +18,6 @@ description: >-
 
   Restock not guaranteed — once it’s gone, it’s gone.
 available: true
-featured: true
+featured: false
 badge: new
 ---
