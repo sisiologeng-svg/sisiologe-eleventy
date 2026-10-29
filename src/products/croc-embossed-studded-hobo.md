@@ -1,8 +1,7 @@
 ---
 name: Croc-Embossed Studded Hobo
-price: 16200
-on_sale: true
-original_price: 27000
+price: 27000
+on_sale: false
 category: bags
 image: /images/products/img_4690.jpeg
 image2: /images/products/img_4689.jpeg

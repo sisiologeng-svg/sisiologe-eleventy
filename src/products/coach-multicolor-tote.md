@@ -1,8 +1,7 @@
 ---
 name: Coach Multicolor Tote
-price: 18000
-on_sale: true
-original_price: 30000
+price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_1680.jpeg
 image2: /images/products/img_1683.jpeg

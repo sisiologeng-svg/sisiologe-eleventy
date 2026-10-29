@@ -1,8 +1,7 @@
 ---
 name: Crochet Rose Hobo
-price: 10800
-on_sale: true
-original_price: 18000
+price: 18000
+on_sale: false
 category: bags
 image: /images/products/img_3572.jpg
 description: >-

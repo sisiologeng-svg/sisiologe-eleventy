@@ -1,8 +1,7 @@
 ---
 name: Pink "OMG" Charm Baguette
-price: 7800
-on_sale: true
-original_price: 13000
+price: 13000
+on_sale: false
 category: bags
 image: /images/products/img_3584.jpg
 image2: /images/products/img_3579.jpg

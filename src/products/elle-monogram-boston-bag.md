@@ -1,8 +1,7 @@
 ---
 name: Elle Monogram Boston Bag
-price: 16800
-on_sale: true
-original_price: 28000
+price: 28000
+on_sale: false
 category: bags
 image: /images/products/img_5963.jpeg
 image2: /images/products/img_5964.jpeg

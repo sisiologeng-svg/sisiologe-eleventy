@@ -1,9 +1,8 @@
 ---
 name: Fossil Red Leather Satchel
 date: 2026-10-23T15:53:00.000+01:00
-price: 18000
-on_sale: true
-original_price: 30000
+price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_3237.jpeg
 image2: /images/products/img_3235.jpeg

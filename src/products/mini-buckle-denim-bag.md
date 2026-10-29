@@ -1,8 +1,7 @@
 ---
 name: Mini Buckle Denim Bag
-price: 10200
-on_sale: true
-original_price: 17000
+price: 17000
+on_sale: false
 category: bags
 image: /images/products/img_3384.jpeg
 description: >-

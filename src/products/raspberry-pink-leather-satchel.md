@@ -1,8 +1,7 @@
 ---
 name: Coach Pink Leather Satchel
-price: 15000
-on_sale: true
-original_price: 25000
+price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_8088.jpeg
 image2: /images/products/img_8094.jpeg

@@ -1,8 +1,7 @@
 ---
 name: Black Baguette Bag
-price: 12000
-on_sale: true
-original_price: 20000
+price: 20000
+on_sale: false
 category: bags
 image: /images/products/img_8637.jpeg
 image2: /images/products/img_8638.jpeg

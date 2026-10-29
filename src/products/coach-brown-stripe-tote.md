@@ -1,9 +1,8 @@
 ---
 name: Coach Brown Stripe Tote
 date: 2026-10-23T16:07:00.000+01:00
-price: 18000
-on_sale: true
-original_price: 30000
+price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_3586.jpeg
 image2: /images/products/c83a234c-7744-458a-a52a-34803ed91c32.jpeg

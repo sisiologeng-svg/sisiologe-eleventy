@@ -1,9 +1,8 @@
 ---
 name: Brown Leather Hobo with Pouch
 date: 2026-10-23T16:09:00.000+01:00
-price: 16800
-on_sale: true
-original_price: 28000
+price: 28000
+on_sale: false
 category: bags
 image: /images/products/img_3594.jpeg
 image2: /images/products/img_3599.jpeg

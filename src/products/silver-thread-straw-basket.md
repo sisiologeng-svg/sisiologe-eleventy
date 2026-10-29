@@ -1,9 +1,8 @@
 ---
 name: Silver Thread Straw Basket
 date: 2026-10-23T19:22:00.000+01:00
-price: 15000
-on_sale: true
-original_price: 25000
+price: 25000
+on_sale: false
 category: bags
 image: /images/products/img_2274.jpeg
 image2: /images/products/img_2275.jpeg

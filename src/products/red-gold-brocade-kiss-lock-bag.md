@@ -1,8 +1,7 @@
 ---
 name: Red & Gold Brocade Kiss-Lock Bag
-price: 7200
-on_sale: true
-original_price: 12000
+price: 12000
+on_sale: false
 category: bags
 image: /images/products/img_3667.jpg
 image2: /images/products/img_3666.jpg

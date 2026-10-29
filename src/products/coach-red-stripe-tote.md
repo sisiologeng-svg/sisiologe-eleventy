@@ -1,9 +1,8 @@
 ---
 name: Coach Red Stripe Tote
 date: 2026-10-23T15:08:00.000+01:00
-price: 18000
-on_sale: true
-original_price: 30000
+price: 30000
+on_sale: false
 category: bags
 image: /images/products/img_2527.jpeg
 image2: /images/products/img_2532.jpeg
