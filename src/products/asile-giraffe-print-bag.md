@@ -15,7 +15,7 @@ description: >-
   Brown and cream giraffe print bag with a gold cutout handle and chain shoulder straps. Fun, bold and easy to dress up.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
