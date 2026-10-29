@@ -16,7 +16,7 @@ description: >-
   Black bowler bag with green and cream stripe panels.  Retro and a little sporty.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: false
+available: true
 featured: false
 badge: new
 ---
