@@ -1,7 +1,7 @@
 ---
 name: Guess Camo Denim Mini Backpack
 date: 2026-10-23T16:14:00.000+01:00
-price: 25000
+price: 20000
 on_sale: false
 category: bags
 image: /images/products/img_3636.jpeg
