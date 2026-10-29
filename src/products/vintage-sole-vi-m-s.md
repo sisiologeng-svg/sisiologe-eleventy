@@ -1,6 +1,7 @@
 ---
 name: "Vintage Sole VI (M&S) "
 price: 20000
+on_sale: false
 category: sole
 shoe_size: "40"
 image: /images/products/img_7532.jpeg
@@ -17,6 +18,6 @@ description: >-
 
   Restock not guaranteed — once it’s gone, it’s gone.
 available: true
-featured: true
+featured: false
 badge: new
 ---
