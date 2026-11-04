@@ -14,7 +14,7 @@ description: >-
   Camel leather hobo with contrast brown trim, gold chain-link strap detail, and the round Coach hangtag. Soft, slouchy shape that's easy to sling on and go. A warm neutral that works all year round.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: sale
 ---
