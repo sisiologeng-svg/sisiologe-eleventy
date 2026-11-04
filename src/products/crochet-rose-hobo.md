@@ -16,7 +16,7 @@ description: >-
   condition: preloved
 
   Hand-crocheted khaki and olive textured body with dimensional pink rose appliques. Cottagecore meets grandma-chic, entirely one of one.
-available: true
+available: false
 featured: false
 badge: sale
 ---
