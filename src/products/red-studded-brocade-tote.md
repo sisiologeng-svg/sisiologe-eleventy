@@ -11,7 +11,7 @@ description: >-
 
   	•	Deep red leather with gold dome studs and an ornate brocade fabric panel
   	•	Rich jewel-tone with a vintage baroque feel — a standout statement piece for fall/winter styling
-available: true
+available: false
 featured: false
 badge: sale
 ---
