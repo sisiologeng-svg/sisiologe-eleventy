@@ -19,7 +19,7 @@ description: >-
   Details: Signature canvas with gold, silver and rose leather circles, gold hardware.
 
   Restock not guaranteed.
-available: true
+available: false
 featured: false
 badge: new
 ---
