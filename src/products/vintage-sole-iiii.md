@@ -17,7 +17,7 @@ description: >-
   Preloved red tartan plaid pointed-toe pumps with a black leather trim and antique gold buckle detail at the toe. Preppy with an edge — perfect for layering into a moodier, structured fall look.
 
   Restock not guaranteed — once it’s gone, it’s gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
