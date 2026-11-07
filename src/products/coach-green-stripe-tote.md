@@ -15,7 +15,7 @@ description: >-
   Light khaki signature jacquard tote with a lime green stripe, green patent trim and a round Coach medallion. A fresh pop of colour on a classic.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
