@@ -20,7 +20,7 @@ description: >-
   Details: Taupe logo fabric, plum leather front panel, silver hardware, hangtag, strap clips.
 
   Restock not guaranteed.
-available: true
+available: false
 featured: false
 badge: new
 ---
