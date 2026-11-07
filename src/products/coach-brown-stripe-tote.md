@@ -15,7 +15,7 @@ description: >-
   Signature khaki jacquard tote with a chocolate brown stripe, brown leather trim and a gold Coach hangtag. A warm neutral for everyday use.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
