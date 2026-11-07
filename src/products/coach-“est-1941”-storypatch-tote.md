@@ -15,7 +15,7 @@ description: >-
   	•	Tan canvas embroidered with vintage Coach storypatch graphics and script logo
   	•	Dark brown leather trim, silver hardware
   	•	Collector-favorite Coach print — the storypatch design is a discontinued, sought-after archive pi
-available: true
+available: false
 featured: false
 badge: sale
 ---
