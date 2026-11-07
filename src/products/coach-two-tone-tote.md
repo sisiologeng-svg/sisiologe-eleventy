@@ -15,7 +15,7 @@ description: >-
   Black and cream two-tone leather tote with the embossed Coach New York logo and tan leather handles. Slouchy, oversized shape with a vintage colour-block look. A standout Coach piece for everyday carry.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
