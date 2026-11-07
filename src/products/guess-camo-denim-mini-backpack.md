@@ -15,7 +15,7 @@ description: >-
   Camo denim mini backpack with metallic silver straps and trim, plus two front zip pockets. Cute, compact and perfect for days out.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
