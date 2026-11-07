@@ -16,7 +16,7 @@ description: |-
   Condition: Good (handle has visible wear) 
   Details: Grey logo fabric, chain link handles, silver turnlock, hangtag.
   Restock not guaranteed.
-available: true
+available: false
 featured: false
 badge: new
 ---
