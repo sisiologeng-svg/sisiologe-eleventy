@@ -15,7 +15,7 @@ description: >-
   Cream canvas tote with an allover multicolor Coach monogram print and pink leather trim. Roomy silhouette with silver hardware and a fun, playful colour palette. A standout Coach piece for anyone who loves a pop of colour.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
