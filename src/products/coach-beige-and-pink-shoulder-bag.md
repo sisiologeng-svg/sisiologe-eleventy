@@ -18,7 +18,7 @@ description: >-
   Details: Beige logo fabric, pink leather handles and trim, gold buckles, clips for a shoulder strap.
 
   Restock not guaranteed.
-available: true
+available: false
 featured: false
 badge: new
 ---
