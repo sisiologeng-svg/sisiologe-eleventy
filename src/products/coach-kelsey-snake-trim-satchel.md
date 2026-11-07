@@ -14,7 +14,7 @@ description: >-
   	•	Blush pink pebbled leather with snake-embossed trim and red piping accents
   	•	Detachable crossbody strap, silver hardware
   	•	A documented Coach Kelsey silhouette — colorblock detailing makes it feel much more premium than a standard satchel
-available: true
+available: false
 featured: false
 badge: sale
 ---
