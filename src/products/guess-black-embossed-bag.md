@@ -14,7 +14,7 @@ description: >-
   Black logo-embossed leather bag with braided handles and a drawstring closure detail. Subtle branding with the Guess triangle logo on the front. Clean and versatile for everyday wear.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: sale
 ---
