@@ -14,7 +14,7 @@ description: >-
   Signature khaki jacquard tote with a red leather stripe, red trim and a Coach hangtag. Zip top and long shoulder straps for easy everyday carry.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
