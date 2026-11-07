@@ -17,7 +17,7 @@ description: >-
   Grey nylon shoulder bag with navy trim and Sansibar branded hardware. Sporty and functional with multiple zip compartments. A great everyday bag for an active lifestyle.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
