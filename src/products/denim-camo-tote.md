@@ -16,7 +16,7 @@ description: >-
   Denim tote with pink leather trim and playful camo-print pockets. A fun mix of tomboy and girly detailing, complete with a crossbody strap. Roomy and versatile for everyday carry.
 
   Restock not guaranteed — once it's gone, it's gone.
-available: true
+available: false
 featured: false
 badge: new
 ---
